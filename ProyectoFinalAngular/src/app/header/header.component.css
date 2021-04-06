@@ -1,0 +1,36 @@
+a{
+    color: #08f0d6;
+}
+
+span{
+    color: #e82179;
+}
+
+nav{
+    background-color: #453d6a;
+}
+
+.btn-outline-success {
+    background-color: #08f0d6;
+    color: #453d6a;
+}
+
+
+/* Boton dropdown del header */
+#dropdownBasic1{
+    color: #08f0d6;
+}
+
+.dropdown-menu{
+    background-color: #453d6a;
+}
+
+.dropdown-item{
+    color: #e82179;
+}
+
+/* Toggler */
+
+.navbar-toggler-icon{
+    color: #08f0d6 !important;
+}
