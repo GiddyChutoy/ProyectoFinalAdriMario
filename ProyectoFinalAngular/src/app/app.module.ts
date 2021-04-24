@@ -17,6 +17,7 @@ import { RamComponent } from './ram/ram.component';
 import { TorresComponent } from './torres/torres.component';
 import { TecladosComponent } from './teclados/teclados.component';
 import { RatonesComponent } from './ratones/ratones.component';
+import { InyectadorComponent } from './inyectador/inyectador.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RatonesComponent } from './ratones/ratones.component';
     RamComponent,
     TorresComponent,
     TecladosComponent,
-    RatonesComponent
+    RatonesComponent,
+    InyectadorComponent
   ],
   imports: [
     BrowserModule,
