@@ -1,25 +1,50 @@
 package com.ardkalic.dtos;
 
-public class Teclados {
+public class ProductosDto {
 	private Integer id;
 	private String nombre;
 	private String descripcion;
 	private int cantidad;
 	private Double precio;
-	
-
-	public Teclados() {
+	private byte[] imagen;
+	public ProductosDto() {
 		super();
 	}
 	
-	public Teclados( String nombre, String descripcion, int cantidad, Double precio) {
+	public ProductosDto(String nombre, String descripcion, int cantidad, Double precio) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.cantidad = cantidad;
+		this.precio = precio;
+	}
+
+	public ProductosDto(Integer id, String nombre, String descripcion, int cantidad, Double precio) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.cantidad = cantidad;
+		this.precio = precio;
+	}
+	public ProductosDto(String nombre, String descripcion, int cantidad, Double precio, byte[] imagen) {
 		super();
 		
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.cantidad = cantidad;
 		this.precio = precio;
+		this.imagen = imagen;
 	}
+
+	public byte[] getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(byte[] imagen) {
+		this.imagen = imagen;
+	}
+
 	public Integer getId() {
 		return id;
 	}

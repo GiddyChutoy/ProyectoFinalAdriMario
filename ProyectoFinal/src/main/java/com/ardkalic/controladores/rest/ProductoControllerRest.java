@@ -9,29 +9,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ardkalic.dtos.TarjetaGrafica;
-import com.ardkalic.dtos.Ratones;
-import com.ardkalic.dtos.Teclados;
+
+import com.ardkalic.daos.productoDAO;
+import com.ardkalic.dtos.ProductosDto;
 import com.ardkalic.repositories.ProductoRepository;
 
 @RestController
-@RequestMapping(value="/v1")
+@RequestMapping(value="/productos")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class ProductoControllerRest {
 	
 	@Autowired
 	private ProductoRepository productorepository;
+	@Autowired
+	private productoDAO producto;
 	
-	@GetMapping(value="/productos/ratones")
-	public List<Ratones> obtenerRatones(){
-		return productorepository.obtenerRatones();
+	
+	@GetMapping(value="/ratones")
+	public List<ProductosDto> obtenerRatones(){
+		return producto.obtenerTodoRatones();
 	}
-	@GetMapping(value="/productos/teclados")
-	public List<Teclados> obtenerTeclados(){
+	@GetMapping(value="/teclados")
+	public List<ProductosDto> obtenerTeclados(){
 		return productorepository.obtenerTeclados();
 	}
-	@GetMapping(value="/productos/graficas")
-	public List<TarjetaGrafica> obtenerGraficas(){
+	@GetMapping(value="/graficas")
+	public List<ProductosDto> obtenerGraficas(){
 		return productorepository.obtenerGraficas();
 	}
 }

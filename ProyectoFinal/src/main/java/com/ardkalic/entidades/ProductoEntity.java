@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -42,8 +43,9 @@ public class ProductoEntity {
 	@Column(name="precio")
 	private Double precio;
 	
+	@Lob
 	@Column(name="imagen")
-	private String imagen;
+	private byte[] imagen;
 
 	
 	
@@ -57,7 +59,7 @@ public class ProductoEntity {
 	
 
 	public ProductoEntity(int id_producto, CategoriaEntity categorias, MarcaEntity marcas, String nombre,
-			String descripcion, int cantidad, Double precio, String imagen) {
+			String descripcion, int cantidad, Double precio, byte[] imagen) {
 		super();
 		this.id_producto = id_producto;
 		this.categorias = categorias;
@@ -66,7 +68,7 @@ public class ProductoEntity {
 		this.descripcion = descripcion;
 		this.cantidad = cantidad;
 		this.precio = precio;
-		this.imagen = imagen;
+		this.imagen=imagen;
 	}
 
 
@@ -128,11 +130,11 @@ public class ProductoEntity {
 		this.precio = precio;
 	}
 
-	public String getImagen() {
+	public byte[] getImagen() {
 		return imagen;
 	}
 
-	public void setImagen(String imagen) {
+	public void setImagen(byte[] imagen) {
 		this.imagen = imagen;
 	}
 	
