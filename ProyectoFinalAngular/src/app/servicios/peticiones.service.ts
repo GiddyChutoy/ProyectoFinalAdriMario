@@ -10,12 +10,12 @@ export class PeticionesService {
   }
 
   getRatones(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/v1/productos/ratones");
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/ratones");
   }
    getTeclados(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/v1/productos/teclados");
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/teclados");
   }
   getGraficas(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/v1/productos/graficas");
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/graficas");
   }
 }

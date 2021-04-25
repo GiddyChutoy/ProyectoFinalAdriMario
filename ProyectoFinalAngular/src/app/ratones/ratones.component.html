@@ -9,7 +9,7 @@
         <div class="card-group mt-3 mb-3 col-12">
             <div *ngFor="let raton of ratones" class="col-4">
                 <div class="card">
-                    <img src="https://picsum.photos/1080" class="card-image-top img-fluid" alt="{{raton.nombre}}">
+                    <img src='data:image/jpeg;base64,{{raton.imagen}}' class="card-image-top img-fluid" alt="{{raton.nombre}}">
                     <div class="card-body">
                         <h1 class="card-title">{{raton.nombre}}</h1>
                         <p class="card-text">{{raton.descripcion}}</p>

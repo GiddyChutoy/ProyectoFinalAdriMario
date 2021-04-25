@@ -20,6 +20,7 @@ export class RatonesComponent implements OnInit {
      console.log(data);
      this.ratones=data;
      console.log(this.ratones);
+     
     })
    
   }
