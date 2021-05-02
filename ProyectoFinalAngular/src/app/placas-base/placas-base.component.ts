@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioTienda } from '../shared/servicio-tienda.service';
 
 @Component({
   selector: 'app-placas-base',
@@ -9,9 +10,13 @@ export class PlacasBaseComponent implements OnInit {
 
   componentes: string[] = ["msi", "asus", "aorus"];
 
-  constructor() { }
+  constructor(private servicioTienda: ServicioTienda) { }
 
   ngOnInit(): void {
+  }
+
+  comprar(idProducto){
+    this.servicioTienda.comprarComponente(idProducto)
   }
 
 }

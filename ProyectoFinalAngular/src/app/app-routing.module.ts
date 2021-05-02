@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AboutUsComponent } from './header/about-us/about-us.component';
 import { ContactUsComponent } from './header/contact-us/contact-us.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { InyectadorComponent } from './inyectador/inyectador.component';
 import { PlacasBaseComponent } from './placas-base/placas-base.component';
 import { ProcesadoresComponent } from './procesadores/procesadores.component';
 import { RamComponent } from './ram/ram.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'ratones',component:RatonesComponent},
   {path:'about',component:AboutUsComponent},
   {path:'contacto',component:ContactUsComponent},
+  {path:'inyectador', component: InyectadorComponent},
   {path:'**',redirectTo:''}
 ];
 
