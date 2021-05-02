@@ -1,76 +1,117 @@
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 m-auto">
-            <form class="mt-4" >
-                <div class="form-group">
-                    <label for="tipo">Categoría</label>
-                    <select name="tipo" id="tipo" class="form-control" formControlName="tipo">
-                        <option value="Ratón">Ratón</option>
-                        <option value="Teclado">Teclado</option>
-                        <option value="Monitor">Monitor</option>
-                        <option value="Procesador">Procesador</option>
-                        <option value="Tarjeta gráfica">Tarjeta gráfica</option>
-                        <option value="Placa Base">Placa Base</option>
-                        <option value="RAM">RAM</option>
-                        <option value="Caja">Caja</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="marca">Marca</label>
-                    <select name="marca" id="marca" class="form-control" formControlName="marca">
-                        <option value="ASUS">ASUS</option>
-                        <option value="AORUS">AORUS</option>
-                        <option value="MSI">MSI</option>
-                        <option value="EVGA">EVGA</option>
-                        <option value="SteelSeries">SteelSeries</option>
-                        <option value="Logitech">Logitech</option>
-                        <option value="Razer">Razer</option>
-                        <option value="Omen">Omen</option>
-                        <option value="Corsair">Corsair</option>
-                        <option value="G.Skill">G.Skill</option>
-                        <option value="NZXT">NZXT</option>
-                        <option value="NOX">NOX</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input formControlName="nombre" type="text" name="nombre" id="nombre" required class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label for="descripcion">Descripción</label><br>
-                    <textarea formControlName="descripcion" name="descripcion" id="descripcion" cols="80" rows="10"
-                        placeholder="Que pedazo de componente!!!" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="cantidad">Cantidad</label>
-                    <!-- esta seria la cantidad a sumar -->
-                    <input formControlName="cantidad" type="number" name="cantidad" id="cantidad" class="form-control" placeholder="{{1}}"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="precio">Precio</label>
-                    <input formControlName="precio" type="number" name="precio" id="precio" class="form-control">
-                </div>
-
-                <button type="submit" class="btn btn-success" (click)="submit()" >Aceptar</button>
-            </form>
+  <div class="row">
+    <div
+      class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 m-auto">
+      <form [formGroup]="formulario">
+        <div class="form-group">
+          <label for="tipo">Categoría</label>
+          <select
+            name="tipo"
+            id="tipo"
+            class="form-control"
+            formControlName="tipo"
+          >
+            <option value="Ratón">Ratón</option>
+            <option value="Teclado">Teclado</option>
+            <option value="Monitor">Monitor</option>
+            <option value="Procesador">Procesador</option>
+            <option value="Tarjeta gráfica">Tarjeta gráfica</option>
+            <option value="Placa Base">Placa Base</option>
+            <option value="RAM">RAM</option>
+            <option value="Caja">Caja</option>
+          </select>
         </div>
-    </div>
-    <hr>
-    <div class="row" *ngIf="submitted">
-        <div class="col-xs-12">
-            <h3>El componenete creado</h3>
-            <p>Cateforía: {{ componente.categoria }}</p>
-            <p>Marca: {{ componente.marca }}</p>
-            <p>Nombre: {{componente.nombre }}</p>
-            <p>Descripción: {{ componente.descripcion }}</p>
-            <p>Cantidad: {{ componente.cantidad }}</p>
-            <p>Precio: {{ componente.precio }} €</p>
+
+        <div class="form-group">
+          <label for="marca">Marca</label>
+          <select
+            name="marca"
+            id="marca"
+            class="form-control"
+            formControlName="marca"
+          >
+            <option value="ASUS">ASUS</option>
+            <option value="AORUS">AORUS</option>
+            <option value="MSI">MSI</option>
+            <option value="EVGA">EVGA</option>
+            <option value="SteelSeries">SteelSeries</option>
+            <option value="Logitech">Logitech</option>
+            <option value="Razer">Razer</option>
+            <option value="Omen">Omen</option>
+            <option value="Corsair">Corsair</option>
+            <option value="G.Skill">G.Skill</option>
+            <option value="NZXT">NZXT</option>
+            <option value="NOX">NOX</option>
+          </select>
         </div>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            formControlName="nombre"
+            type="text"
+            name="nombre"
+            id="nombre"
+            required
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion">Descripción</label><br />
+          <textarea
+            formControlName="descripcion"
+            name="descripcion"
+            id="descripcion"
+            cols="80"
+            rows="10"
+            placeholder="Que pedazo de componente!!!"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="cantidad">Cantidad</label>
+          esta seria la cantidad a sumar
+          <input
+            formControlName="cantidad"
+            type="number"
+            name="cantidad"
+            id="cantidad"
+            class="form-control"
+            placeholder="{{ 1 }}"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input
+            formControlName="precio"
+            type="number"
+            name="precio"
+            id="precio"
+            class="form-control"
+          />
+        </div>
+
+        <button type="button" class="btn btn-success" (click)="submit()">
+          Aceptar
+        </button>
+      </form>
+      -->
     </div>
+  </div>
+  <!-- <hr />
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>El componenete creado</h3>
+      <p>Cateforía: {{ componente.categoria }}</p>
+      <p>Marca: {{ componente.marca }}</p>
+      <p>Nombre: {{ componente.nombre }}</p>
+      <p>Descripción: {{ componente.descripcion }}</p>
+      <p>Cantidad: {{ componente.cantidad }}</p>
+      <p>Precio: {{ componente.precio }} €</p>
+    </div>
+  </div> -->
 </div>

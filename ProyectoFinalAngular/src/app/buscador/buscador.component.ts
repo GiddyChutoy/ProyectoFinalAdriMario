@@ -1,5 +1,6 @@
 import { Route } from '@angular/compiler/src/core';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PeticionesService } from '../servicios/peticiones.service';
 
@@ -10,6 +11,7 @@ import { PeticionesService } from '../servicios/peticiones.service';
 })
 export class BuscadorComponent implements OnInit {
   busqueda:string ='';
+  formulario:FormGroup
   constructor(private route:ActivatedRoute,private peticionesServicios:PeticionesService) { }
   productos:any;
   ngOnInit(): void {
