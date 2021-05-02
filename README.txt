@@ -12,5 +12,9 @@ Para que funcione la aplicacion:
 
 	- Una vez instalados los paquetes ejecutar ng serve para compilar y desplegar e introducir en el navegador localhost:4200  
 
-Nota: Todo esta enlazado pero solo hay peticiones al back en la seccion productos de teclados graficas y ratones 
+Nota: Ahora se muestran las imagenes si las hay en la bbdd si no hay se pueden añadir en la BBDD por el mysql para ver el resultado , tambien se pueden agregar eliminar modificar los productos 
+y asi como también estan disponibles las peticiones para añadir eliminar y modificar usuarios.
+
+Nota 2: Se puede encontrar un error a la hora de usar las peticiones porque cuando se arranca Spring crea una columna user_password si se elimina la columana UserPassword de la bbdd funcionare correctamente 
+de todas maneras intentare subir la BBDD mas actualizada 
 
