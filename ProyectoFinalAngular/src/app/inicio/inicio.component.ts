@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeticionesService } from '../servicios/peticiones.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private peticiones:PeticionesService) { }
+  productos:any;
   ngOnInit(): void {
+    this.listarProductos();
   }
-
+  listarProductos(){
+    this.peticiones.getProductos().subscribe(data=>{
+      this.productos=data;
+    })
+  }
 }

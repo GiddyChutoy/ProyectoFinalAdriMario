@@ -7,14 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  
+  palabra:string='';
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
+  
+  recogerDatoBuscador(){
+    console.log(this.palabra);
 
-  nuevoProducto(){
-    this.router.navigate(['/inyectador'])
+    this.router.navigate(["resultado",this.palabra])
   }
-
 }

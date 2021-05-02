@@ -9,13 +9,24 @@ export class PeticionesService {
   constructor(private http: HttpClient) { 
   }
 
-  getRatones(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/productos/ratones");
+  // getRatones(){
+  //   return this.http.get<any>("http://localhost:8080/ardkalic/productos/ratones");
+  // }
+  //  getTeclados(){
+  //   return this.http.get<any>("http://localhost:8080/ardkalic/productos/teclados");
+  // }
+  // getGraficas(){
+  //   return this.http.get<any>("http://localhost:8080/ardkalic/productos/graficas");
+  // }
+  getProductos(){
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/inicio");
   }
-  getTeclados(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/productos/teclados");
+
+  getProductosTipo(tipo){
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/" + tipo);
   }
-  getGraficas(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/productos/graficas");
+
+  getProductosBuscador(tipo){
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/?tipo=" + tipo);
   }
 }

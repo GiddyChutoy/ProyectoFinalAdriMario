@@ -10,14 +10,9 @@ import { AboutUsComponent } from './header/about-us/about-us.component';
 import { ContactUsComponent } from './header/contact-us/contact-us.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './inicio/carousel/carousel.component';
-import { ProcesadoresComponent } from './procesadores/procesadores.component';
-import { TarjetasGraficasComponent } from './tarjetas-graficas/tarjetas-graficas.component';
-import { PlacasBaseComponent } from './placas-base/placas-base.component';
-import { RamComponent } from './ram/ram.component';
-import { TorresComponent } from './torres/torres.component';
-import { TecladosComponent } from './teclados/teclados.component';
-import { RatonesComponent } from './ratones/ratones.component';
-import { InyectadorComponent } from './inyectador/inyectador.component';
+import { ProductosComponent } from './productos/productos.component';
+import { BuscadorComponent } from './buscador/buscador.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,20 +23,16 @@ import { InyectadorComponent } from './inyectador/inyectador.component';
     AboutUsComponent,
     ContactUsComponent,
     CarouselComponent,
-    ProcesadoresComponent,
-    TarjetasGraficasComponent,
-    PlacasBaseComponent,
-    RamComponent,
-    TorresComponent,
-    TecladosComponent,
-    RatonesComponent,
-    InyectadorComponent
+    ProductosComponent,
+    BuscadorComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
