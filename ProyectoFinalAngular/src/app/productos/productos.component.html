@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <div class="form-group">
+        <div class="col-12">
             <app-filtros></app-filtros>
         </div>
         <div class="card-group mt-3 mb-3 col-12">
@@ -16,6 +16,8 @@
                     <div class="card-body">
                         <h1 class="card-title">{{producto.nombre}}</h1>
                         <p class="card-text">{{producto.descripcion}}</p>
+                        <h3>{{producto.precio}}€</h3>
+                        <span class="help-block">Quedan {{producto.cantidad}}</span>
                         <button class="btn btn-primary btn-block">Comprar</button>
                     </div>
                 </div>

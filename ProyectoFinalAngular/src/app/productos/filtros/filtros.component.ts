@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-filtros',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltrosComponent implements OnInit {
 
+  //bindear variables
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(){
   }
 
 }
