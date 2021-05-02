@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 m-auto">
+            <form class="mt-4" #f>
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+                    <select name="categoria" id="categoria" class="form-control" ngModel>
+                        <option value="{{1}}">Ratón</option>
+                        <option value="{{2}}">Teclado</option>
+                        <option value="{{3}}">Monitor</option>
+                        <option value="{{4}}">Procesador</option>
+                        <option value="{{5}}">Tarjeta gráfica</option>
+                        <option value="{{6}}">Placa Base</option>
+                        <option value="{{7}}">RAM</option>
+                        <option value="{{8}}">Caja</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <select name="marca" id="marca" class="form-control" ngModel>
+                        <option value="{{1}}">ASUS</option>
+                        <option value="{{2}}">AORUS</option>
+                        <option value="{{3}}">MSI</option>
+                        <option value="{{4}}">EVGA</option>
+                        <option value="{{5}}">SteelSeries</option>
+                        <option value="{{6}}">Logitech</option>
+                        <option value="{{7}}">Razer</option>
+                        <option value="{{8}}">Omen</option>
+                        <option value="{{9}}">Corsair</option>
+                        <option value="{{10}}">G.Skill</option>
+                        <option value="{{11}}">NZXT</option>
+                        <option value="{{12}}">NOX</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required class="form-control" ngModel>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label><br>
+                    <textarea name="descripcion" id="descripcion" cols="80" rows="10"
+                        placeholder="Que pedazo de componente!!!" required ngModel></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <!-- esta seria la cantidad a sumar -->
+                    <input type="number" name="cantidad" id="cantidad" class="form-control" placeholder="{{1}}"
+                        required ngModel>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" name="precio" id="precio" class="form-control" ngModel>
+                </div>
+
+                <button type="submit" class="btn btn-success" (click)="submit()" >Aceptar</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row" *ngIf="submitted">
+        <div class="col-xs-12">
+            <h3>El componenete creado</h3>
+            <p>Cateforía: {{ componente.categoria }}</p>
+            <p>Marca: {{ componente.marca }}</p>
+            <p>Nombre: {{componente.nombre }}</p>
+            <p>Descripción: {{ componente.descripcion }}</p>
+            <p>Cantidad: {{ componente.cantidad }}</p>
+            <p>Precio: {{ componente.precio }} €</p>
+        </div>
+    </div>
+</div>
