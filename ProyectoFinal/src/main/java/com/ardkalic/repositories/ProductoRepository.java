@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import com.ardkalic.dtos.ProductosDto;
 
@@ -28,5 +29,9 @@ public interface ProductoRepository extends CrudRepository<ProductoEntity, Integ
 			+ " where p.categorias.id_categoria = 5 ")
 	List<ProductosDto> obtenerGraficas();		 
 	
+	@Query(value = "select new com.ardkalic.dtos.ProductosDto (p.nombre,p.descripcion,p.cantidad,p.precio,p.imagen) "
+			+ "FROM com.ardkalic.entidades.ProductoEntity p join com.ardkalic.entidades.CategoriaEntity c on p.categorias.id_categoria=c.id_categoria"
+			+ " WHERE p.categorias.tipo like concat('%',:tipo,'%') ")
+	List<ProductosDto> obtenerProductos(@Param("tipo") String tipo);	
 	
 }

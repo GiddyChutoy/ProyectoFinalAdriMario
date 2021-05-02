@@ -18,4 +18,7 @@ export class PeticionesService {
   getGraficas(){
     return this.http.get<any>("http://localhost:8080/ardkalic/productos/graficas");
   }
+  getRAM(tipo){
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/" + tipo);
+  }
 }

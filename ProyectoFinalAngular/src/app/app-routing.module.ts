@@ -6,6 +6,7 @@ import { ContactUsComponent } from './header/contact-us/contact-us.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PlacasBaseComponent } from './placas-base/placas-base.component';
 import { ProcesadoresComponent } from './procesadores/procesadores.component';
+import { ProductosComponent } from './productos/productos.component';
 import { RamComponent } from './ram/ram.component';
 import { RatonesComponent } from './ratones/ratones.component';
 import { TarjetasGraficasComponent } from './tarjetas-graficas/tarjetas-graficas.component';
@@ -15,16 +16,17 @@ import { TorresComponent } from './torres/torres.component';
 const routes: Routes = [
   {path:'',redirectTo:'/inicio',pathMatch:'full'},
   {path:'inicio',component:InicioComponent},
-  {path:'procesadores',component:ProcesadoresComponent},
-  {path:'tarjetasgraficas',component:TarjetasGraficasComponent},
-  {path:'placasbase',component:PlacasBaseComponent},
-  {path:'ram',component:RamComponent},
-  {path:'cajas',component:TorresComponent},
-  {path:'teclados',component:TecladosComponent},
-  {path:'ratones',component:RatonesComponent},
+  // {path:'procesadores',component:ProcesadoresComponent},
+  // {path:'tarjetasgraficas',component:TarjetasGraficasComponent},
+  // {path:'placasbase',component:PlacasBaseComponent},
+  // {path:'RAM',component:RamComponent},
+  // {path:'cajas',component:TorresComponent},
+  // {path:'teclados',component:TecladosComponent},
+  // {path:'ratones',component:RatonesComponent},
   {path:'about',component:AboutUsComponent},
   {path:'contacto',component:ContactUsComponent},
-  {path:'**',redirectTo:''}
+  {path:'productos/:tipo',component:ProductosComponent},
+  // {path:'**',redirectTo:''}
 ];
 
 @NgModule({
