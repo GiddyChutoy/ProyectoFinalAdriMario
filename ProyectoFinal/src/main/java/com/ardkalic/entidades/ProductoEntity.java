@@ -58,6 +58,21 @@ public class ProductoEntity {
 	
 	
 
+	public ProductoEntity(CategoriaEntity categorias, MarcaEntity marcas, String nombre, String descripcion,
+			int cantidad, Double precio, byte[] imagen) {
+		super();
+		this.categorias = categorias;
+		this.marcas = marcas;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.imagen = imagen;
+	}
+
+
+
+
 	public ProductoEntity(int id_producto, CategoriaEntity categorias, MarcaEntity marcas, String nombre,
 			String descripcion, int cantidad, Double precio, byte[] imagen) {
 		super();
