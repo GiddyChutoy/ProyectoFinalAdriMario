@@ -12,7 +12,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './inicio/carousel/carousel.component';
 import { ProductosComponent } from './productos/productos.component';
 import { BuscadorComponent } from './buscador/buscador.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FiltrosComponent } from './productos/filtros/filtros.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { FormsModule } from '@angular/forms';
     CarouselComponent,
     ProductosComponent,
     BuscadorComponent,
+    FiltrosComponent,
+    LoginComponent,
+    RegisterComponent,
     
   ],
   imports: [
@@ -32,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

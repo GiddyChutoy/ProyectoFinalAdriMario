@@ -5,6 +5,9 @@ import { BuscadorComponent } from './buscador/buscador.component';
 import { AboutUsComponent } from './header/about-us/about-us.component';
 import { ContactUsComponent } from './header/contact-us/contact-us.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { InyectadorComponent } from './inyectador/inyectador.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register/register.component';
 import { ProductosComponent } from './productos/productos.component';
 
 
@@ -15,6 +18,9 @@ const routes: Routes = [
   {path:'contacto',component:ContactUsComponent},
   {path:'productos/:tipo',component:ProductosComponent},
   {path:'resultado/:busqueda',component:BuscadorComponent},
+  {path:'anadir-componente', component: InyectadorComponent},
+  {path:'login', component: LoginComponent},
+  {path:'register', component: RegisterComponent}
   // {path:'**',redirectTo:''}
 ];
 

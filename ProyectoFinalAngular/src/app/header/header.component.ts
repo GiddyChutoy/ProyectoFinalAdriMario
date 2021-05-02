@@ -19,4 +19,8 @@ export class HeaderComponent implements OnInit {
 
     this.router.navigate(["resultado",this.palabra])
   }
+
+  inyectador(){
+    this.router.navigate(["anadir-componente"])
+  }
 }
