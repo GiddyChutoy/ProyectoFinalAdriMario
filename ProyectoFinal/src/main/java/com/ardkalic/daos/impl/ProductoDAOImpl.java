@@ -1,15 +1,16 @@
 package com.ardkalic.daos.impl;
 
-import java.util.Base64;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Optional;
 
-import org.hibernate.engine.jdbc.ReaderInputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ardkalic.daos.productoDAO;
-import com.ardkalic.dtos.ProductosDto;
+import com.ardkalic.entidades.CategoriaEntity;
+import com.ardkalic.entidades.MarcaEntity;
+import com.ardkalic.entidades.ProductoEntity;
+import com.ardkalic.repositories.CategoriaRepository;
+import com.ardkalic.repositories.MarcaRepository;
 import com.ardkalic.repositories.ProductoRepository;
 
 
@@ -18,18 +19,38 @@ public class ProductoDAOImpl implements productoDAO {
 	
 	@Autowired
 	private ProductoRepository productoRepo;
+	@Autowired
+	private MarcaRepository marcaRepo;
+	@Autowired
+	private CategoriaRepository categoriaRepo;
+
+	
 
 	@Override
-	public List<ProductosDto> obtenerTodoRatones() {
-		// TODO Auto-generated method stub
-		return null;
+	public Integer anadirProducto(String nombre, String descripcion, String tipo, String marca, int cantidad,
+			Double precio, byte[] imagen) {
+		Integer idMarca= marcaRepo.buscarIdMarca(marca);
+		Integer idCategoria= categoriaRepo.buscarIdCategoria(tipo);
+		Optional<MarcaEntity> marcaOp= marcaRepo.findById(idMarca);
+		MarcaEntity marcaEn = marcaOp.get();
+		Optional<CategoriaEntity> categoriaOp= categoriaRepo.findById(idCategoria);
+		CategoriaEntity categoriaEn = categoriaOp.get();
+		ProductoEntity p = new ProductoEntity(categoriaEn,marcaEn,nombre,descripcion,cantidad,precio,imagen);
+		productoRepo.save(p);
+		return 1;
+	}
+	@Override
+	public Integer modificarProducto(int id,String nombre, String descripcion, String tipo, String marca, int cantidad,
+			Double precio, byte[] imagen) {
+		Integer idMarca= marcaRepo.buscarIdMarca(marca);
+		Integer idCategoria= categoriaRepo.buscarIdCategoria(tipo);
+		Optional<MarcaEntity> marcaOp= marcaRepo.findById(idMarca);
+		MarcaEntity marcaEn = marcaOp.get();
+		Optional<CategoriaEntity> categoriaOp= categoriaRepo.findById(idCategoria);
+		CategoriaEntity categoriaEn = categoriaOp.get();
+		ProductoEntity p = new ProductoEntity(id,categoriaEn,marcaEn,nombre,descripcion,cantidad,precio,imagen);
+		productoRepo.save(p);
+		return 1;
 	}
 	
-	
-//	@Override
-//	public List<ProductosDto> obtenerTodoRatones(){
-//		List<ProductosDto> listaRatones = productoRepo.obtenerRatones() ;
-//		return listaRatones;
-//		
-//	}
 }

@@ -1,11 +1,9 @@
 package com.ardkalic.daos;
 
-import java.util.List;
-
-import com.ardkalic.dtos.ProductosDto;
-
 public interface productoDAO {
 	
-	List<ProductosDto> obtenerTodoRatones();
 	
+	Integer anadirProducto(String nombre,String descripcion,String tipo,String marca,int cantidad,Double precio,byte[] imagen);
+	Integer modificarProducto(int id, String nombre, String descripcion, String tipo, String marca, int cantidad,
+			Double precio, byte[] imagen);
 }

@@ -37,4 +37,6 @@ public interface ProductoRepository extends CrudRepository<ProductoEntity, Integ
 			+ " WHERE p.categorias.tipo like concat('%',:tipo,'%') ")
 	List<ProductosDto> obtenerProductosPorTipo(@Param("tipo") String tipo);	
 	
+	
+	
 }

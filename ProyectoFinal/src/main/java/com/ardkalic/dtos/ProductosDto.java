@@ -4,6 +4,8 @@ public class ProductosDto {
 	private Integer id;
 	private String nombre;
 	private String descripcion;
+	private String tipo;
+	private String marca;
 	private int cantidad;
 	private Double precio;
 	private byte[] imagen;
@@ -11,6 +13,34 @@ public class ProductosDto {
 		super();
 	}
 	
+	public ProductosDto( String nombre, String descripcion, String tipo, String marca, int cantidad,
+			Double precio, byte[] imagen) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.tipo = tipo;
+		this.marca = marca;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.imagen = imagen;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
 	public ProductosDto(String nombre, String descripcion, int cantidad, Double precio) {
 		super();
 		this.nombre = nombre;
