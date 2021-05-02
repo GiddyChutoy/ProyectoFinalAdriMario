@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ardkalic.daos.productoDAO;
+import com.ardkalic.daos.ProductoDAO;
 import com.ardkalic.entidades.CategoriaEntity;
 import com.ardkalic.entidades.MarcaEntity;
 import com.ardkalic.entidades.ProductoEntity;
@@ -15,7 +15,7 @@ import com.ardkalic.repositories.ProductoRepository;
 
 
 @Service
-public class ProductoDAOImpl implements productoDAO {
+public class ProductoDAOImpl implements ProductoDAO {
 	
 	@Autowired
 	private ProductoRepository productoRepo;

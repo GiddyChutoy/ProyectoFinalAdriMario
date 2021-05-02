@@ -1,6 +1,6 @@
 package com.ardkalic.daos;
 
-public interface productoDAO {
+public interface ProductoDAO {
 	
 	
 	Integer anadirProducto(String nombre,String descripcion,String tipo,String marca,int cantidad,Double precio,byte[] imagen);

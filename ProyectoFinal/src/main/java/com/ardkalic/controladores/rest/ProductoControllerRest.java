@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ardkalic.daos.productoDAO;
+import com.ardkalic.daos.ProductoDAO;
 import com.ardkalic.dtos.ProductosDto;
 import com.ardkalic.entidades.ProductoEntity;
 import com.ardkalic.repositories.ProductoRepository;
@@ -30,11 +30,11 @@ public class ProductoControllerRest {
 	@Autowired
 	private ProductoRepository productorepository;
 	@Autowired
-	private productoDAO productoDao;
+	private ProductoDAO productoDao;
 	
 	
 	@GetMapping(value="/inicio")
-	public Iterable<ProductoEntity> obtenerRatones(){
+	public Iterable<ProductoEntity> obtenerProductos(){
 		return productorepository.findAll();
 	}
 	@GetMapping(value="/{tipo}")
@@ -65,8 +65,8 @@ public class ProductoControllerRest {
 		return new ResponseEntity<>("Insercion Correcta", HttpStatus.OK);
 
 	}
-	@DeleteMapping(value="/borrar")
-	public ResponseEntity<String> borrarProductos(@RequestParam(value = "id",required = false ) Integer id) {
+	@DeleteMapping(value="/{id}")
+	public ResponseEntity<String> borrarProductos(@PathVariable(value = "id",required = false ) Integer id) {
 		
 		productorepository.deleteById(id);
 		

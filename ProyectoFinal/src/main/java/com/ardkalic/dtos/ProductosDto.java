@@ -9,10 +9,38 @@ public class ProductosDto {
 	private int cantidad;
 	private Double precio;
 	private byte[] imagen;
+	
 	public ProductosDto() {
 		super();
 	}
 	
+
+	public ProductosDto(Integer id, String nombre, String descripcion, int cantidad, Double precio, byte[] imagen) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.imagen = imagen;
+	}
+
+
+
+	public ProductosDto(Integer id, String nombre, String descripcion, String tipo, String marca, int cantidad,
+			Double precio, byte[] imagen) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.tipo = tipo;
+		this.marca = marca;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.imagen = imagen;
+	}
+
+
 	public ProductosDto( String nombre, String descripcion, String tipo, String marca, int cantidad,
 			Double precio, byte[] imagen) {
 		super();
@@ -41,22 +69,8 @@ public class ProductosDto {
 		this.marca = marca;
 	}
 
-	public ProductosDto(String nombre, String descripcion, int cantidad, Double precio) {
-		super();
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.cantidad = cantidad;
-		this.precio = precio;
-	}
 
-	public ProductosDto(Integer id, String nombre, String descripcion, int cantidad, Double precio) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.cantidad = cantidad;
-		this.precio = precio;
-	}
+
 	public ProductosDto(String nombre, String descripcion, int cantidad, Double precio, byte[] imagen) {
 		super();
 		
