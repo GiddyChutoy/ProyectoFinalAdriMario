@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioTienda } from '../shared/servicio-tienda.service';
+import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
   selector: 'app-placas-base',

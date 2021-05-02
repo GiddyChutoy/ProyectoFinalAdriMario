@@ -12,7 +12,7 @@ export class PeticionesService {
   getRatones(){
     return this.http.get<any>("http://localhost:8080/ardkalic/productos/ratones");
   }
-   getTeclados(){
+  getTeclados(){
     return this.http.get<any>("http://localhost:8080/ardkalic/productos/teclados");
   }
   getGraficas(){

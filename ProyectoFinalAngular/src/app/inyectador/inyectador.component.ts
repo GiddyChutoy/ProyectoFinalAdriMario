@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ServicioTienda } from '../shared/servicio-tienda.service';
+import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
   selector: 'app-inyectador',
