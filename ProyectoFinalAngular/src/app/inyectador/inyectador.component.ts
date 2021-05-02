@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
@@ -9,9 +9,10 @@ import { ServicioTienda } from '../servicios/servicio-tienda.service';
 })
 export class InyectadorComponent implements OnInit {
 
+  
   submitted: boolean = false;
 
-  signupForm: FormGroup;
+  formulario:FormGroup;
 
   // componente = {
   //   tipo: '',
@@ -25,19 +26,20 @@ export class InyectadorComponent implements OnInit {
   constructor(private servicioTienda: ServicioTienda) { }
 
   ngOnInit(): void {
-    this.signupForm = new FormGroup({
-      'tipo': new FormControl('Procesador'),
-      'marca': new FormControl('MSI'),
-      'nombre': new FormControl,
-      'descripcion': new FormControl,
-      'cantidad': new FormControl,
-      'precio': new FormControl
+    this.formulario = new FormGroup({
+      'tipo': new FormControl(),
+      'marca': new FormControl(),
+      'nombre': new FormControl(),
+      'descripcion': new FormControl(),
+      'cantidad': new FormControl(),
+      'precio': new FormControl()
     });
   }
 
   submit(){
     // this.servicioTienda.nuevoComponente()
-    console.log(this.signupForm)
+
+    console.log(this.formulario.get('tipo'))
     // this.submitted = true;
     // this.componente.tipo = this.signupForm.value.tipo;
     // this.componente.marca = this.signupForm.value.marca;
@@ -48,6 +50,5 @@ export class InyectadorComponent implements OnInit {
 
     // console.log(this.componente)
 
-    this.signupForm.reset();
-  }
+}
 }

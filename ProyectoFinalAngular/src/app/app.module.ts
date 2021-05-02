@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import{HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -12,10 +13,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './inicio/carousel/carousel.component';
 import { ProductosComponent } from './productos/productos.component';
 import { BuscadorComponent } from './buscador/buscador.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FiltrosComponent } from './productos/filtros/filtros.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
+import { InyectadorComponent } from './inyectador/inyectador.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RegisterComponent } from './login/register/register.component';
     FiltrosComponent,
     LoginComponent,
     RegisterComponent,
+    InyectadorComponent,
     
   ],
   imports: [
