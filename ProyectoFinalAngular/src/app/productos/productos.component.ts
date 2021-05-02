@@ -22,7 +22,7 @@ export class ProductosComponent implements OnInit {
     })
   }
   listaProductos(tipo){
-    this.peticiones.getRAM(tipo).subscribe(data=>
+    this.peticiones.getProductosTipo(tipo).subscribe(data=>
         {
           console.log(data);
           this.productos=data;

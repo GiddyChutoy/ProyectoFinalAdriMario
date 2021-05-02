@@ -14,8 +14,8 @@ public interface ProductoRepository extends CrudRepository<ProductoEntity, Integ
 
 	@Query(value = "select new com.ardkalic.dtos.ProductosDto (p.nombre,p.descripcion,p.cantidad,p.precio,p.imagen) "
 			+ "FROM com.ardkalic.entidades.ProductoEntity p join com.ardkalic.entidades.CategoriaEntity c on p.categorias.id_categoria=c.id_categoria"
-			+ " where p.categorias.id_categoria = 1 ")
-	List<ProductosDto> obtenerRatones();
+			)
+	List<ProductosDto> obtenerProductos();
 	
 	
 
@@ -25,13 +25,16 @@ public interface ProductoRepository extends CrudRepository<ProductoEntity, Integ
 	List<ProductosDto> obtenerTeclados();		 
 	
 	@Query(value = "select new com.ardkalic.dtos.ProductosDto (p.nombre,p.descripcion,p.cantidad,p.precio,p.imagen) "
-			+ "FROM com.ardkalic.entidades.ProductoEntity p join com.ardkalic.entidades.CategoriaEntity c on p.categorias.id_categoria=c.id_categoria"
-			+ " where p.categorias.id_categoria = 5 ")
-	List<ProductosDto> obtenerGraficas();		 
+			+ "FROM com.ardkalic.entidades.ProductoEntity p join com.ardkalic.entidades.CategoriaEntity c on p.categorias.id_categoria=c.id_categoria "
+			+ "join com.ardkalic.entidades.MarcaEntity m on p.marcas.id_marca=m.id_marca "
+			+ "WHERE p.categorias.tipo like concat('%',:tipo,'%') "
+            + "OR p.marcas.marca like concat('%',:tipo,'%')" 
+			+ "OR p.nombre like concat('%',:tipo,'%')")
+	List<ProductosDto> buscador(@Param("tipo") String tipo);		 
 	
 	@Query(value = "select new com.ardkalic.dtos.ProductosDto (p.nombre,p.descripcion,p.cantidad,p.precio,p.imagen) "
 			+ "FROM com.ardkalic.entidades.ProductoEntity p join com.ardkalic.entidades.CategoriaEntity c on p.categorias.id_categoria=c.id_categoria"
 			+ " WHERE p.categorias.tipo like concat('%',:tipo,'%') ")
-	List<ProductosDto> obtenerProductos(@Param("tipo") String tipo);	
+	List<ProductosDto> obtenerProductosPorTipo(@Param("tipo") String tipo);	
 	
 }

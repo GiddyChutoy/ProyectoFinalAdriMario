@@ -18,12 +18,18 @@ public class ProductoDAOImpl implements productoDAO {
 	
 	@Autowired
 	private ProductoRepository productoRepo;
-	
-	
+
 	@Override
-	public List<ProductosDto> obtenerTodoRatones(){
-		List<ProductosDto> listaRatones = productoRepo.obtenerRatones() ;
-		return listaRatones;
-		
+	public List<ProductosDto> obtenerTodoRatones() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
+	
+//	@Override
+//	public List<ProductosDto> obtenerTodoRatones(){
+//		List<ProductosDto> listaRatones = productoRepo.obtenerRatones() ;
+//		return listaRatones;
+//		
+//	}
 }
