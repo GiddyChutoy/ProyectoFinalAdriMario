@@ -18,6 +18,12 @@
 --
 -- Table structure for table `authorities`
 --
+Drop database if exists ardkalic;
+CREATE DATABASE  IF NOT EXISTS `ardkalic` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ardkalic`;
+
+
+
 
 DROP TABLE IF EXISTS `authorities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

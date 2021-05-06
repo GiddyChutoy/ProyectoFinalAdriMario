@@ -23,7 +23,7 @@ import com.ardkalic.repositories.UserRepository;
 
 @RestController
 @RequestMapping(value="/usuarios")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class UserControllerRest {
 	
 	@Autowired
