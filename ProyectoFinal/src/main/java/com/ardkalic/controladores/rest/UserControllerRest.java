@@ -23,7 +23,7 @@ import com.ardkalic.repositories.UserRepository;
 
 @RestController
 @RequestMapping(value="/usuarios")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class UserControllerRest {
 	
 	@Autowired
@@ -46,7 +46,7 @@ public class UserControllerRest {
 	@PutMapping(value="/modificarUser")
 	public ResponseEntity<String> modificarUsuario(@RequestBody UserDto user){
 		userDao.anadirUser(user.getUsername(),user.getNombre(), user.getApellidos(), user.getUserPassword(), user.getEmail(), user.getDireccion(), user.getFecha_nacimiento(), user.getRol());
-		return new ResponseEntity<>("Insercion Correcta", HttpStatus.OK);
+		return new ResponseEntity<>("Modificacion Correcta", HttpStatus.OK);
 	}
 	@DeleteMapping(value="/borrar")
 	public ResponseEntity<String> borrarUsuario(@RequestParam(value = "username",required = false ) String username) {

@@ -16,6 +16,7 @@ export class InicioComponent implements OnInit {
   listarProductos(){
     this.peticiones.getProductos().subscribe(data=>{
       this.productos=data;
+      console.log(this.productos);
     })
   }
 }
