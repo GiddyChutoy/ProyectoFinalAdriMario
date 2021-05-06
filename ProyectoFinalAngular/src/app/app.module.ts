@@ -13,10 +13,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './inicio/carousel/carousel.component';
 import { ProductosComponent } from './productos/productos.component';
 import { BuscadorComponent } from './buscador/buscador.component';
-import { FiltrosComponent } from './productos/filtros/filtros.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { InyectadorComponent } from './inyectador/inyectador.component';
+import { precioMaximoPipe } from './productos/precio-maximo.pipe';
+import { MarcaFiltradaPipe } from './productos/marca-filtrada.pipe';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import { InyectadorComponent } from './inyectador/inyectador.component';
     CarouselComponent,
     ProductosComponent,
     BuscadorComponent,
-    FiltrosComponent,
     LoginComponent,
     RegisterComponent,
     InyectadorComponent,
+    precioMaximoPipe,
+    MarcaFiltradaPipe,
     
   ],
   imports: [

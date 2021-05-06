@@ -14,7 +14,9 @@ export class ProductosComponent implements OnInit {
   tipo:string;
   productos:any;
   
- 
+  precioMaximo: number = 10000;
+  marcaFiltrada: string = "Todas las marcas";
+
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.tipo = params.get('tipo');
