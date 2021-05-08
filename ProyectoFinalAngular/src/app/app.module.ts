@@ -18,6 +18,8 @@ import { RegisterComponent } from './login/register/register.component';
 import { InyectadorComponent } from './inyectador/inyectador.component';
 import { precioMaximoPipe } from './productos/precio-maximo.pipe';
 import { MarcaFiltradaPipe } from './productos/marca-filtrada.pipe';
+import { ModificadorComponent } from './inyectador/modificador/modificador.component';
+import { FormularioModificadorComponent } from './inyectador/modificador/formulario-modificador/formulario-modificador.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { MarcaFiltradaPipe } from './productos/marca-filtrada.pipe';
     InyectadorComponent,
     precioMaximoPipe,
     MarcaFiltradaPipe,
+    ModificadorComponent,
+    FormularioModificadorComponent,
     
   ],
   imports: [

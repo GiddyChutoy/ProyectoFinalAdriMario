@@ -42,6 +42,12 @@ public class ProductoControllerRest {
 		return productorepository.obtenerProductosPorTipo(tipo);
 	}
 	
+	@GetMapping(value="/formularioModificador/{id}")
+	public List<ProductosDto> obtenerProductosPorID(@PathVariable(value = "id", required = false) int id){
+		return productorepository.obtenerProductosPorId(id);
+	}
+	
+	
 	@GetMapping(value="/")
 	public List<ProductosDto> obtenerProductosBuscador(@RequestParam(value = "tipo",required = false ) String tipo){
 		return productorepository.buscador(tipo);

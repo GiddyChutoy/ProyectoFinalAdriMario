@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ServicioTienda } from '../servicios/servicio-tienda.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inyectador',
@@ -9,21 +10,9 @@ import { ServicioTienda } from '../servicios/servicio-tienda.service';
 })
 export class InyectadorComponent implements OnInit {
 
-  
-  submitted: boolean = false;
+  formulario: FormGroup;
 
-  formulario:FormGroup;
-
-  // componente = {
-  //   tipo: '',
-  //   marca: '',
-  //   nombre: '',
-  //   descripcion: '',
-  //   cantidad: 0,
-  //   precio: 0
-  // }
-
-  constructor(private servicioTienda: ServicioTienda) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.formulario = new FormGroup({
@@ -36,19 +25,22 @@ export class InyectadorComponent implements OnInit {
     });
   }
 
-  submit(){
-    // this.servicioTienda.nuevoComponente()
+  toModificar() {
+    this.router.navigate(["modificador"])
+  }
 
-    console.log(this.formulario.get('tipo'))
-    // this.submitted = true;
-    // this.componente.tipo = this.signupForm.value.tipo;
-    // this.componente.marca = this.signupForm.value.marca;
-    // this.componente.nombre = this.signupForm.value.nombre;
-    // this.componente.descripcion = this.signupForm.value.descripcion;
-    // this.componente.cantidad = this.signupForm.value.cantidad;
-    // this.componente.precio = this.signupForm.value.precio;
-
-    // console.log(this.componente)
-
-}
+  submit() {
+    console.log(this.formulario.value);
+    this.http.post("http://localhost:8080/ardkalic/productos/anadir", this.formulario.value, { responseType: 'text' })
+      .subscribe(
+        data => {
+          console.log("************")
+          console.log(data)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+        this.formulario.reset();
+  }
 }

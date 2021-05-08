@@ -29,4 +29,8 @@ export class PeticionesService {
   getProductosBuscador(tipo){
     return this.http.get<any>("http://localhost:8080/ardkalic/productos/?tipo=" + tipo);
   }
+
+  getProductoPorId(id){
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/formularioModificador/" + id)
+  }
 }
