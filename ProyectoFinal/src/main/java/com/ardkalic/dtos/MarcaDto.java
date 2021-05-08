@@ -11,6 +11,15 @@ public class MarcaDto {
 		super();
 	}
 
+	
+
+
+	public MarcaDto(String marca) {
+		super();
+		this.marca = marca;
+	}
+
+
 
 
 	public MarcaDto(int id_marca, String marca) {

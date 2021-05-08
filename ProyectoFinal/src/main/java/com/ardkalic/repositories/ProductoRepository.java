@@ -15,8 +15,9 @@ public interface ProductoRepository extends CrudRepository<ProductoEntity, Integ
 	@Query(value = "select new com.ardkalic.dtos.ProductosDto (p.id,p.nombre,p.descripcion,c.tipo, m.marca,p.cantidad,p.precio,p.imagen) "
 			+ "FROM com.ardkalic.entidades.ProductoEntity p join com.ardkalic.entidades.CategoriaEntity c on p.categorias.id_categoria=c.id_categoria "
 			+ "join com.ardkalic.entidades.MarcaEntity m on p.marcas.id_marca=m.id_marca "
+			+ "WHERE p.id like concat('%',:id_producto,'%') "
 			)
-	List<ProductosDto> obtenerProductos();
+	List<ProductosDto> obtenerProductosporId(@Param("id_producto")Integer id_producto);
 		 
 	
 	@Query(value = "select new com.ardkalic.dtos.ProductosDto (p.id,p.nombre,p.descripcion,c.tipo, m.marca,p.cantidad,p.precio,p.imagen) "
