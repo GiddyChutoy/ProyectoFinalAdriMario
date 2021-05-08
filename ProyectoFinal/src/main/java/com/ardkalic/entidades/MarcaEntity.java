@@ -33,6 +33,11 @@ public class MarcaEntity {
 	}
 
 
+	public MarcaEntity(String marca) {
+		this.marca = marca;
+	}
+
+
 	public int getId_marca() {
 		return id_marca;
 	}

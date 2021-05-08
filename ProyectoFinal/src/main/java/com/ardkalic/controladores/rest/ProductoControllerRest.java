@@ -1,7 +1,6 @@
 package com.ardkalic.controladores.rest;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,12 +31,17 @@ public class ProductoControllerRest {
 	@Autowired
 	private ProductoDAO productoDao;
 	
+	@GetMapping(value="/{id_producto}")
+	public List<ProductosDto> obtenerProducto(@PathVariable(value="id_producto",required=false)Integer id_producto){
+		
+		return productorepository.obtenerProductosporId(id_producto);
+	}
 	
-	@GetMapping(value="/inicio")
+	@GetMapping(value="")
 	public Iterable<ProductoEntity> obtenerProductos(){
 		return productorepository.findAll();
 	}
-	@GetMapping(value="/{tipo}")
+	@GetMapping(value="/categoria/{tipo}")
 	public List<ProductosDto> obtenerProductosTipo(@PathVariable(value = "tipo",required = false ) String tipo ){
 		return productorepository.obtenerProductosPorTipo(tipo);
 	}
@@ -71,7 +75,7 @@ public class ProductoControllerRest {
 		return new ResponseEntity<>("Insercion Correcta", HttpStatus.OK);
 
 	}
-	@DeleteMapping(value="/{id}")
+	@DeleteMapping(value="borrar/{id}")
 	public ResponseEntity<String> borrarProductos(@PathVariable(value = "id",required = false ) Integer id) {
 		
 		productorepository.deleteById(id);
