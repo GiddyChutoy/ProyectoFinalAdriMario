@@ -40,6 +40,7 @@ export class PeticionesService {
   //   return this.http.post("http://localhost:8080/marca/anadir",objeto);
   // }
   deleteProducto(id){
-    return this.http.delete("http://localhost:8080/ardkalic/productos/borrar/" + id)
+    
+    return this.http.delete<any>("http://localhost:8080/ardkalic/productos/borrar/" + id)
   }
 }

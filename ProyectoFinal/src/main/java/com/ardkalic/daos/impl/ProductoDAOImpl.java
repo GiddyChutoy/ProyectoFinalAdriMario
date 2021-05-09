@@ -1,18 +1,13 @@
 package com.ardkalic.daos.impl;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Optional;
-
-import javax.sql.rowset.serial.SerialBlob;
-import javax.sql.rowset.serial.SerialException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ardkalic.daos.ProductoDAO;
-import com.ardkalic.dtos.ProductosDto;
 import com.ardkalic.entidades.CategoriaEntity;
 import com.ardkalic.entidades.MarcaEntity;
 import com.ardkalic.entidades.ProductoEntity;
@@ -39,7 +34,12 @@ public class ProductoDAOImpl implements ProductoDAO {
 		Integer idCategoria= categoriaRepo.buscarIdCategoria(tipo);
 		byte[] imagen = null;
 		try {
-			imagen = file.getBytes();
+			if(file!=null) {
+				imagen = file.getBytes();
+			}else {
+				imagen=null;
+			}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,6 +72,7 @@ public class ProductoDAOImpl implements ProductoDAO {
 		productoRepo.save(p);
 		return 1;
 	}
+	
 
 	
 }

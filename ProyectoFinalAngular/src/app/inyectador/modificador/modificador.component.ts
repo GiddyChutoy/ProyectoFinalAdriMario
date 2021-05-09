@@ -9,42 +9,31 @@ import { PeticionesService } from 'src/app/servicios/peticiones.service';
   templateUrl: './modificador.component.html',
   styleUrls: ['./modificador.component.css']
 })
-export class ModificadorComponent implements OnInit ,OnChanges{
+export class ModificadorComponent implements OnInit {
 
   formulario: FormGroup;
   productos: any = [];
 
   constructor(private router: Router, private peticiones: PeticionesService, private http: HttpClient) { }
   
-  ngOnChanges(changes: SimpleChanges): void {
-   
-   
-   if(changes.productos){
-    this.peticiones.getProductos()
-    .subscribe(
-      data => {
-        this.productos =[...data];
-        // console.log(data)
-      },
-      error => {
-       
-      }
-    )
-   }
-  }
+  
 
   ngOnInit(): void {
 
+    this.getProductos();
+  }
+
+  private getProductos() {
     this.peticiones.getProductos()
       .subscribe(
         data => {
-          this.productos =[...data];
+          this.productos = [...data];
           // console.log(data)
         },
         error => {
-          console.error(error); 
+          console.error(error);
         }
-      )
+      );
   }
 
   toFomularioModificador(productoId) {
@@ -59,6 +48,8 @@ export class ModificadorComponent implements OnInit ,OnChanges{
    
     this.peticiones.deleteProducto(id).subscribe(data=>{
       console.log(data);
+      this.getProductos();
     })
+    
  }
 }

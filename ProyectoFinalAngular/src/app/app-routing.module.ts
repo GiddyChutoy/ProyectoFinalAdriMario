@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { CarritoComponent } from './carrito/carrito.component';
 import { AboutUsComponent } from './header/about-us/about-us.component';
 import { ContactUsComponent } from './header/contact-us/contact-us.component';
 import { InicioComponent } from './inicio/inicio.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:"modificador", component: ModificadorComponent},
   {path:"formularioModificador", component: FormularioModificadorComponent},
   {path:'login', component: LoginComponent},
-  {path:'register', component: RegisterComponent}
+  {path:'register', component: RegisterComponent},
+  {path:'carrito', component: CarritoComponent}
   // {path:'**',redirectTo:''}
 ];
 

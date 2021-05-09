@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -58,7 +57,7 @@ public class ProductoControllerRest {
 	}
 	
 	@PostMapping(value="/anadir" )
-	public ResponseEntity<String> insertarProductos(@RequestPart(name = "file") MultipartFile file,
+	public ResponseEntity<String> insertarProductos(@RequestPart(name = "file",required=false) MultipartFile file,
 
             @RequestPart("request") ProductosDto producto) {
 		
@@ -70,20 +69,20 @@ public class ProductoControllerRest {
 
 	}
 	@PutMapping(value="/modificar")
-	public ResponseEntity<String> modificarProductos(@RequestPart(name = "file") MultipartFile file,@RequestPart("request") ProductosDto producto) {
+	public ResponseEntity<String> modificarProductos(@RequestPart(name = "file",required=false) MultipartFile file,@RequestPart("request") ProductosDto producto) {
 		
 		productoDao.modificarProducto(producto.getId(),producto.getNombre(),producto.getDescripcion(),producto.getTipo(),producto.getMarca(),
 				producto.getCantidad(),producto.getPrecio(),file);
 
-		return new ResponseEntity<>("Insercion Correcta", HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.OK);
 
 	}
 	@DeleteMapping(value="borrar/{id}")
-	public ResponseEntity<String> borrarProductos(@PathVariable(value = "id",required = false ) Integer id) {
+	public ResponseEntity<String> borrarProductos(@PathVariable(value = "id") Integer id) {
 		
 		productorepository.deleteById(id);
 		
-		return new ResponseEntity<>("Borrado Correcta", HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.OK);
 		
 	}
 }

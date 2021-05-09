@@ -20,6 +20,7 @@ import { precioMaximoPipe } from './productos/precio-maximo.pipe';
 import { MarcaFiltradaPipe } from './productos/marca-filtrada.pipe';
 import { ModificadorComponent } from './inyectador/modificador/modificador.component';
 import { FormularioModificadorComponent } from './inyectador/modificador/formulario-modificador/formulario-modificador.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FormularioModificadorComponent } from './inyectador/modificador/formula
     MarcaFiltradaPipe,
     ModificadorComponent,
     FormularioModificadorComponent,
+    CarritoComponent,
     
   ],
   imports: [
