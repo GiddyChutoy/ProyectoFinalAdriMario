@@ -38,5 +38,10 @@ export class ModificadorComponent implements OnInit {
   toInyectador() {
     this.router.navigate(["anadir-componente"])
   }
-
+ borrarProducto(id){
+   
+    this.peticiones.deleteProducto(id).subscribe(data=>{
+      console.log(data);
+    })
+ }
 }

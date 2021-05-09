@@ -13,7 +13,7 @@ export class FormularioModificadorComponent implements OnInit {
   constructor(private peticiones: PeticionesService) { }
 
   ngOnInit(): void {
-    this.peticiones.getProductoPorId(localStorage.getItem("productoId"))
+    this.peticiones.getProductoPorID(localStorage.getItem("productoId"))
       .subscribe(
         data => {
           this.producto = data[0];          

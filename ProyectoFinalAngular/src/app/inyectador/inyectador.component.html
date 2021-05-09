@@ -96,7 +96,14 @@
             class="form-control"
           />
         </div>
-
+        <div>
+          <div>
+            <input type="file" name="profile" (change)="onFileSelect($event)" /><br>
+            <img [src]="url">
+          </div>
+           
+        </div>
+    
         <button type="button" class="btn btn-success" (click)="submit()">
           Aceptar
         </button>

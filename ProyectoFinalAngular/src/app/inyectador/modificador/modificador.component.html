@@ -27,9 +27,10 @@
                     <td>{{producto.cantidad}}</td>
                     <td>{{producto.precio}}</td>
                     <td><button class="btn btn-primary" (click)="toFomularioModificador(producto.id_producto)">modificar</button></td>
+                    <td><button class="btn btn-danger" (click)="borrarProducto(producto.id_producto)">borrar</button></td>
                 </tr>
             </table>
-
+          
             <!-- <form *ngFor="let producto of productos" action="http://localhost:8080/ardkalic/productos/modificar" method="POST">
 
                 <p>************************</p>
