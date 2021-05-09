@@ -64,16 +64,16 @@ public class ProductoControllerRest {
 		
 		productoDao.anadirProducto(producto.getNombre(),producto.getDescripcion(),producto.getTipo(),producto.getMarca(),
 				producto.getCantidad(),producto.getPrecio(),file);
-//		productoDao.servicioQueHaceLoqueSea(file, producto);
+
 		
 		return new ResponseEntity<>("Insercion Correcta", HttpStatus.OK);
 
 	}
 	@PutMapping(value="/modificar")
-	public ResponseEntity<String> modificarProductos(@RequestBody ProductosDto producto) {
+	public ResponseEntity<String> modificarProductos(@RequestPart(name = "file") MultipartFile file,@RequestPart("request") ProductosDto producto) {
 		
 		productoDao.modificarProducto(producto.getId(),producto.getNombre(),producto.getDescripcion(),producto.getTipo(),producto.getMarca(),
-				producto.getCantidad(),producto.getPrecio(),producto.getImagen());
+				producto.getCantidad(),producto.getPrecio(),file);
 
 		return new ResponseEntity<>("Insercion Correcta", HttpStatus.OK);
 

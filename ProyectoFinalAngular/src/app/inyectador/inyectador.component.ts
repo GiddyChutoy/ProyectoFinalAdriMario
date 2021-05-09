@@ -15,6 +15,10 @@ export class InyectadorComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    this.iniciarForm();
+  }
+
+  private iniciarForm() {
     this.formulario = new FormGroup({
       'tipo': new FormControl(),
       'marca': new FormControl(),
@@ -22,26 +26,13 @@ export class InyectadorComponent implements OnInit {
       'descripcion': new FormControl(),
       'cantidad': new FormControl(),
       'precio': new FormControl(),
-      'imagen':new FormControl(),
+      'imagen': new FormControl(),
     });
   }
 
   toModificar() {
     this.router.navigate(["modificador"])
   }
-
- 
-  // readUrl(event:any) {
-  //   if (event.target.files && event.target.files[0]) {
-  //     var reader = new FileReader();
-  
-  //     reader.onload = (event: ProgressEvent) => {
-  //       this.url = (<FileReader>event.target).result;
-  //     }
-  
-  //     reader.readAsDataURL(event.target.files[0]);
-  //   }
-  // }
 
   submit() {
     const formData = new FormData();
@@ -73,7 +64,7 @@ export class InyectadorComponent implements OnInit {
       const file = event.target.files[0];
       this.formulario.get('imagen').setValue(file);
     }
-
+    //para mostrar la imagen que sube en pantalla
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
   

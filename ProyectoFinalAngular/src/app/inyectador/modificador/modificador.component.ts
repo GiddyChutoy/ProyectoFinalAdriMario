@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PeticionesService } from 'src/app/servicios/peticiones.service';
@@ -9,19 +9,36 @@ import { PeticionesService } from 'src/app/servicios/peticiones.service';
   templateUrl: './modificador.component.html',
   styleUrls: ['./modificador.component.css']
 })
-export class ModificadorComponent implements OnInit {
+export class ModificadorComponent implements OnInit ,OnChanges{
 
   formulario: FormGroup;
   productos: any = [];
 
   constructor(private router: Router, private peticiones: PeticionesService, private http: HttpClient) { }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+   
+   
+   if(changes.productos){
+    this.peticiones.getProductos()
+    .subscribe(
+      data => {
+        this.productos =[...data];
+        // console.log(data)
+      },
+      error => {
+       
+      }
+    )
+   }
+  }
 
   ngOnInit(): void {
 
     this.peticiones.getProductos()
       .subscribe(
         data => {
-          this.productos = data;
+          this.productos =[...data];
           // console.log(data)
         },
         error => {
