@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PeticionesService } from 'src/app/servicios/peticiones.service';
@@ -15,19 +15,25 @@ export class ModificadorComponent implements OnInit {
   productos: any = [];
 
   constructor(private router: Router, private peticiones: PeticionesService, private http: HttpClient) { }
+  
+  
 
   ngOnInit(): void {
 
+    this.getProductos();
+  }
+
+  private getProductos() {
     this.peticiones.getProductos()
       .subscribe(
         data => {
-          this.productos = data;
+          this.productos = [...data];
           // console.log(data)
         },
         error => {
-          console.error(error); 
+          console.error(error);
         }
-      )
+      );
   }
 
   toFomularioModificador(productoId) {
@@ -38,5 +44,12 @@ export class ModificadorComponent implements OnInit {
   toInyectador() {
     this.router.navigate(["anadir-componente"])
   }
-
+ borrarProducto(id){
+   
+    this.peticiones.deleteProducto(id).subscribe(data=>{
+      console.log(data);
+      this.getProductos();
+    })
+    
+ }
 }

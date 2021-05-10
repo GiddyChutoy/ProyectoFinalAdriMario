@@ -1,9 +1,11 @@
 package com.ardkalic.daos.impl;
 
+import java.io.IOException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.ardkalic.daos.ProductoDAO;
 import com.ardkalic.entidades.CategoriaEntity;
@@ -27,10 +29,21 @@ public class ProductoDAOImpl implements ProductoDAO {
 	
 
 	@Override
-	public Integer anadirProducto(String nombre, String descripcion, String tipo, String marca, int cantidad,
-			Double precio, byte[] imagen) {
+	public Integer anadirProducto(String nombre,String descripcion,String tipo,String marca,int cantidad,Double precio,MultipartFile file) {
 		Integer idMarca= marcaRepo.buscarIdMarca(marca);
 		Integer idCategoria= categoriaRepo.buscarIdCategoria(tipo);
+		byte[] imagen = null;
+		try {
+			if(file!=null) {
+				imagen = file.getBytes();
+			}else {
+				imagen=null;
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Optional<MarcaEntity> marcaOp= marcaRepo.findById(idMarca);
 		MarcaEntity marcaEn = marcaOp.get();
 		Optional<CategoriaEntity> categoriaOp= categoriaRepo.findById(idCategoria);
@@ -41,9 +54,16 @@ public class ProductoDAOImpl implements ProductoDAO {
 	}
 	@Override
 	public Integer modificarProducto(int id,String nombre, String descripcion, String tipo, String marca, int cantidad,
-			Double precio, byte[] imagen) {
+			Double precio, MultipartFile file) {
 		Integer idMarca= marcaRepo.buscarIdMarca(marca);
 		Integer idCategoria= categoriaRepo.buscarIdCategoria(tipo);
+		byte[] imagen = null;
+		try {
+			imagen = file.getBytes();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Optional<MarcaEntity> marcaOp= marcaRepo.findById(idMarca);
 		MarcaEntity marcaEn = marcaOp.get();
 		Optional<CategoriaEntity> categoriaOp= categoriaRepo.findById(idCategoria);
@@ -52,5 +72,7 @@ public class ProductoDAOImpl implements ProductoDAO {
 		productoRepo.save(p);
 		return 1;
 	}
+	
+
 	
 }

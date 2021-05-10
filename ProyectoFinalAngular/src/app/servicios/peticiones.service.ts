@@ -11,7 +11,7 @@ export class PeticionesService {
 
  
   getProductos(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/productos/inicio");
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos");
   }
 
   getProductoPorID(idProducto){
@@ -25,9 +25,9 @@ export class PeticionesService {
     return this.http.get<any>("http://localhost:8080/ardkalic/productos/?tipo=" + tipo);
   }
 
-  getProductoPorId(id){
-    return this.http.get<any>("http://localhost:8080/ardkalic/productos/formularioModificador/" + id)
-  }
+  // getProductoPorId(id){
+  //   return this.http.get<any>("http://localhost:8080/ardkalic/productos/formularioModificador/" + id)
+  // }
 
   getMarcas(){
     return this.http.get<any>("http://localhost:8080/marca");
@@ -39,4 +39,8 @@ export class PeticionesService {
   // postAnadirMarca(objeto){
   //   return this.http.post("http://localhost:8080/marca/anadir",objeto);
   // }
+  deleteProducto(id){
+    
+    return this.http.delete<any>("http://localhost:8080/ardkalic/productos/borrar/" + id)
+  }
 }
