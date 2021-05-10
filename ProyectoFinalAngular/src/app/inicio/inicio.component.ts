@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ProductosComponent } from '../productos/productos.component';
 import { PeticionesService } from '../servicios/peticiones.service';
 
@@ -9,12 +10,11 @@ import { PeticionesService } from '../servicios/peticiones.service';
 })
 export class InicioComponent implements OnInit {
 
-  arrayProductos=JSON.parse(localStorage.getItem('productos'));
-  constructor(private peticiones:PeticionesService) { }
+ 
+  constructor(private peticiones:PeticionesService,private toastr: ToastrService) { }
   productos:any;
   ngOnInit(): void {
     this.listarProductos();
-    console.log(this.arrayProductos);
   }
   listarProductos(){
     this.peticiones.getProductos().subscribe(data=>{
@@ -23,9 +23,22 @@ export class InicioComponent implements OnInit {
     })
   }
   anadirCarrito(producto){
-    this.arrayProductos=[...this.arrayProductos]
-    this.arrayProductos.push(producto)
-    console.log(this.arrayProductos);
-    localStorage.setItem('productos',JSON.stringify(this.arrayProductos));
+    let arrayProductos=[];
+    if(JSON.parse(localStorage.getItem('productos'))==null){
+      arrayProductos=[];
+    }else{
+      arrayProductos=JSON.parse(localStorage.getItem('productos'));
+    }
+    if(arrayProductos==null || arrayProductos==undefined){
+      console.log("entra");
+      arrayProductos.push(producto)
+    }else{
+      arrayProductos=[...arrayProductos]
+      arrayProductos.push(producto)
+    }
+    this.toastr.info("Ha añadido el producto al carrito");
+    console.log(arrayProductos);
+    localStorage.setItem('productos',JSON.stringify(arrayProductos));
   }
+
 }

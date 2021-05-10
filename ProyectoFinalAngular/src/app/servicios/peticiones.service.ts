@@ -43,4 +43,9 @@ export class PeticionesService {
     
     return this.http.delete<any>("http://localhost:8080/ardkalic/productos/borrar/" + id)
   }
+
+
+  getProductoLogitech(){
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/logitech")
+  }
 }

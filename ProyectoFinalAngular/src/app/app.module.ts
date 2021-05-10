@@ -21,7 +21,10 @@ import { MarcaFiltradaPipe } from './productos/marca-filtrada.pipe';
 import { ModificadorComponent } from './inyectador/modificador/modificador.component';
 import { FormularioModificadorComponent } from './inyectador/modificador/formulario-modificador/formulario-modificador.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +44,7 @@ import { CarritoComponent } from './carrito/carrito.component';
     ModificadorComponent,
     FormularioModificadorComponent,
     CarritoComponent,
+    OfertaLogitechComponent,
     
   ],
   imports: [
@@ -49,7 +53,9 @@ import { CarritoComponent } from './carrito/carrito.component';
     HttpClientModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

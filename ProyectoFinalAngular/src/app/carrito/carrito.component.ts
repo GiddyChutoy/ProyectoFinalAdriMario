@@ -14,7 +14,7 @@ export class CarritoComponent implements OnInit {
   }
   copiarProductos(){
     this.productos=JSON.parse(localStorage.getItem('productos'));
-    console.log(this.productos[0]);
+    console.log(this.productos);
     
   }
 }

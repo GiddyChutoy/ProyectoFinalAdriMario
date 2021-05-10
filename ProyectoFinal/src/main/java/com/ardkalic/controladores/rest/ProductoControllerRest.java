@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestPart;
 
 import com.ardkalic.daos.ProductoDAO;
 import com.ardkalic.dtos.ProductosDto;
-import com.ardkalic.entidades.ProductoEntity;
 import com.ardkalic.repositories.ProductoRepository;
 
 
@@ -42,8 +41,8 @@ public class ProductoControllerRest {
 	}
 	
 	@GetMapping(value="")
-	public Iterable<ProductoEntity> obtenerProductos(){
-		return productorepository.findAll();
+	public List<ProductosDto> obtenerProductos(){
+		return productorepository.obtenerTodosProductos();
 	}
 	@GetMapping(value="/categoria/{tipo}")
 	public List<ProductosDto> obtenerProductosTipo(@PathVariable(value = "tipo",required = false ) String tipo ){
@@ -84,5 +83,9 @@ public class ProductoControllerRest {
 		
 		return new ResponseEntity<>(HttpStatus.OK);
 		
+	}
+	@GetMapping(value="/logitech")
+	public List<ProductosDto> obtenerProductosLogitech(){
+		return productorepository.obtenerProductosLogitech();
 	}
 }
