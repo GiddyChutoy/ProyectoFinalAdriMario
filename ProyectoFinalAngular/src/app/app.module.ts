@@ -25,9 +25,9 @@ import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-
 import { ToastrModule } from 'ngx-toastr';
-import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component'
+import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +59,7 @@ import { DetallesProductoComponent } from './productos/detalles-producto/detalle
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, 
+    NgxPaginationModule,
     ToastrModule.forRoot(),
     MatButtonModule,
     MatDialogModule

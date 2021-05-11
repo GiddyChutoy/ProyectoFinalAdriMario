@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { ProductosComponent } from '../productos/productos.component';
 import { PeticionesService } from '../servicios/peticiones.service';
 import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
@@ -17,6 +16,7 @@ export class InicioComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private servicioTienda: ServicioTienda) { }
+  page=1;
   productos:any;
   ngOnInit(): void {
     this.listarProductos();

@@ -16,6 +16,7 @@ export class ProductosComponent implements OnInit {
   productos:any;
   marcas: any;
   
+  page = 1;
   precioMaximo: number = 10000;
   marcaFiltrada: string = "Todas las marcas";
 
