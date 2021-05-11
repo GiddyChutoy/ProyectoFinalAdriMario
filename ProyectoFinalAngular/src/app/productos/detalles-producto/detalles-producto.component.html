@@ -1,0 +1,27 @@
+<div class="container">
+    <div *ngIf="producto == null" class="alert alert-warning">
+        UPS!! parece que recargaste la pagina, vuelve a la sección anterior.
+    </div>
+    <div class="row">
+        <div class="col-12 m-auto">
+            <h1 class="display-1">{{ producto.nombre }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <img src='data:image/jpeg;base64,{{producto.imagen}}' alt="{{producto.nombre}}">
+        </div>
+        <div class="col-8">
+            {{ producto.descripcion }}
+            <hr *ngIf="producto != null">
+            <p>Marca: {{ producto.marca }}</p>
+            <p>Precio: {{producto.precio}}€</p>
+            <p>Unidades restantes: {{producto.cantidad}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="ml-auto">
+            <button *ngIf="producto != null" class="btn btn-primary" (click)="anadirCarrito(producto)">Añadir al carrito</button>
+        </div>
+    </div>
+</div>

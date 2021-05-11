@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductosComponent } from '../productos/productos.component';
 import { PeticionesService } from '../servicios/peticiones.service';
+import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
   selector: 'app-inicio',
@@ -11,7 +13,10 @@ import { PeticionesService } from '../servicios/peticiones.service';
 export class InicioComponent implements OnInit {
 
  
-  constructor(private peticiones:PeticionesService,private toastr: ToastrService) { }
+  constructor(private peticiones:PeticionesService,
+    private toastr: ToastrService,
+    private router: Router,
+    private servicioTienda: ServicioTienda) { }
   productos:any;
   ngOnInit(): void {
     this.listarProductos();
@@ -39,6 +44,12 @@ export class InicioComponent implements OnInit {
     this.toastr.info("Ha añadido el producto al carrito");
     console.log(arrayProductos);
     localStorage.setItem('productos',JSON.stringify(arrayProductos));
+  }
+
+  verDetalles(id){
+    this.servicioTienda.guardarIdProducto(id);
+    console.log(id)
+    this.router.navigate(['/detalles-producto'])
   }
 
 }

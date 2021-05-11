@@ -30,11 +30,11 @@ export class PeticionesService {
   // }
 
   getMarcas(){
-    return this.http.get<any>("http://localhost:8080/marca");
+    return this.http.get<any>("http://localhost:8080/ardkalic/marca");
   }
 
   getCategorias(){
-    return this.http.get<any>("http://localhost:8080/categoria");
+    return this.http.get<any>("http://localhost:8080/ardkalic/categoria");
   }
   // postAnadirMarca(objeto){
   //   return this.http.post("http://localhost:8080/marca/anadir",objeto);

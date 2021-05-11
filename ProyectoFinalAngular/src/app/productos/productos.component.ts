@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { PeticionesService } from '../servicios/peticiones.service';
+import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
   selector: 'app-productos',
@@ -10,10 +10,11 @@ import { PeticionesService } from '../servicios/peticiones.service';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private peticiones:PeticionesService,private router:Router,private toastr: ToastrService) { }
+  constructor(private route:ActivatedRoute,private peticiones:PeticionesService,private router:Router, private servicioTienda: ServicioTienda) { }
   
   tipo:string;
   productos:any;
+  marcas: any;
   
   precioMaximo: number = 10000;
   marcaFiltrada: string = "Todas las marcas";
@@ -22,6 +23,7 @@ export class ProductosComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.tipo = params.get('tipo');
       this.listaProductos(this.tipo);
+      this.listaMarcas();
     })
   }
   listaProductos(tipo){
@@ -32,23 +34,23 @@ export class ProductosComponent implements OnInit {
         }
       )
   }
+  listaMarcas(){
+    this.peticiones.getMarcas()
+      .subscribe(
+        data => {
+          console.log('marcas')
+          console.log(data)
+          this.marcas = data
+        }
+      )
+  }
   anadirCarrito(producto){
-    console.log(producto);
-    let arrayProductos=[];
-    if(JSON.parse(localStorage.getItem('productos'))==null){
-      arrayProductos=[];
-    }else{
-      arrayProductos=JSON.parse(localStorage.getItem('productos'));
-    }
-    if(arrayProductos==null || arrayProductos==undefined){
-      console.log("entra");
-      arrayProductos.push(producto)
-    }else{
-      arrayProductos=[...arrayProductos]
-      arrayProductos.push(producto)
-    }
-    this.toastr.info("Ha añadido el producto al carrito");
-    console.log(arrayProductos);
-    localStorage.setItem('productos',JSON.stringify(arrayProductos));
+    this.servicioTienda.añadirProducto(producto);
+  }
+
+  verDetalles(id){
+    this.servicioTienda.guardarIdProducto(id);
+    console.log(id)
+    this.router.navigate(['/detalles-producto'])
   }
 }

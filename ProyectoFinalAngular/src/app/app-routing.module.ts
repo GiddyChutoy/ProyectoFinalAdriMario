@@ -12,6 +12,7 @@ import { ModificadorComponent } from './inyectador/modificador/modificador.compo
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.component';
+import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component';
 import { ProductosComponent } from './productos/productos.component';
 
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'carrito', component: CarritoComponent},
-  {path:'logitech', component: OfertaLogitechComponent}
+  {path:'logitech', component: OfertaLogitechComponent},
+  {path:'detalles-producto', component: DetallesProductoComponent}
   // {path:'**',redirectTo:''}
 ];
 

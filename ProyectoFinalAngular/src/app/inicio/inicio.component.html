@@ -19,6 +19,7 @@
                 </h4>
                 <h5>{{producto.precio}}</h5>
                 <p class="card-text">{{producto.descripcion}}</p>
+                <button class="btn btn-success btn-block" (click)="verDetalles(producto.id)">Ver más</button>
                 <button class="btn btn-primary btn-block" (click)=" anadirCarrito(producto)">Añadir al carrito</button>
               </div>
               
