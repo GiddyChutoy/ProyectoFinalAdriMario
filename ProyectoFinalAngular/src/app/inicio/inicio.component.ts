@@ -10,7 +10,7 @@ import { PeticionesService } from '../servicios/peticiones.service';
 })
 export class InicioComponent implements OnInit {
 
- 
+  page=1;
   constructor(private peticiones:PeticionesService,private toastr: ToastrService) { }
   productos:any;
   ngOnInit(): void {

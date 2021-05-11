@@ -25,9 +25,7 @@ export class PeticionesService {
     return this.http.get<any>("http://localhost:8080/ardkalic/productos/?tipo=" + tipo);
   }
 
-  // getProductoPorId(id){
-  //   return this.http.get<any>("http://localhost:8080/ardkalic/productos/formularioModificador/" + id)
-  // }
+  
 
   getMarcas(){
     return this.http.get<any>("http://localhost:8080/marca");
@@ -36,9 +34,11 @@ export class PeticionesService {
   getCategorias(){
     return this.http.get<any>("http://localhost:8080/categoria");
   }
+
   // postAnadirMarca(objeto){
   //   return this.http.post("http://localhost:8080/marca/anadir",objeto);
   // }
+  
   deleteProducto(id){
     
     return this.http.delete<any>("http://localhost:8080/ardkalic/productos/borrar/" + id)

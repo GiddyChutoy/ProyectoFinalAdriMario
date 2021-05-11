@@ -23,7 +23,7 @@ import { FormularioModificadorComponent } from './inyectador/modificador/formula
 import { CarritoComponent } from './carrito/carrito.component';
 import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr'
 @NgModule({
   declarations: [
@@ -55,6 +55,7 @@ import { ToastrModule } from 'ngx-toastr'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, 
+    NgxPaginationModule,
     ToastrModule.forRoot(),
   ],
   providers: [],
