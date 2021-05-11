@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PeticionesService } from 'src/app/servicios/peticiones.service';
 
 @Component({
@@ -83,14 +83,14 @@ export class FormularioModificadorComponent implements OnInit {
   }
   private iniciarForm() {
     this.formulario = new FormGroup({
-      'id':new FormControl(),
-      'tipo': new FormControl(),
-      'marca': new FormControl(),
-      'nombre': new FormControl(),
-      'descripcion': new FormControl(),
-      'cantidad': new FormControl(),
-      'precio': new FormControl(),
-      'imagen': new FormControl(),
+      'id':new FormControl(null),
+      'tipo': new FormControl(null, Validators.required),
+      'marca': new FormControl(null, Validators.required),
+      'nombre': new FormControl(null, [Validators.minLength(1), Validators.required]),
+      'descripcion': new FormControl(null, [Validators.minLength(1), Validators.required]),
+      'cantidad': new FormControl(null, [Validators.minLength(1), Validators.required]),
+      'precio': new FormControl(null, [Validators.minLength(1), Validators.required]),
+      'imagen': new FormControl(null, Validators.minLength(1)),
     });
     
   }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,13 +20,13 @@ export class InyectadorComponent implements OnInit {
 
   private iniciarForm() {
     this.formulario = new FormGroup({
-      'tipo': new FormControl(),
-      'marca': new FormControl(),
-      'nombre': new FormControl(),
-      'descripcion': new FormControl(),
-      'cantidad': new FormControl(),
-      'precio': new FormControl(),
-      'imagen': new FormControl(),
+      'tipo': new FormControl(null, Validators.required),
+      'marca': new FormControl(null, Validators.required),
+      'nombre': new FormControl(null, Validators.required),
+      'descripcion': new FormControl(null, Validators.required),
+      'cantidad': new FormControl(null, Validators.required),
+      'precio': new FormControl(null, Validators.required),
+      'imagen': new FormControl(null),
     });
   }
 

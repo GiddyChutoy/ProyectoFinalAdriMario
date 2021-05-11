@@ -102,9 +102,14 @@
             <img [src]="url">
         </div>
            
-      
-    
-        <button type="button" class="btn btn-success" (click)="submit()">
+        <span class="help-block" *ngIf="!formulario.valid && formulario.touched">
+          Rellena correctamente los campos por favor.
+        </span>
+        <hr>
+        <button type="button" *ngIf="formulario.valid" class="btn btn-success" (click)="submit()">
+          Aceptar
+        </button>
+        <button type="button" *ngIf="!formulario.valid" disabled class="btn btn-success" (click)="submit()">
           Aceptar
         </button>
       </form>
