@@ -15,7 +15,7 @@ import com.ardkalic.entidades.MarcaEntity;
 import com.ardkalic.repositories.MarcaRepository;
 
 @RestController
-@RequestMapping(value="/marca")
+@RequestMapping(value="/marcas")
 @CrossOrigin(origins = "*")
 public class MarcaControllerRest {
 

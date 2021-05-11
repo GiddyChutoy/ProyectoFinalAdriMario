@@ -18,7 +18,7 @@
                     <th>PRECIO</th>
                     <th>*</th>
                 </tr>
-                <tr *ngFor="let producto of productos">
+                <tr *ngFor="let producto of productos| paginate:{itemsPerPage: 12, currentPage:page}">
                     <td>{{producto.id}}</td>
                     <td>{{producto.tipo}}</td>
                     <td>{{producto.marca}}</td>
@@ -30,7 +30,7 @@
                     <td><button class="btn btn-danger" (click)="borrarProducto(producto.id)">borrar</button></td>
                 </tr>
             </table>
-          
+            <pagination-controls (pageChange)="page= $event"></pagination-controls>
             <!-- <form *ngFor="let producto of productos" action="http://localhost:8080/ardkalic/productos/modificar" method="POST">
 
                 <p>************************</p>

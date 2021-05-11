@@ -13,7 +13,7 @@ export class ModificadorComponent implements OnInit {
 
   formulario: FormGroup;
   productos: any = [];
-
+  page=1;
   constructor(private router: Router, private peticiones: PeticionesService, private http: HttpClient) { }
   
   

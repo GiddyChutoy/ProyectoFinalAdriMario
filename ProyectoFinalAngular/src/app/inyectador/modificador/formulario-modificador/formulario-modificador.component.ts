@@ -66,6 +66,7 @@ export class FormularioModificadorComponent implements OnInit {
       cantidad:this.formulario.get('cantidad').value,
       precio :this.formulario.get('precio').value
     }
+    console.log(data);
     console.log(this.formulario.get('imagen').value);
     formData.append('file',this.formulario.get('imagen').value);//este es el input que recoge el la imagen file
     formData.append('request', new Blob([JSON.stringify(data)], { type: 'application/json' }))
