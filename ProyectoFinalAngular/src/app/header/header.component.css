@@ -15,6 +15,15 @@ nav{
     color: #453d6a;
 }
 
+/* Links hechos a mano */
+#login-button{
+    color: #08f0d6;
+    cursor: pointer;
+}
+
+#login-button:hover{
+    text-decoration: underline;
+}
 
 /* Boton dropdown del header */
 #dropdownBasic1{

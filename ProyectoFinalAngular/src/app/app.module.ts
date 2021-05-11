@@ -23,8 +23,11 @@ import { FormularioModificadorComponent } from './inyectador/modificador/formula
 import { CarritoComponent } from './carrito/carrito.component';
 import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
-import { ToastrModule } from 'ngx-toastr'
+import { ToastrModule } from 'ngx-toastr';
+import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { ToastrModule } from 'ngx-toastr'
     FormularioModificadorComponent,
     CarritoComponent,
     OfertaLogitechComponent,
+    DetallesProductoComponent,
     
   ],
   imports: [
@@ -56,8 +60,11 @@ import { ToastrModule } from 'ngx-toastr'
     ReactiveFormsModule,
     BrowserAnimationsModule, 
     ToastrModule.forRoot(),
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginComponent, RegisterComponent]
 })
 export class AppModule { }
