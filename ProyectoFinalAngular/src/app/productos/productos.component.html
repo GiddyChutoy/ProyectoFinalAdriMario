@@ -33,7 +33,7 @@
                         <p class="card-text">{{producto.descripcion}}</p>
                         <h3>{{producto.precio}}€</h3>
                         <span class="help-block">Quedan {{producto.cantidad}}</span>
-                        <button class="btn btn-primary btn-block">Comprar</button>
+                        <button class="btn btn-primary btn-block" (click)="anadirCarrito(producto)">Comprar</button>
                     </div>
                 </div>
             </div>

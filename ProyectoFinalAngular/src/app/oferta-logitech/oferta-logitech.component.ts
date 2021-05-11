@@ -1,31 +1,21 @@
-import { Component, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { PeticionesService } from '../servicios/peticiones.service';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  selector: 'app-oferta-logitech',
+  templateUrl: './oferta-logitech.component.html',
+  styleUrls: ['./oferta-logitech.component.css']
 })
-export class ProductosComponent implements OnInit {
-
-  constructor(private route:ActivatedRoute,private peticiones:PeticionesService,private router:Router,private toastr: ToastrService) { }
-  
-  tipo:string;
+export class OfertaLogitechComponent implements OnInit {
   productos:any;
-  
-  precioMaximo: number = 10000;
-  marcaFiltrada: string = "Todas las marcas";
+  constructor(private peticiones:PeticionesService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.tipo = params.get('tipo');
-      this.listaProductos(this.tipo);
-    })
+    this.listaProductos();
   }
-  listaProductos(tipo){
-    this.peticiones.getProductosTipo(tipo).subscribe(data=>
+  listaProductos(){
+    this.peticiones.getProductoLogitech().subscribe(data=>
         {
           console.log(data);
           this.productos=data;
