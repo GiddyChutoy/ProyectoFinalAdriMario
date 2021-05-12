@@ -8,6 +8,7 @@ export class ServicioTienda {
     constructor(private toastr: ToastrService, private http: HttpClient) { }
 
     idProducto: number;
+    modalBoolean: boolean;
 
     guardarIdProducto(id) {
         this.idProducto = id;
@@ -31,6 +32,10 @@ export class ServicioTienda {
         this.toastr.info("Ha añadido el producto al carrito");
         console.log(arrayProductos);
         sessionStorage.setItem('productos', JSON.stringify(arrayProductos));
+    }
+
+    cambioModal(boolean) {
+        this.modalBoolean = boolean;
     }
 
 }
