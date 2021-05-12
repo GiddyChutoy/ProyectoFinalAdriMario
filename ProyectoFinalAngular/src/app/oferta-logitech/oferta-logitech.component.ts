@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { PeticionesService } from '../servicios/peticiones.service';
+import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
   selector: 'app-oferta-logitech',
@@ -9,7 +10,7 @@ import { PeticionesService } from '../servicios/peticiones.service';
 })
 export class OfertaLogitechComponent implements OnInit {
   productos:any;
-  constructor(private peticiones:PeticionesService,private toastr: ToastrService) { }
+  constructor(private peticiones:PeticionesService,private toastr: ToastrService, private servicioTienda: ServicioTienda) { }
 
   ngOnInit(): void {
     this.listaProductos();
@@ -23,22 +24,6 @@ export class OfertaLogitechComponent implements OnInit {
       )
   }
   anadirCarrito(producto){
-    console.log(producto);
-    let arrayProductos=[];
-    if(JSON.parse(localStorage.getItem('productos'))==null){
-      arrayProductos=[];
-    }else{
-      arrayProductos=JSON.parse(localStorage.getItem('productos'));
-    }
-    if(arrayProductos==null || arrayProductos==undefined){
-      console.log("entra");
-      arrayProductos.push(producto)
-    }else{
-      arrayProductos=[...arrayProductos]
-      arrayProductos.push(producto)
-    }
-    this.toastr.info("Ha añadido el producto al carrito");
-    console.log(arrayProductos);
-    localStorage.setItem('productos',JSON.stringify(arrayProductos));
+    this.servicioTienda.añadirProducto(producto);
   }
 }

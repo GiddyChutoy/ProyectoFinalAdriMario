@@ -20,11 +20,13 @@
               <a href="#">
               <img class="card-img-top img-fluid" src="data:image/jpeg;base64,{{producto.imagen}}" height="300px" width="300px" alt=""></a>
               <div class="card-body" >
-                <h4 class="card-title">
+                <h3 class="card-title">
                   <a href="#">{{producto.nombre}}</a>
-                </h4>
-                <h5>{{producto.precio}}</h5>
+                </h3>
+                <h4>{{producto.precio}}€</h4>
+                
                 <p class="card-text">{{producto.descripcion}}</p>
+                <hr>
                 <button class="btn btn-success btn-block" (click)="verDetalles(producto.id)">Ver más</button>
                 <button class="btn btn-primary btn-block" (click)=" anadirCarrito(producto)">Añadir al carrito</button>
               </div>

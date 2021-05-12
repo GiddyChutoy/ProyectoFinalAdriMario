@@ -16,10 +16,10 @@ export class ServicioTienda {
     añadirProducto(producto) {
         console.log(producto);
         let arrayProductos = [];
-        if (JSON.parse(localStorage.getItem('productos')) == null) {
+        if (JSON.parse(sessionStorage.getItem('productos')) == null) {
             arrayProductos = [];
         } else {
-            arrayProductos = JSON.parse(localStorage.getItem('productos'));
+            arrayProductos = JSON.parse(sessionStorage.getItem('productos'));
         }
         if (arrayProductos == null || arrayProductos == undefined) {
             console.log("entra");
@@ -30,7 +30,7 @@ export class ServicioTienda {
         }
         this.toastr.info("Ha añadido el producto al carrito");
         console.log(arrayProductos);
-        localStorage.setItem('productos', JSON.stringify(arrayProductos));
+        sessionStorage.setItem('productos', JSON.stringify(arrayProductos));
     }
 
 }

@@ -1,6 +1,4 @@
-
-
-
+<div class="container">
     <form class="row">
         <div class="col-6">
             <div class="form-group col-6">
@@ -13,7 +11,8 @@
             <div class="form-group col-6">
                 <label for="marca">Marca</label>
                 <select name="marca" id="marca" class="form-control" [(ngModel)]="marcaFiltrada">
-                    <option *ngFor="let marca of marcas, let repetida = index" data-index="repetida" value="{{marca.marca}}">
+                    <option *ngFor="let marca of marcas, let repetida = index" data-index="repetida"
+                        value="{{marca.marca}}">
                         {{ marca.marca }}
                     </option>
                     <option value="Todas las marcas">Todas las marcas</option>
@@ -34,12 +33,13 @@
                         <p class="card-text">{{producto.descripcion}}</p>
                         <h3>{{producto.precio}}€</h3>
                         <span class="help-block">Quedan {{producto.cantidad}}</span>
+                        <hr>
                         <button class="btn btn-success btn-block" (click)="verDetalles(producto.id)">Ver más</button>
                         <button class="btn btn-primary btn-block" (click)="anadirCarrito(producto)">Comprar</button>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-        <pagination-controls (pageChange)="page= $event"></pagination-controls>
- 
+    </div>
+    <pagination-controls (pageChange)="page= $event"></pagination-controls>
+</div>

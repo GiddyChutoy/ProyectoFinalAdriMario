@@ -28,22 +28,7 @@ export class InicioComponent implements OnInit {
     })
   }
   anadirCarrito(producto){
-    let arrayProductos=[];
-    if(JSON.parse(localStorage.getItem('productos'))==null){
-      arrayProductos=[];
-    }else{
-      arrayProductos=JSON.parse(localStorage.getItem('productos'));
-    }
-    if(arrayProductos==null || arrayProductos==undefined){
-      console.log("entra");
-      arrayProductos.push(producto)
-    }else{
-      arrayProductos=[...arrayProductos]
-      arrayProductos.push(producto)
-    }
-    this.toastr.info("Ha añadido el producto al carrito");
-    console.log(arrayProductos);
-    localStorage.setItem('productos',JSON.stringify(arrayProductos));
+    this.servicioTienda.añadirProducto(producto);
   }
 
   verDetalles(id){
