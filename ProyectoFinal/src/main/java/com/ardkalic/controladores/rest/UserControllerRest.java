@@ -40,20 +40,22 @@ public class UserControllerRest {
 	
 	@PostMapping(value="/anadirUser")
 	public ResponseEntity<String> anadirUsuario(@RequestBody UserDto user){
-		userDao.anadirUser(user.getUsername(),user.getNombre(), user.getApellidos(), user.getUserPassword(), user.getEmail(), user.getDireccion(), user.getFecha_nacimiento(), user.getRol());
-		return new ResponseEntity<>("Insercion Correcta", HttpStatus.OK);
+		if(userDao.anadirUser(user.getUsername(),user.getNombre(), user.getApellidos(), user.getUserPassword(), user.getEmail(), user.getDireccion(), user.getFecha_nacimiento())) {
+			return new ResponseEntity<>( HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
 	}
 	@PutMapping(value="/modificarUser")
 	public ResponseEntity<String> modificarUsuario(@RequestBody UserDto user){
-		userDao.anadirUser(user.getUsername(),user.getNombre(), user.getApellidos(), user.getUserPassword(), user.getEmail(), user.getDireccion(), user.getFecha_nacimiento(), user.getRol());
-		return new ResponseEntity<>("Modificacion Correcta", HttpStatus.OK);
+		userDao.modificarUser(user.getUsername(),user.getNombre(), user.getApellidos(), user.getUserPassword(), user.getEmail(), user.getDireccion(), user.getFecha_nacimiento(),user.getRol());
+		return new ResponseEntity<>( HttpStatus.OK);
 	}
 	@DeleteMapping(value="/borrar")
 	public ResponseEntity<String> borrarUsuario(@RequestParam(value = "username",required = false ) String username) {
 		
 		authRepo.borrarAuth(username);
 		userRepo.borrarUsuario(username);
-		return new ResponseEntity<>("Borrado Correcta", HttpStatus.OK);
+		return new ResponseEntity<>( HttpStatus.OK);
 		
 	}
 }
