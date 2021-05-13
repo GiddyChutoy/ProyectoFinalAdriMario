@@ -26,8 +26,14 @@ public interface UserRepository extends CrudRepository<UsersEntity, Integer> {
 			+ "FROM com.ardkalic.entidades.UsersEntity u join com.ardkalic.entidades.AuthoritiesEntity a on u.username=a.username " 
 			+ "where u.email like :email") 
 	UserDto comprobarEmail(@Param("email") String email);
-	
-	
+	@Query(value = "select new com.ardkalic.dtos.UserDto(u.username,u.nombre,u.apellidos,u.userPassword,u.email,u.direccion,u.fecha,a.authority) "
+			+ "FROM com.ardkalic.entidades.UsersEntity u join com.ardkalic.entidades.AuthoritiesEntity a on u.username=a.username " 
+			+ "where u.username like :username and u.userPassword like :userPassword") 
+	UserDto comprobarLogin(@Param("username") String username,@Param("userPassword") String userPassword);
+	@Query(value = "select new com.ardkalic.dtos.UserDto(u.username,u.nombre,u.apellidos,u.userPassword,u.email,u.direccion,u.fecha,a.authority) "
+			+ "FROM com.ardkalic.entidades.UsersEntity u join com.ardkalic.entidades.AuthoritiesEntity a on u.username=a.username " 
+			+ "where u.username like :username") 
+	UserDto obtenerUsuario(@Param("username") String username);
 	
 	@Transactional
 	@Modifying
