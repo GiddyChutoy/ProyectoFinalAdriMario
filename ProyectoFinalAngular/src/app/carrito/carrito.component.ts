@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
   selector: 'app-carrito',
@@ -7,25 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
   productos:any
-  productosCarrito=[];
-  arrayCantidad=[];
-  constructor() { }
+  constructor(private servicioTienda:ServicioTienda) { }
 
   ngOnInit(): void {
-    this.copiarProductos();
+   this.copiarProductos();
   }
   copiarProductos(){
+    // this.servicioTienda.getProducto().subscribe(resultado=>{
+    //   this.productos=resultado;
+    // })
     this.productos=JSON.parse(sessionStorage.getItem('productos'));
     console.log(this.productos);
     
-    this.productos.forEach(element => {
-      console.log("elemento",element.id)
-      if(this.productosCarrito.indexOf(element.tipo)===-1) {
-        console.log("entra");
-        this.productosCarrito.push(element);
-      }
-    });
-      console.log(this.productosCarrito)
+   
+    
 
   }
 }

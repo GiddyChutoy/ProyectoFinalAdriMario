@@ -30,8 +30,11 @@ export class ProductosComponent implements OnInit {
   listaProductos(tipo){
     this.peticiones.getProductosTipo(tipo).subscribe(data=>
         {
-          console.log(data);
           this.productos=data;
+          this.productos.map(el=>{
+            el['cantidadProducto']=0;
+          })
+          console.log(this.productos);
         }
       )
   }
