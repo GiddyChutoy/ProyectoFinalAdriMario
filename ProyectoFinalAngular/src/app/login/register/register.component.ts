@@ -1,36 +1,57 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PeticionesUsuarioService } from 'src/app/servicios/peticiones-usuario.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ServicioTienda } from 'src/app/servicios/servicio-tienda.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
-  formularioRegister: FormGroup;
-
-  @Output('register') register: EventEmitter<boolean> = new EventEmitter;
-
-  constructor() { }
-
-  toLogIn() {
-    this.register.emit(false);
-  }
+  formulario:FormGroup
+  constructor(private peticionesUsuario:PeticionesUsuarioService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.formularioRegister = new FormGroup({
-      'username': new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      'nombre': new FormControl(null, Validators.required),
-      'apellidos': new FormControl(null, Validators.required),
-      'UserPassword': new FormControl(null, Validators.required),
-      'email': new FormControl(null, Validators.required),
-      'direccion': new FormControl(null, Validators.required),
-      'fecha_nacimiento': new FormControl(null, Validators.required),
-    })
+    this.iniciarForm();
   }
 
-  // metodo para insertar usuararios (se supone que lo ha hecho mariopo)
-
+  anadirUsuario(){
+    const datos={
+      username:this.formulario.get('username').value,
+      nombre:this.formulario.get('nombre').value,
+      apellidos:this.formulario.get('apellidos').value,
+      userPassword:this.formulario.get('contraseña').value,
+      email:this.formulario.get('email').value,
+      direccion:this.formulario.get('direccion').value,
+      fecha_nacimiento:this.formulario.get('nacimiento').value
+    }
+    console.log(datos);
+    this.peticionesUsuario.postUsuarios(datos).subscribe(
+      data=>{
+      console.log(data);
+        this.toastr.info("Has sido registrado con exito");
+      },
+      error=>{
+        console.error(error);
+        this.toastr.error("Tu usuario o correo ya estan registrados");
+      }
+      
+      )
+    this.formulario.reset();
+  }
+  limpiarFormulario(){
+    this.formulario.reset();
+  }
+  private iniciarForm() {
+    this.formulario = new FormGroup({
+      'username':new FormControl(null,Validators.required),
+      'nombre': new FormControl(null, Validators.required),
+      'apellidos': new FormControl(null, Validators.required),
+      'contraseña': new FormControl(null, [Validators.required]),
+      'email': new FormControl(null, [Validators.required,Validators.email]),
+      'direccion': new FormControl(null, [ Validators.required]),
+      'nacimiento': new FormControl(null, [ Validators.required]),
+    });
+    
+  }
 }

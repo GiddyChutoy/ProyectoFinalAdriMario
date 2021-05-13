@@ -19,7 +19,19 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	private AuthorityRepository authRepo;
 	
-	public Integer anadirUser(String username, String nombre, String apellidos, Integer userPassword, String email,
+	public boolean anadirUser(String username, String nombre, String apellidos, Integer userPassword, String email,
+			String direccion, String fecha) {
+		AuthoritiesEntity auth = new AuthoritiesEntity(username,"usuario");		
+		UsersEntity u = new UsersEntity(username,nombre,apellidos,userPassword,email,direccion,fecha);
+		if(comprobarUsuarioEmail(username, email)) {
+			userRepo.save(u);
+			authRepo.save(auth);
+			return true;
+		}
+		return false;
+		
+	}
+	public Integer modificarUser(String username, String nombre, String apellidos, Integer userPassword, String email,
 			String direccion, String fecha,String rol) {
 		AuthoritiesEntity auth = new AuthoritiesEntity(username,rol);		
 		UsersEntity u = new UsersEntity(username,nombre,apellidos,userPassword,email,direccion,fecha);
@@ -28,4 +40,14 @@ public class UserDAOImpl implements UserDAO {
 		return 1;
 		
 	}
+	public boolean comprobarUsuarioEmail(String username,String email) {
+		
+		if(userRepo.comprobarUsername(username)==null || userRepo.comprobarEmail(email)==null) {
+			return true;
+		}
+	
+		return false;
+		
+	}
+	//buscar por nombre y email
 }
