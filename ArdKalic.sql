@@ -168,7 +168,7 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellidos` varchar(255) DEFAULT NULL,
-  `user_password` int NOT NULL,
+  `user_password` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `direccion` varchar(255) DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
