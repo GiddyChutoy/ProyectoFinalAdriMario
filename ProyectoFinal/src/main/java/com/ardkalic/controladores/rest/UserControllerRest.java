@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,7 +34,7 @@ public class UserControllerRest {
 	@Autowired
 	private UserDAO userDao;
 	
-	@GetMapping(value="/")
+	@GetMapping(value="")
 	public List<UserDto> obtenerUsuarios(){
 		return userRepo.obtenerUsuarios();
 	}
@@ -58,4 +59,16 @@ public class UserControllerRest {
 		return new ResponseEntity<>( HttpStatus.OK);
 		
 	}
+	@GetMapping(value="/{username}/{userPassword}")
+	public ResponseEntity<String> comprobarLogin(@PathVariable(value = "username") String username,@PathVariable(value = "userPassword") String userPassword) {
+		if (userRepo.comprobarLogin(username,userPassword)!=null) {
+			return new ResponseEntity<>(HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+	}
+	@GetMapping(value="usuario/{username}")
+	public UserDto comprobarLogin(@PathVariable(value = "username") String username) {
+		return userRepo.obtenerUsuario(username);	
+	}
+	
 }

@@ -89,8 +89,8 @@ export class FormularioModificadorComponent implements OnInit {
       'marca': new FormControl(null, Validators.required),
       'nombre': new FormControl(null, [Validators.minLength(1), Validators.required]),
       'descripcion': new FormControl(null, [Validators.minLength(1), Validators.required]),
-      'cantidad': new FormControl(null, [Validators.minLength(1), Validators.required]),
-      'precio': new FormControl(null, [Validators.minLength(1), Validators.required]),
+      'cantidad': new FormControl(null, [Validators.minLength(1), Validators.required,Validators.min(0)]),
+      'precio': new FormControl(null, [Validators.minLength(1), Validators.required,Validators.min(0)]),
       'imagen': new FormControl(null, Validators.minLength(1)),
     });
     

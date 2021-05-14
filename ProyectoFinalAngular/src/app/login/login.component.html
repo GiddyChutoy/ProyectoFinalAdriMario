@@ -1,14 +1,15 @@
 <div id="modal-content-wrapper">
     <div id="modal-body">
-        <form class="m-auto" *ngIf="registrar == false">
+        <form class="m-auto" [formGroup]="formulario" *ngIf="registrar == false">
             <div class="form-group">
                 <label for="usuario">Nombre de usuario</label>
-                <input type="text" name="usuario" id="usuario" class="form-control" required>
+                <input type="text" name="usuario" id="usuario" class="form-control" formControlName="usuario">
             </div>
             <div class="form group">
                 <label for="contraseña">Contraseña</label>
-                <input type="text" name="contraseña" id="contraseña" class="form-control" required>
+                <input type="text" name="contraseña" id="contraseña" class="form-control" formControlName="contraseña">
             </div>
+            <button type="button" (click)="comprobarLogin()" class="btn btn-primary">Enviar</button>
             <small>¿No estás registrado? <a (click)="toRegister()" style="cursor:pointer; color: lightblue; text-decoration: underline;">regístrate</a></small>
         </form>
         <app-register *ngIf="registrar == true" (register)="registrar"></app-register>

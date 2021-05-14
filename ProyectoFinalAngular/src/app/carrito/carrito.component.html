@@ -14,15 +14,19 @@
                     <th>DESCRIPCIÓN</th>
                     <th>CANTIDAD</th>
                     <th>PRECIO</th>
+                    <th>TOTAL</th>
                     <th>*</th>
                 </tr>
-                <tr *ngFor="let producto of productosCarrito">
+                <tr *ngFor="let producto of productos">
                     <td>{{producto.nombre}}</td>
                     <td>{{producto.tipo}}</td>
                     <td>{{producto.marca}}</td>
                     <td>{{producto.descripcion}}</td>
-                    <td>{{producto.cantidad}}</td>
+                    <td>{{producto.cantidadProducto}}</td>
                     <td>{{producto.precio}}</td>
+                    <td>{{producto.precio * producto.cantidadProducto}}</td>
+                    
+
                     <td>
                         <img src="data:image/jpeg;base64,{{producto.imagen}}" alt="{{producto.nombre}}">
                     </td>

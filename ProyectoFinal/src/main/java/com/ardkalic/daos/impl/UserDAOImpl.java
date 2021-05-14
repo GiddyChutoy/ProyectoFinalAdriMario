@@ -19,7 +19,7 @@ public class UserDAOImpl implements UserDAO {
 	@Autowired
 	private AuthorityRepository authRepo;
 	
-	public boolean anadirUser(String username, String nombre, String apellidos, Integer userPassword, String email,
+	public boolean anadirUser(String username, String nombre, String apellidos, String userPassword, String email,
 			String direccion, String fecha) {
 		AuthoritiesEntity auth = new AuthoritiesEntity(username,"usuario");		
 		UsersEntity u = new UsersEntity(username,nombre,apellidos,userPassword,email,direccion,fecha);
@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO {
 		return false;
 		
 	}
-	public Integer modificarUser(String username, String nombre, String apellidos, Integer userPassword, String email,
+	public Integer modificarUser(String username, String nombre, String apellidos, String userPassword, String email,
 			String direccion, String fecha,String rol) {
 		AuthoritiesEntity auth = new AuthoritiesEntity(username,rol);		
 		UsersEntity u = new UsersEntity(username,nombre,apellidos,userPassword,email,direccion,fecha);

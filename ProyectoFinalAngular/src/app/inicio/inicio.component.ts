@@ -24,11 +24,15 @@ export class InicioComponent implements OnInit {
   listarProductos(){
     this.peticiones.getProductos().subscribe(data=>{
       this.productos=data;
+      this.productos.map(el=>{
+        el['cantidadProducto']=0;
+      })
       console.log(this.productos);
     })
   }
   anadirCarrito(producto){
     this.servicioTienda.añadirProducto(producto);
+    console.log("carrito",producto); 
   }
 
   verDetalles(id){

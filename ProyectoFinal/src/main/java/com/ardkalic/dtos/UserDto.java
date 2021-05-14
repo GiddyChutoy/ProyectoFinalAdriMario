@@ -4,7 +4,7 @@ public class UserDto {
 	private String username;
 	private String nombre;
 	private String apellidos;
-	private Integer userPassword;
+	private String userPassword;
 	private String email;
 	private String direccion;
 	private String fecha_nacimiento;
@@ -15,7 +15,7 @@ public class UserDto {
 	}
 
 
-	public UserDto(String username, String nombre, String apellidos, Integer userPassword, String email,
+	public UserDto(String username, String nombre, String apellidos, String userPassword, String email,
 			String direccion, String fecha_nacimiento) {
 		super();
 		this.username = username;
@@ -30,7 +30,7 @@ public class UserDto {
 
 
 
-	public UserDto(String username, String nombre, String apellidos, Integer userPassword, String email, String direccion,
+	public UserDto(String username, String nombre, String apellidos, String userPassword, String email, String direccion,
 		String fecha_nacimiento, String rol) {
 	super();
 	this.username = username;
@@ -72,12 +72,12 @@ public class UserDto {
 	}
 
 
-	public Integer getUserPassword() {
+	public String getUserPassword() {
 		return this.userPassword;
 	}
 
 
-	public void setUserPassword(Integer userPassword) {
+	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
 

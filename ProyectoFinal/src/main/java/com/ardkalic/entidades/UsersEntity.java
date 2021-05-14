@@ -20,7 +20,7 @@ public class UsersEntity {
 	private String apellidos;
 	
 	@Column(name="user_password")
-	private Integer userPassword;
+	private String userPassword;
 	
 	@Column(name="email")
 	private String email;
@@ -35,7 +35,7 @@ public class UsersEntity {
 		super();
 	}
 
-	public UsersEntity(String username, String nombre, String apellidos, Integer userPassword, String email,
+	public UsersEntity(String username, String nombre, String apellidos, String userPassword, String email,
 			String direccion, String fecha) {
 		super();
 		this.username = username;
@@ -71,11 +71,11 @@ public class UsersEntity {
 		this.apellidos = apellidos;
 	}
 
-	public Integer getUserPassword() {
+	public String getUserPassword() {
 		return userPassword;
 	}
 
-	public void setUserPassword(Integer userPassword) {
+	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
 
