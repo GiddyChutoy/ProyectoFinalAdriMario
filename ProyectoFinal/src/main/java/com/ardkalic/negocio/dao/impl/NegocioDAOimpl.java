@@ -4,17 +4,17 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.ardkalic.dtos.ItemDto;
+import com.ardkalic.dtos.ProductosDto;
 import com.ardkalic.negocioDAO.NegocioDAO;
 
 @Service
 public class NegocioDAOimpl implements NegocioDAO {
 
 	@Override
-	public Double obtenerPrecioFinal(List<ItemDto> lista) {
+	public Double obtenerPrecioFinal(List<ProductosDto> lista) {
 		double precioTotal = 0;
-		for (ItemDto itemDto : lista) {
-			precioTotal = (itemDto.getCantidadProducto() * itemDto.getPrecio()) + precioTotal;
+		for (ProductosDto productosDto : lista) {
+			precioTotal= ( productosDto.getCantidadProducto() * productosDto.getPrecio() ) + precioTotal; 
 		}
 		return precioTotal;
 	}

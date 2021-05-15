@@ -25,14 +25,15 @@
                     <td>{{producto.cantidadProducto}}</td>
                     <td>{{producto.precio}}</td>
                     <td>{{producto.precio * producto.cantidadProducto}}</td>
-                    
-
                     <td>
                         <img src="data:image/jpeg;base64,{{producto.imagen}}" alt="{{producto.nombre}}">
                     </td>
+                    <button type="button" (click)="anadirProducto(producto)"><i class="bi bi-file-plus"></i> </button>
+                    <button type="button" (click)="quitarProducto(producto)">-</button>
                 </tr>
             </table>
-            <button type="button" class="btn btn-success"(click)="completarCompra(productos)" >Completar Compra</button> 
+            <p>El precio total es {{precioTotal}}</p>
+            <button type="button" class="btn btn-success"(click)="completarCompra()" >Completar Compra</button> 
             <button type="button" class="btn btn-danger" (click)="limpiarCarrito()">Limpiar Carrito</button> 
         </div>
     </div>

@@ -8,10 +8,12 @@ import { ServicioTienda } from '../servicios/servicio-tienda.service';
 })
 export class CarritoComponent implements OnInit {
   productos:any
+  precioTotal:any
   constructor(private servicioTienda:ServicioTienda) { }
 
   ngOnInit(): void {
    this.copiarProductos();
+
   }
   copiarProductos(){
     // this.servicioTienda.getProducto().subscribe(resultado=>{
@@ -27,22 +29,19 @@ export class CarritoComponent implements OnInit {
     this.productos=[];
   }
 
-  completarCompra(productoCompra){
-    console.log(productoCompra);
-    let items=[];
+  anadirProducto(producto){
+    const index=this.productos.findIndex(el=> el.id === producto.id);
+    this.productos[index].cantidadProducto = this.productos[index].cantidadProducto + 1;
+  }
+  quitarProducto(producto){
+    const index=this.productos.findIndex(el=> el.id === producto.id);
+    this.productos[index].cantidadProducto = this.productos[index].cantidadProducto + -1;
+  }
+  completarCompra(){
     
-    productoCompra.forEach(element => {
-      let item={
-        id:element.id,
-        cantidadProducto:element.cantidadProducto,
-        precio:element.precio
-      }
-      items.push(item);
-    });
-    console.log("listaCompra",items);
-    this.servicioTienda.sendListaCompra(items).subscribe(
+    this.servicioTienda.sendListaCompra(this.productos).subscribe(
       data=>{
-        console.log(data);
+        this.precioTotal=data;
       }
     )
   }

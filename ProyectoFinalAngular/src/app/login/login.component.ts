@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       })
       this.peticioneUsuario.comprobarLogin(username,contraseña).subscribe(
         data=>{
-          this.toastr.info("has iniciado con exito");
+          this.toastr.info("Has iniciado con exito");
 
         },error=>{
           this.toastr.error("usuario y/o contraseña incorrecta");

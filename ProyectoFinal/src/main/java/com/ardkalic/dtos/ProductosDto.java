@@ -8,6 +8,7 @@ public class ProductosDto {
 	private String marca;
 	private int cantidad;
 	private Double precio;
+	private int cantidadProducto;
 	private byte[] imagen;
 	
 	public ProductosDto() {
@@ -119,6 +120,17 @@ public class ProductosDto {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
-	
+
+
+	public int getCantidadProducto() {
+		return cantidadProducto;
+	}
+
+
+	public void setCantidadProducto(int cantidadProducto) {
+		this.cantidadProducto = cantidadProducto;
+	}
+
+
 	
 }

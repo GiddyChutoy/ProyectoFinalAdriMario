@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ardkalic.dtos.ItemDto;
+import com.ardkalic.dtos.ProductosDto;
 import com.ardkalic.negocioDAO.NegocioDAO;
 
 @RestController
@@ -22,7 +23,7 @@ public class CestaControllerRest {
 	private NegocioDAO negocioDAO;
 
 	@PostMapping(value="/anadir")
-	Double anadirProducto(@RequestBody List<ItemDto> lista){
+	Double anadirProducto(@RequestBody List<ProductosDto> lista){
 		Double precioTotal=negocioDAO.obtenerPrecioFinal(lista) ;	
 		return precioTotal;
 		
