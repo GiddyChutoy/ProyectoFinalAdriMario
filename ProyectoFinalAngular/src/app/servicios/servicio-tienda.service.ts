@@ -48,4 +48,8 @@ export class ServicioTienda {
     getProducto(){
         return this.productos;
     }
+
+    sendListaCompra(datos){
+        return this.http.post("http://localhost:8080/ardkalic/cesta/anadir",datos);
+    }
 }
