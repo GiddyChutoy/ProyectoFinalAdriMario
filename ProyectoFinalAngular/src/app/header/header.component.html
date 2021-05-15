@@ -9,7 +9,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link"[routerLink]="['/inicio']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"[routerLink]="['/inicio']"><span class="material-icons-outlined">
+          home
+          </span> <span class="sr-only">(current)</span></a>
       </li>
       
       <li ngbDropdown  class="nav-item dropdown">
@@ -31,10 +33,14 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/contacto']">Contact us</a>
+        <a class="nav-link" [routerLink]="['/contacto']"><span class="material-icons-outlined">
+          email
+          </span> Contact us </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/carrito']">Carrito</a>
+        <a class="nav-link" [routerLink]="['/carrito']"><span class="material-icons-outlined">
+          shopping_cart
+          </span></a>
       </li>
     </ul>
 
