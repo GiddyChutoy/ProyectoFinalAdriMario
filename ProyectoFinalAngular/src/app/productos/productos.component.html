@@ -36,7 +36,7 @@
               <p class="card-text">{{producto.descripcion}}</p>
               <hr>
               <button class="btn btn-success btn-block" (click)="verDetalles(producto.id)">Ver más</button>
-              <input type="number" [(ngModel)]="producto.cantidadProducto">
+              <input min="1" type="number" [(ngModel)]="producto.cantidadProducto">
               <button class="btn btn-primary btn-block" (click)=" anadirCarrito(producto)">Añadir al carrito</button>
             </div>
             

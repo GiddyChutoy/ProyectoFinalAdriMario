@@ -25,7 +25,7 @@ export class InicioComponent implements OnInit {
     this.peticiones.getProductos().subscribe(data=>{
       this.productos=data;
       this.productos.map(el=>{
-        el['cantidadProducto']=0;
+        el['cantidadProducto']=1;
       })
       console.log(this.productos);
     })

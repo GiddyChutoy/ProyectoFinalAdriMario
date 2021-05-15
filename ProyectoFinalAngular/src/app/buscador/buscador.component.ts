@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PeticionesService } from '../servicios/peticiones.service';
+import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
   selector: 'app-buscador',
@@ -12,7 +13,8 @@ import { PeticionesService } from '../servicios/peticiones.service';
 export class BuscadorComponent implements OnInit {
   busqueda:string ='';
   formulario:FormGroup
-  constructor(private route:ActivatedRoute,private peticionesServicios:PeticionesService) { }
+  page=1;
+  constructor(private route:ActivatedRoute,private peticionesServicios:PeticionesService,private servicioTienda: ServicioTienda) { }
   productos:any;
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -23,7 +25,14 @@ export class BuscadorComponent implements OnInit {
   listaProductos(){
     this.peticionesServicios.getProductosBuscador(this.busqueda).subscribe(data=>{
       this.productos=data;
-      console.log(this.productos)
+      this.productos=data;
+      this.productos.map(el=>{
+        el['cantidadProducto']=1;
+      })
     })
+  }
+  anadirCarrito(producto){
+    this.servicioTienda.añadirProducto(producto);
+    console.log("carrito",producto); 
   }
 }

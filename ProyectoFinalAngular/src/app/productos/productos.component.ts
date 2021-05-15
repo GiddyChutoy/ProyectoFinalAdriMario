@@ -32,7 +32,7 @@ export class ProductosComponent implements OnInit {
         {
           this.productos=data;
           this.productos.map(el=>{
-            el['cantidadProducto']=0;
+            el['cantidadProducto']=1;
           })
           console.log(this.productos);
         }
