@@ -34,6 +34,7 @@
                         <h3>{{producto.precio}}€</h3>
                         <span class="help-block">Quedan {{producto.cantidad}}</span>
                         <hr>
+                        <input type="number" [(ngModel)]="producto.cantidadProducto">
                         <button class="btn btn-success btn-block" (click)="verDetalles(producto.id)">Ver más</button>
                         <button class="btn btn-primary btn-block" (click)="anadirCarrito(producto)">Comprar</button>
                     </div>
