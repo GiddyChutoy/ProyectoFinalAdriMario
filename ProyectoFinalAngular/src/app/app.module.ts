@@ -30,6 +30,9 @@ import { DetallesProductoComponent } from './productos/detalles-producto/detalle
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-modificar.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +56,8 @@ import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-m
     DetallesProductoComponent,
     UsuarioComponent,
     UsuarioModificarComponent,
+   
+   
     
   ],
   imports: [

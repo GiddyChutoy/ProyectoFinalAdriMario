@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PeticionesUsuarioService } from 'src/app/servicios/peticiones-usuario.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent implements OnInit {
   formulario:FormGroup
-  constructor(private peticionesUsuario:PeticionesUsuarioService,private toastr: ToastrService) { }
+  constructor(private peticionesUsuario:PeticionesUsuarioService,private toastr: ToastrService,public matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.iniciarForm();
@@ -28,12 +29,13 @@ export class RegisterComponent implements OnInit {
     console.log(datos);
     this.peticionesUsuario.postUsuarios(datos).subscribe(
       data=>{
-      console.log(data);
         this.toastr.info("Has sido registrado con exito");
+        this.matDialog.closeAll();
       },
       error=>{
         console.error(error);
         this.toastr.error("Tu usuario o correo ya estan registrados");
+        
       }
       
       )

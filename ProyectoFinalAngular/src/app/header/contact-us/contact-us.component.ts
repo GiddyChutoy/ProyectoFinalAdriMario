@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact-us',
@@ -8,12 +9,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-  
-  constructor(private http: HttpClient){}
+  formulario:FormGroup
+  constructor(private http: HttpClient,private toastr: ToastrService){}
   ngOnInit(): void {
   }
   onSubmit(contactForm: NgForm) {
     if (contactForm.valid) {
+      console.log(contactForm.valid);
       const email = contactForm.value;
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       this.http.post('https://formspree.io/f/xjvjybzl',
@@ -24,6 +26,8 @@ export class ContactUsComponent implements OnInit {
           }
         );
     }
+    this.toastr.info("Su mensaje ha sido recibido con exito un admin contactara proximamente")
     contactForm.reset();
   }
+  
 }

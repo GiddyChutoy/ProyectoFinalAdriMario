@@ -7,13 +7,31 @@
                     <input  formControlName="id" type="text" disabled class="form-control" id="id" name="id" value="{{ producto.id }}"  class="form-control" >
                 </div>
                 <div class="form-group">
-                    <label for="categoria">Categoría</label>
-                    <input  formControlName="tipo" type="text" id="categoria" name="categoria" value="{{ producto.tipo }}" class="form-control">
-                </div>
-                <div class="form-group">
+                    <label for="tipo">Categoría</label>
+                    <select
+                      name="tipo"
+                      id="tipo"
+                      class="form-control"
+                      formControlName="tipo"
+                      value=""
+                    >
+                      <option *ngFor="let tipo of tipos" value="{{tipo.tipo}}">{{tipo.tipo}}</option>
+                      
+                    </select>
+                  </div>
+          
+                  <div class="form-group">
                     <label for="marca">Marca</label>
-                    <input  formControlName="marca" type="text" id="marca" name="marca" value="{{ producto.marca }}" class="form-control">
-                </div>
+                    <select
+                      name="marca"
+                      id="marca"
+                      class="form-control"
+                      formControlName="marca"
+                    >
+                      <option *ngFor="let marca of marcas" value="{{marca.marca}}">{{marca.marca}}</option>
+                      
+                    </select>
+                  </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input  formControlName="nombre" type="text" id="nombre" name="nombre" value="{{ producto.nombre }}" class="form-control">

@@ -32,7 +32,7 @@ export class InicioComponent implements OnInit {
   }
   anadirCarrito(producto){
     this.servicioTienda.añadirProducto(producto);
-    console.log("carrito",producto); 
+    this.toastr.info("Has añadido este producto al carrito");
   }
 
   verDetalles(id){

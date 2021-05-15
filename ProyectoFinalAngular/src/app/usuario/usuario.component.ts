@@ -23,7 +23,9 @@ export class UsuarioComponent implements OnInit {
 
   toModificarUsuario(){
     this.listaVisible = false;
-    this.router.navigate(["modificar"], {relativeTo: this.route})
+    console.log(this.usuario.username);
+    this.router.navigate(["usuario/",this.usuario.username])
+  
   }
 
   cerrarSesion() {
@@ -32,7 +34,5 @@ export class UsuarioComponent implements OnInit {
     window.location.replace('http://localhost:4200/inicio')
   }
 
-  eliminarCuenta(){
-    
-  }
+  
 }

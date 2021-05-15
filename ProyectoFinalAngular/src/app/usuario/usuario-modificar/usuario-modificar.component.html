@@ -1,47 +1,51 @@
-<form [formGroup]="formulario">
-    <form class="mt-4 mb-4" [formGroup]="formulario">
-        <div class="form-group">
-            <label for="username">Nombre de usuario:</label>
-            <input type="text" name="username" id="username" class="form-control"  formControlName="username" >
-            <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido el username</span><br>
-        </div>
-
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" formControlName="nombre" >
-            <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido el nombre</span><br>
-        </div>
-
-        <div class="form-group">
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" name="apellidos" id="apellidos" class="form-control" formControlName="apellidos" >         
-            <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido los apellidos</span><br>       
-        </div>
-
-        <div class="form-group">
-            <label for="UserPassword">Contraseña:</label>
-            <input type="text" name="contraseña" id="contraseña" class="form-control" formControlName="contraseña" >
-            <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido la contraseña</span><br>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" class="form-control" formControlName="email" >
-            <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido el email</span><br>
-        </div>
-
-        <div class="form-group">
-            <label for="direccion">Dirección</label>
-            <input type="text" name="direccion" id="direccion" formControlName="direccion" class="form-control">
-            <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido la direccion</span><br>
-        </div>
-
-        <div class="form-group">
-            <label for="nacimiento">Fecha de nacimiento</label>
-            <input type="date" name="nacimiento" id="nacimiento" formControlName="nacimiento" class="form-control" >
-            <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido la fecha de nacimiento</span><br>
-        </div>
-        <button type="submit" class="btn btn-success mr-2" (click)="modificarUsuario()" [disabled]="!formulario.valid">Aceptar cambios</button>
-        <button type="submit" class="btn btn-info" (click)="limpiarFormulario()" >Limpiar</button>
+<div class="container">
+    <form [formGroup]="formulario">
+        <form class="mt-4 mb-4" [formGroup]="formulario">
+            <div class="form-group">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" name="username" id="username" class="form-control" readonly formControlName="username" >
+                <span class="text-danger" *ngIf="!formulario.get('username').valid && formulario.get('username').touched">No ha introducido el username</span><br>
+            </div>
+    
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" formControlName="nombre" >
+                <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido el nombre</span><br>
+            </div>
+    
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" id="apellidos" class="form-control" formControlName="apellidos" >         
+                <span class="text-danger" *ngIf="!formulario.get('apellidos').valid && formulario.get('apellidos').touched">No ha introducido los apellidos</span><br>       
+            </div>
+    
+            <div class="form-group">
+                <label for="UserPassword">Contraseña:</label>
+                <input type="text" name="contraseña" id="contraseña" class="form-control" formControlName="contraseña" >
+                <span class="text-danger" *ngIf="!formulario.get('contraseña').valid && formulario.get('contraseña').touched">No ha introducido la contraseña</span><br>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control" formControlName="email" readonly>
+                <span class="text-danger" *ngIf="!formulario.get('email').valid && formulario.get('email').touched">No ha introducido el email</span><br>
+            </div>
+    
+            <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" id="direccion" formControlName="direccion" class="form-control">
+                <span class="text-danger" *ngIf="!formulario.get('direccion').valid && formulario.get('direccion').touched">No ha introducido la direccion</span><br>
+            </div>
+    
+            <div class="form-group">
+                <label for="nacimiento">Fecha de nacimiento</label>
+                <input type="date" name="nacimiento" id="nacimiento" formControlName="nacimiento" class="form-control" >
+                <span class="text-danger" *ngIf="!formulario.get('nacimiento').valid && formulario.get('nacimiento').touched">No ha introducido la fecha de nacimiento</span><br>
+            </div>
+            <button type="submit" class="btn btn-success mr-2" (click)="modificarUsuario()" [disabled]="!formulario.valid">Aceptar cambios</button>
+            <button type="submit" class="btn btn-info" (click)="limpiarFormulario()" >Limpiar</button>
+        </form>
     </form>
-</form>
+
+</div>
+

@@ -32,7 +32,7 @@ export class PeticionesService {
   }
 
   getCategorias(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/categoria");
+    return this.http.get<any>("http://localhost:8080/ardkalic/categorias");
   }
 
   // postAnadirMarca(objeto){

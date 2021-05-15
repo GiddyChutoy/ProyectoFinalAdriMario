@@ -51,8 +51,8 @@ public class UserControllerRest {
 		userDao.modificarUser(user.getUsername(),user.getNombre(), user.getApellidos(), user.getUserPassword(), user.getEmail(), user.getDireccion(), user.getFecha_nacimiento(),user.getRol());
 		return new ResponseEntity<>( HttpStatus.OK);
 	}
-	@DeleteMapping(value="/borrar")
-	public ResponseEntity<String> borrarUsuario(@RequestParam(value = "username",required = false ) String username) {
+	@DeleteMapping(value="/borrar/{username}")
+	public ResponseEntity<String> borrarUsuario(@PathVariable(value = "username",required = false ) String username) {
 		
 		authRepo.borrarAuth(username);
 		userRepo.borrarUsuario(username);

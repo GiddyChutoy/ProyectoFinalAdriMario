@@ -50,5 +50,10 @@ export class HeaderComponent implements OnInit {
   toPerfilUsuario(){
     this.router.navigate(["perfil"])
   }
+  cerrarSesion() {
+    sessionStorage.removeItem('usuario')
+    sessionStorage.removeItem('rol')
+    window.location.replace('http://localhost:4200/inicio')
+  }
 
 }

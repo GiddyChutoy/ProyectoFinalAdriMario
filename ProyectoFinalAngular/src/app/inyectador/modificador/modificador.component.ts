@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PeticionesService } from 'src/app/servicios/peticiones.service';
 
 @Component({
@@ -10,11 +11,11 @@ import { PeticionesService } from 'src/app/servicios/peticiones.service';
   styleUrls: ['./modificador.component.css']
 })
 export class ModificadorComponent implements OnInit {
-
+  idProducto:any;
   formulario: FormGroup;
   productos: any = [];
   page=1;
-  constructor(private router: Router, private peticiones: PeticionesService, private http: HttpClient) { }
+  constructor(private router: Router, private peticiones: PeticionesService, private http: HttpClient,private toastr: ToastrService) { }
   
   
 
@@ -45,11 +46,11 @@ export class ModificadorComponent implements OnInit {
     this.router.navigate(["anadir-componente"])
   }
  borrarProducto(id){
-   
-    this.peticiones.deleteProducto(id).subscribe(data=>{
-      console.log(data);
+  this.peticiones.deleteProducto(id).subscribe(data=>{
       this.getProductos();
-    })
-    
+  },error=>{
+    this.toastr.error("No se ha podido eliminar el producto");
+  })
+  this.toastr.info("Se ha eliminado el producto con exito");
  }
 }

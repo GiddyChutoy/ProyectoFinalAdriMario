@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { PeticionesService } from 'src/app/servicios/peticiones.service';
 
 @Component({
@@ -12,10 +13,13 @@ export class FormularioModificadorComponent implements OnInit {
   formulario: FormGroup;
   producto: any = {};
   url:any
-  constructor(private peticiones: PeticionesService,private http: HttpClient) { }
+  marcas:any;
+  tipos:any;
+  constructor(private peticiones: PeticionesService,private http: HttpClient,private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    
+    this.getMarcas();
+    this.getTipos();
     this.listarProductos();
     this.iniciarForm();
   }
@@ -74,14 +78,17 @@ export class FormularioModificadorComponent implements OnInit {
     this.http.put("http://localhost:8080/ardkalic/productos/modificar", formData, { responseType: 'text' })
       .subscribe(
         data => {
-          console.log("************")
-          console.log(data)
+          this.toastr.info("Se ha modificado el producto con exito");
+          setTimeout(() => {
+            window.location.reload()
+          }, 1000);
         },
         error => {
-          console.log(error)
+          this.toastr.error("No se ha podido modificar el producto seleccione una imagen");
         }
       )
-        this.formulario.reset();
+     
+      
   }
   private iniciarForm() {
     this.formulario = new FormGroup({
@@ -95,5 +102,19 @@ export class FormularioModificadorComponent implements OnInit {
       'imagen': new FormControl(null, Validators.minLength(1)),
     });
     
+  }
+  private getMarcas(){
+  this.peticiones.getMarcas().subscribe(
+     data=>{
+       this.marcas=data;
+     }
+   );
+  }
+  private getTipos(){
+    this.peticiones.getCategorias().subscribe(
+      data=>{
+        this.tipos=data;
+      }
+    )
   }
 }

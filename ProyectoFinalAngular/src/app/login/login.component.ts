@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PeticionesUsuarioService } from '../servicios/peticiones-usuario.service';
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   @Input() registrar: boolean = false;
 
   formulario:FormGroup
-  constructor(private route: ActivatedRoute, private router: Router,private peticioneUsuario:PeticionesUsuarioService,private toastr: ToastrService) { }
+  constructor(private route: ActivatedRoute, private router: Router,private peticioneUsuario:PeticionesUsuarioService,private toastr: ToastrService,public matDialog: MatDialog) { }
   usuario:any;
   ngOnInit(): void {
     this.iniciarForm();
@@ -38,15 +39,17 @@ export class LoginComponent implements OnInit {
       const username=this.formulario.get('usuario').value;
       const contraseña=this.formulario.get('contraseña').value;
       this.peticioneUsuario.getUsuario(username).subscribe(data=>{
-        console.log(data);
         this.usuario=data;
         sessionStorage.setItem('usuario', this.usuario.username)
         sessionStorage.setItem('rol', this.usuario.rol)
       })
       this.peticioneUsuario.comprobarLogin(username,contraseña).subscribe(
         data=>{
-          window.location.reload()
           this.toastr.info("has iniciado con exito");
+          setTimeout(() => {
+            window.location.reload()
+          }, 1000);
+          this.matDialog.closeAll();
         },error=>{
           this.toastr.error("usuario y/o contraseña incorrecta");
         }

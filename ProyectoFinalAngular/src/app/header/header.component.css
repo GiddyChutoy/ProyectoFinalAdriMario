@@ -30,6 +30,13 @@ nav{
     text-decoration: underline;
 }
 
+.logout-button{
+    color: #08f0d6;
+    cursor: pointer;
+}
+.logout-button:hover{
+    text-decoration: underline;
+}
 /* Boton dropdown del header */
 #dropdownBasic1{
     color: #08f0d6;

@@ -29,9 +29,8 @@ const routes: Routes = [
   {path:"modificador", component: ModificadorComponent},
   {path:"formularioModificador", component: FormularioModificadorComponent},
   {path:'login', component: LoginComponent},
-  {path:'perfil', component: UsuarioComponent, children: [
-    {path:'modificar', component: UsuarioModificarComponent}
-  ]},
+  {path:'perfil', component: UsuarioComponent, },
+  {path:'usuario/:username', component: UsuarioModificarComponent},
   {path:'register', component: RegisterComponent},
   {path:'carrito', component: CarritoComponent},
   {path:'logitech', component: OfertaLogitechComponent},

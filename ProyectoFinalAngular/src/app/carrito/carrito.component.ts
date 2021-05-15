@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ServicioTienda } from '../servicios/servicio-tienda.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ServicioTienda } from '../servicios/servicio-tienda.service';
 export class CarritoComponent implements OnInit {
   productos:any
   precioTotal:any
-  constructor(private servicioTienda:ServicioTienda) { }
+  constructor(private servicioTienda:ServicioTienda,public matDialog: MatDialog) { }
 
   ngOnInit(): void {
    this.listarProductos();
@@ -51,4 +52,5 @@ export class CarritoComponent implements OnInit {
     sessionStorage.removeItem('productos');
    
   }
+  
 }
