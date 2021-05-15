@@ -21,6 +21,7 @@
     </div>
     <div class="row">
         <div class="ml-auto">
+            <input type="number" [(ngModel)]="producto.cantidadProducto">
             <button *ngIf="producto != null" class="btn btn-primary" (click)="anadirCarrito(producto)">Añadir al carrito</button>
         </div>
     </div>
