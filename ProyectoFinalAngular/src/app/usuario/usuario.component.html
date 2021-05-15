@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row mt-4 mb-4">
+        <div class="col-6" *ngIf="listaVisible == true">
+            <ul class="list-group">
+                <li class="list-group-item">Tu usuario: <br>{{ usuario.username }}</li>
+                <li class="list-group-item">Nombre: {{ usuario.nombre }}</li>
+                <li class="list-group-item">Apellidos: {{ usuario.apellidos }}</li>
+                <li class="list-group-item">Email: {{ usuario.email }}</li>
+                <li class="list-group-item">Direccion: {{ usuario.direccion }}</li>
+                <li class="list-group-item">Fecha de nacimiento: {{ usuario.fecha_nacimiento }}</li>
+            </ul>
+        </div>
+        <div class="col-6 m-auto">
+            <button class="btn btn-primary mr-4" (click)="toModificarUsuario()">Modificar perfil</button>
+            <button class="btn btn-warning mr-4" (click)="cerrarSesion()">Cerrar sesión</button>
+            <button class="btn btn-danger" (click)="eliminarCuenta()">Eliminar cuenta</button>
+        </div>
+        <div class="col-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

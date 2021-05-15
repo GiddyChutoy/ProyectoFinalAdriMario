@@ -14,6 +14,8 @@ import { RegisterComponent } from './login/register/register.component';
 import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.component';
 import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component';
 import { ProductosComponent } from './productos/productos.component';
+import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-modificar.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 
 const routes: Routes = [
@@ -27,6 +29,9 @@ const routes: Routes = [
   {path:"modificador", component: ModificadorComponent},
   {path:"formularioModificador", component: FormularioModificadorComponent},
   {path:'login', component: LoginComponent},
+  {path:'perfil', component: UsuarioComponent, children: [
+    {path:'modificar', component: UsuarioModificarComponent}
+  ]},
   {path:'register', component: RegisterComponent},
   {path:'carrito', component: CarritoComponent},
   {path:'logitech', component: OfertaLogitechComponent},

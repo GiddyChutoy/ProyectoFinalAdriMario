@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +11,19 @@ import { LoginComponent } from '../login/login.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  nombreUsuario: string = "";
+  rol: string = "";
   
   palabra:string='';
   constructor(private router:Router, public matDialog: MatDialog) { }
 
   ngOnInit(): void {
+
+    this.nombreUsuario = sessionStorage.getItem('usuario')
+    this.rol = sessionStorage.getItem('rol')
+
+    console.log(this.nombreUsuario, this.rol)
   }
   
   recogerDatoBuscador(){
@@ -37,4 +46,9 @@ export class HeaderComponent implements OnInit {
     // https://material.angular.io/components/dialog/overview
     const modalDialog = this.matDialog.open(LoginComponent, dialogConfig);
   }
+
+  toPerfilUsuario(){
+    this.router.navigate(["perfil"])
+  }
+
 }

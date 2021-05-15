@@ -28,6 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
 import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-modificar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CarritoComponent,
     OfertaLogitechComponent,
     DetallesProductoComponent,
+    UsuarioComponent,
+    UsuarioModificarComponent,
     
   ],
   imports: [
