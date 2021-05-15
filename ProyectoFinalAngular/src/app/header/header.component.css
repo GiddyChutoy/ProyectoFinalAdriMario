@@ -15,6 +15,11 @@ nav{
     color: #453d6a;
 }
 
+.userName{
+    color: #08f0d6;
+    cursor: pointer;
+}
+
 /* Links hechos a mano */
 #login-button{
     color: #08f0d6;

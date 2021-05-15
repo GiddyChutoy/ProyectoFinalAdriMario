@@ -44,14 +44,15 @@
       </li>
     </ul>
 
-    <button class="btn btn-success mr-2" (click)="inyectador()">Añadir/Modificar componente</button>
+    <button *ngIf="rol == 'Administrador'" class="btn btn-success mr-2" (click)="inyectador()">Añadir/Modificar componente</button>
 
     <form class="form-inline my-2 my-lg-0" >
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="palabra" name="busqueda">
       <button class="btn btn-outline-success my-2 my-sm-0" (click)="recogerDatoBuscador()" >Search</button>
     </form>
 
-    <div class="ml-2" mat-raised-button id="login-button" (click)="openModal()">Inicia sesión</div>
-
+    <div *ngIf="nombreUsuario == null || nombreUsuario == ''" class="ml-2" mat-raised-button id="login-button" (click)="openModal()">Inicia sesión</div>
+    
+    <div *ngIf="nombreUsuario != ''" class="userName ml-2" (click)="toPerfilUsuario()">{{ nombreUsuario }}</div>
   </div>
 </nav>

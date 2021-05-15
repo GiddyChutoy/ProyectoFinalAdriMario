@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PeticionesUsuarioService } from '../servicios/peticiones-usuario.service';
 
@@ -10,15 +10,18 @@ import { PeticionesUsuarioService } from '../servicios/peticiones-usuario.servic
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  @Input() registrar: boolean = false;
+
   formulario:FormGroup
-  constructor(private router: Router,private peticioneUsuario:PeticionesUsuarioService,private toastr: ToastrService) { }
+  constructor(private route: ActivatedRoute, private router: Router,private peticioneUsuario:PeticionesUsuarioService,private toastr: ToastrService) { }
   usuario:any;
   ngOnInit(): void {
     this.iniciarForm();
   }
 
   toRegister(){
-    this.router.navigate(["register"])
+       this.registrar = !this.registrar 
   }
 
 
@@ -37,11 +40,13 @@ export class LoginComponent implements OnInit {
       this.peticioneUsuario.getUsuario(username).subscribe(data=>{
         console.log(data);
         this.usuario=data;
+        sessionStorage.setItem('usuario', this.usuario.username)
+        sessionStorage.setItem('rol', this.usuario.rol)
       })
       this.peticioneUsuario.comprobarLogin(username,contraseña).subscribe(
         data=>{
-          this.toastr.info("Has iniciado con exito");
-
+          window.location.reload()
+          this.toastr.info("has iniciado con exito");
         },error=>{
           this.toastr.error("usuario y/o contraseña incorrecta");
         }
