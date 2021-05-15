@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { PeticionesUsuarioService } from 'src/app/servicios/peticiones-usuario.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class UsuarioModificarComponent implements OnInit {
   nombreUser:any;
   formulario: FormGroup
   usuario:any ;
-  constructor(private peticionUsuario: PeticionesUsuarioService,private route:ActivatedRoute) { }
+  constructor(private peticionUsuario: PeticionesUsuarioService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -62,7 +62,10 @@ export class UsuarioModificarComponent implements OnInit {
   }
 
   bajaUsuario(){
-    this.peticionUsuario.deleteUsuario(this.usuario.username);
+    this.peticionUsuario.deleteUsuario(this.usuario.username).subscribe(()=>{});
+    sessionStorage.removeItem('usuario')
+    sessionStorage.removeItem('rol')
+    this.router.navigate(["/inicio"]);
   }
 
   limpiarFormulario(){
