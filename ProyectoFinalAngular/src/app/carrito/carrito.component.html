@@ -7,7 +7,7 @@
 
             <table class="table">
                 <tr>
-               
+                    <th></th>
                     <th>NOMBRE</th>
                     <th>CATEGORÍA</th>
                     <th>MARCA</th>
@@ -15,9 +15,12 @@
                     <th>CANTIDAD</th>
                     <th>PRECIO</th>
                     <th>TOTAL</th>
-                    <th>*</th>
+                    <th></th>
                 </tr>
                 <tr *ngFor="let producto of productos">
+                    <button  class="boton" type="button" (click)="anadirProducto(producto)"><span class="material-icons-outlined">
+                        add
+                    </span></button>
                     <td>{{producto.nombre}}</td>
                     <td>{{producto.tipo}}</td>
                     <td>{{producto.marca}}</td>
@@ -25,13 +28,17 @@
                     <td>{{producto.cantidadProducto}}</td>
                     <td>{{producto.precio}}</td>
                     <td>{{producto.precio * producto.cantidadProducto}}</td>
-                    
-
                     <td>
                         <img src="data:image/jpeg;base64,{{producto.imagen}}" alt="{{producto.nombre}}">
                     </td>
+                    <button class="boton" type="button" (click)="quitarProducto(producto)"><span class="material-icons-outlined">
+                        remove
+                    </span></button>
                 </tr>
             </table>
+            <p>El precio total es {{precioTotal}}</p>
+            <button type="button" class="btn btn-success"(click)="completarCompra()" >Completar Compra</button> 
+            <button type="button" class="btn btn-danger" (click)="limpiarCarrito()">Limpiar Carrito</button> 
         </div>
     </div>
 </div>

@@ -10,7 +10,7 @@ import com.ardkalic.entidades.CategoriaEntity;
 import com.ardkalic.repositories.CategoriaRepository;
 
 @RestController
-@RequestMapping(value="/categoria")
+@RequestMapping(value="/categorias")
 @CrossOrigin(origins = "*")
 public class CategoriaControllerRest {
 	

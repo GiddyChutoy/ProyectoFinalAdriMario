@@ -19,16 +19,16 @@ public interface UserRepository extends CrudRepository<UsersEntity, Integer> {
 	
 	@Query(value = "select new com.ardkalic.dtos.UserDto(u.username,u.nombre,u.apellidos,u.userPassword,u.email,u.direccion,u.fecha,a.authority) "
 			+ "FROM com.ardkalic.entidades.UsersEntity u join com.ardkalic.entidades.AuthoritiesEntity a on u.username=a.username " 
-			+ "where u.username like :username") 
+			+ "where u.username = :username") 
 	UserDto comprobarUsername(@Param("username") String username);
 	
 	@Query(value = "select new com.ardkalic.dtos.UserDto(u.username,u.nombre,u.apellidos,u.userPassword,u.email,u.direccion,u.fecha,a.authority) "
 			+ "FROM com.ardkalic.entidades.UsersEntity u join com.ardkalic.entidades.AuthoritiesEntity a on u.username=a.username " 
-			+ "where u.email like :email") 
+			+ "where u.email = :email") 
 	UserDto comprobarEmail(@Param("email") String email);
 	@Query(value = "select new com.ardkalic.dtos.UserDto(u.username,u.nombre,u.apellidos,u.userPassword,u.email,u.direccion,u.fecha,a.authority) "
 			+ "FROM com.ardkalic.entidades.UsersEntity u join com.ardkalic.entidades.AuthoritiesEntity a on u.username=a.username " 
-			+ "where u.username like :username and u.userPassword like :userPassword") 
+			+ "where u.username = :username and u.userPassword = :userPassword") 
 	UserDto comprobarLogin(@Param("username") String username,@Param("userPassword") String userPassword);
 	@Query(value = "select new com.ardkalic.dtos.UserDto(u.username,u.nombre,u.apellidos,u.userPassword,u.email,u.direccion,u.fecha,a.authority) "
 			+ "FROM com.ardkalic.entidades.UsersEntity u join com.ardkalic.entidades.AuthoritiesEntity a on u.username=a.username " 

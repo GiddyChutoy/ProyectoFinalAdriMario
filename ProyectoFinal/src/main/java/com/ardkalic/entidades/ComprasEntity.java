@@ -28,9 +28,6 @@ public class ComprasEntity {
 	@JoinColumn(name="id_producto")
 	private ProductoEntity productos;
 	
-	@OneToOne(cascade=CascadeType.PERSIST,fetch = FetchType.EAGER)
-	@JoinColumn(name="username")
-	private UsersEntity users;
 	
 	@Column(name="cantidad")
 	private int cantidad;
@@ -43,11 +40,10 @@ public class ComprasEntity {
 
 
 
-	public ComprasEntity(int id_compra, ProductoEntity productos, UsersEntity users, int cantidad) {
+	public ComprasEntity(int id_compra, ProductoEntity productos, int cantidad) {
 		super();
 		this.id_compra = id_compra;
 		this.productos = productos;
-		this.users = users;
 		this.cantidad = cantidad;
 	}
 
@@ -74,19 +70,6 @@ public class ComprasEntity {
 	public void setProductos(ProductoEntity productos) {
 		this.productos = productos;
 	}
-
-
-
-	public UsersEntity getUsers() {
-		return users;
-	}
-
-
-
-	public void setUsers(UsersEntity users) {
-		this.users = users;
-	}
-
 
 
 	public int getCantidad() {

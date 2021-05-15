@@ -32,6 +32,7 @@ export class FormularioModificadorComponent implements OnInit {
           this.formulario.get('cantidad').setValue(data[0].cantidad);
           this.formulario.get('precio').setValue(data[0].precio);
           this.formulario.get('imagen').setValue(data[0].imagen);
+          console.log("valor imagen",this.formulario.get('imagen').setValue(data[0].imagen))
         },
         error => {
           console.error(error);

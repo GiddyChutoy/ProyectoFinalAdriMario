@@ -18,6 +18,7 @@ export class DetallesProductoComponent implements OnInit {
       .subscribe(
         data => {
           this.producto = data[0]
+          this.producto["cantidadProducto"]=0
         },
         error => {
           console.error(error);
