@@ -1,28 +1,48 @@
+
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu usuario con nadie</small>
-                    <input type="text" class="form-control" name="name" ngModel required #name="ngModel">
-                    
-                    <br>
-                    <label for="asunto">Email: </label>
-                    <input type="text" class="form-control" email name="email" ngModel required #email="ngModel">
-                    <br>
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal"  (ngSubmit)="onSubmit(contactForm)"  #contactForm="ngForm">
+                    <fieldset>
+                        <legend class="text-center header">Contacta con nosotros</legend>
 
-                    <br>
-                    <label for="asunto">Asunto: </label>
-                    <input type="text" class="form-control" >
-                    <br>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8 col-lg-12">
+                                <input type="text" class="form-control" name="name" ngModel required #name="ngModel">
+                            </div>
+                        </div>
 
-                    <label for="mensaje">Mensaje: </label>
-                    <textarea placeholder="Messages" name="messages"cols="30" rows="10" placeholder="Escriba aqui su texto" class="form-control" ngModel required #messages="ngModel"></textarea>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8 col-lg-12">
+                                <input  type="text" class="form-control" email name="email" ngModel required #email="ngModel">
+                            </div>
+                        </div>
 
-                    <input type="submit" value="Send" class="btn btn-primary">
-                </div>
-            </form>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8 col-lg-12">
+                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <div class="col-md-8 col-lg-12">
+                                <textarea placeholder="Messages" name="messages"cols="30" rows="10" placeholder="Escriba aqui su texto" class="form-control" ngModel required #messages="ngModel"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </div>
 </div>

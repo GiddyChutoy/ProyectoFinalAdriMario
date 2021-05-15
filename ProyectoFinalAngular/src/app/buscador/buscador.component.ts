@@ -23,6 +23,7 @@ export class BuscadorComponent implements OnInit {
   listaProductos(){
     this.peticionesServicios.getProductosBuscador(this.busqueda).subscribe(data=>{
       this.productos=data;
+      console.log(this.productos)
     })
   }
 }

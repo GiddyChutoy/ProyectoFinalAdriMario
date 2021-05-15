@@ -24,5 +24,6 @@ export class ContactUsComponent implements OnInit {
           }
         );
     }
+    contactForm.reset();
   }
 }

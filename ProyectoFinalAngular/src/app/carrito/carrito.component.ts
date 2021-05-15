@@ -12,13 +12,11 @@ export class CarritoComponent implements OnInit {
   constructor(private servicioTienda:ServicioTienda) { }
 
   ngOnInit(): void {
-   this.copiarProductos();
+   this.listarProductos();
 
   }
-  copiarProductos(){
-    // this.servicioTienda.getProducto().subscribe(resultado=>{
-    //   this.productos=resultado;
-    // })
+  listarProductos(){
+   
     this.productos=JSON.parse(sessionStorage.getItem('productos'));
     console.log(this.productos);
     
@@ -36,7 +34,7 @@ export class CarritoComponent implements OnInit {
   }
   quitarProducto(producto){
     const index=this.productos.findIndex(el=> el.id === producto.id);
-    if(this.productos[index].cantidadProducto > 0){
+    if(this.productos[index].cantidadProducto > 1){
       this.productos[index].cantidadProducto = this.productos[index].cantidadProducto - 1;
     }else{
       this.productos.splice(index,1);
