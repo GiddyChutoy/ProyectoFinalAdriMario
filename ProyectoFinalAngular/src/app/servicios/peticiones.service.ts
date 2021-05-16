@@ -45,7 +45,7 @@ export class PeticionesService {
   }
 
 
-  getProductoLogitech(){
-    return this.http.get<any>("http://localhost:8080/ardkalic/productos/logitech")
+  getProductoMarca(marca){
+    return this.http.get<any>("http://localhost:8080/ardkalic/productos/marca/" + marca)
   }
 }

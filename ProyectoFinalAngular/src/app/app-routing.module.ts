@@ -11,7 +11,7 @@ import { FormularioModificadorComponent } from './inyectador/modificador/formula
 import { ModificadorComponent } from './inyectador/modificador/modificador.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
-import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.component';
+import { ProductoMarcasComponent } from './producto-marcas/producto-marcas.component';
 import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component';
 import { ProductosComponent } from './productos/productos.component';
 import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-modificar.component';
@@ -33,7 +33,7 @@ const routes: Routes = [
   {path:'usuario/:username', component: UsuarioModificarComponent},
   {path:'register', component: RegisterComponent},
   {path:'carrito', component: CarritoComponent},
-  {path:'logitech', component: OfertaLogitechComponent},
+  {path:'categoria/:marca', component: ProductoMarcasComponent},
   {path:'detalles-producto', component: DetallesProductoComponent}
   // {path:'**',redirectTo:''}
 ];
