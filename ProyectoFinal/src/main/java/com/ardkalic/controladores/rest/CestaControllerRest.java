@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ardkalic.dtos.ItemDto;
 import com.ardkalic.dtos.ProductosDto;
 import com.ardkalic.negocioDAO.NegocioDAO;
 

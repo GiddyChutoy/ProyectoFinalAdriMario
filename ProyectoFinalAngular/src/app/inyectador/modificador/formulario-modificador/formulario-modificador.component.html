@@ -5,6 +5,7 @@
                 <div class="form-group">
                     <label for="id">ID</label>
                     <input  formControlName="id" type="text" disabled class="form-control" id="id" name="id" value="{{ producto.id }}"  class="form-control" >
+                 
                 </div>
                 <div class="form-group">
                     <label for="tipo">Categoría</label>
@@ -18,6 +19,7 @@
                       <option *ngFor="let tipo of tipos" value="{{tipo.tipo}}">{{tipo.tipo}}</option>
                       
                     </select>
+                    <span class="text-danger" *ngIf="!formulario.get('tipo').valid && formulario.get('tipo').touched">No ha introducido el tipo</span><br>
                   </div>
           
                   <div class="form-group">
@@ -31,26 +33,32 @@
                       <option *ngFor="let marca of marcas" value="{{marca.marca}}">{{marca.marca}}</option>
                       
                     </select>
+                    <span class="text-danger" *ngIf="!formulario.get('marca').valid && formulario.get('marca').touched">No ha introducido la marca</span><br>
                   </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input  formControlName="nombre" type="text" id="nombre" name="nombre" value="{{ producto.nombre }}" class="form-control">
+                    <span class="text-danger" *ngIf="!formulario.get('nombre').valid && formulario.get('nombre').touched">No ha introducido el nombre</span><br>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
                     <textarea  formControlName="descripcion" name="descripcion" id="descripcion" cols="50" rows="10" value="{{ producto.descripcion }}" class="form-control"></textarea>
+                    <span class="text-danger" *ngIf="!formulario.get('descripcion').valid && formulario.get('descripcion').touched">No ha introducido la descripcion</span><br>
                 </div>
                 <div class="form-group">
                     <label for="cantidad">Cantidad</label>
                     <input  formControlName="cantidad" type="number" id="cantidad" name="cantidad" value="{{ producto.cantidad }}" min="0" class="form-control">
+                    <span class="text-danger" *ngIf="!formulario.get('cantidad').valid && formulario.get('cantidad').touched">No ha introducido la cantidad</span><br>
                 </div>
                 <div class="form-group">
                     <label for="precio">Precio</label>
                     <input  formControlName="precio" type="number" id="precio" name="precio" value="{{ producto.precio }}" min="0" class="form-control">
+                    <span class="text-danger" *ngIf="!formulario.get('precio').valid && formulario.get('precio').touched">No ha introducido el precio</span><br>
                 </div>
                 <div class="form-group">
-                    <input type="file" name="profile" (change)="onFileSelect($event)" /><br>
+                    <input type="file" name="fichero" (change)="onFileSelect($event)" required /><br>
                     <img [src]="url">
+                    <span class="text-danger" *ngIf="!formulario.get('fichero').valid && formulario.get('fichero').touched">No ha introducido el precio</span><br>
                 </div>
 
                 <span class="help-block" *ngIf="!formulario.valid">

@@ -14,15 +14,10 @@
             class="form-control"
             formControlName="tipo"
           >
-            <option value="Ratón">Ratón</option>
-            <option value="Teclado">Teclado</option>
-            <option value="Monitor">Monitor</option>
-            <option value="Procesador">Procesador</option>
-            <option value="Tarjeta gráfica">Tarjeta gráfica</option>
-            <option value="Placa Base">Placa Base</option>
-            <option value="RAM">RAM</option>
-            <option value="Caja">Caja</option>
+            <option *ngFor="let tipo of tipos" value="{{tipo.tipo}}">{{tipo.tipo}}</option>
+          
           </select>
+          
         </div>
 
         <div class="form-group">
@@ -33,18 +28,8 @@
             class="form-control"
             formControlName="marca"
           >
-            <option value="ASUS">ASUS</option>
-            <option value="AORUS">AORUS</option>
-            <option value="MSI">MSI</option>
-            <option value="EVGA">EVGA</option>
-            <option value="SteelSeries">SteelSeries</option>
-            <option value="Logitech">Logitech</option>
-            <option value="Razer">Razer</option>
-            <option value="Omen">Omen</option>
-            <option value="Corsair">Corsair</option>
-            <option value="G.Skill">G.Skill</option>
-            <option value="NZXT">NZXT</option>
-            <option value="NOX">NOX</option>
+            <option *ngFor="let marca of marcas" value="{{marca.marca}}">{{marca.marca}}</option>
+            
           </select>
         </div>
 

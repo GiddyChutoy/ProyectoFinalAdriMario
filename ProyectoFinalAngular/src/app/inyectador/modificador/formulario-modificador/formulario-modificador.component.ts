@@ -47,7 +47,7 @@ export class FormularioModificadorComponent implements OnInit {
   onFileSelect(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.formulario.get('imagen').setValue(file);
+      this.formulario.get('fichero').setValue(file);
     }
     //para mostrar la imagen que sube en pantalla
     if (event.target.files && event.target.files[0]) {
@@ -69,11 +69,12 @@ export class FormularioModificadorComponent implements OnInit {
       nombre:this.formulario.get('nombre').value,
       descripcion:this.formulario.get('descripcion').value,
       cantidad:this.formulario.get('cantidad').value,
-      precio :this.formulario.get('precio').value
+      precio :this.formulario.get('precio').value,
+      imagen:this.formulario.get('imagen').value
     }
     console.log(data);
     console.log(this.formulario.get('imagen').value);
-    formData.append('file',this.formulario.get('imagen').value);//este es el input que recoge el la imagen file
+    formData.append('file',this.formulario.get('fichero').value);//este es el input que recoge el la imagen file
     formData.append('request', new Blob([JSON.stringify(data)], { type: 'application/json' }))
     this.http.put("http://localhost:8080/ardkalic/productos/modificar", formData, { responseType: 'text' })
       .subscribe(
@@ -100,6 +101,7 @@ export class FormularioModificadorComponent implements OnInit {
       'cantidad': new FormControl(null, [Validators.minLength(1), Validators.required,Validators.min(0)]),
       'precio': new FormControl(null, [Validators.minLength(1), Validators.required,Validators.min(0)]),
       'imagen': new FormControl(null, Validators.minLength(1)),
+      'fichero':new FormControl(null)
     });
     
   }

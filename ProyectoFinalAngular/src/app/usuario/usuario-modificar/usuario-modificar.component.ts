@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { DialogoConfirmacionComponent } from 'src/app/carrito/dialogo-confirmacion/dialogo-confirmacion.component';
 import { PeticionesUsuarioService } from 'src/app/servicios/peticiones-usuario.service';
 
 @Component({
@@ -12,7 +15,7 @@ export class UsuarioModificarComponent implements OnInit {
   nombreUser:any;
   formulario: FormGroup
   usuario:any ;
-  constructor(private peticionUsuario: PeticionesUsuarioService,private route:ActivatedRoute,private router:Router) { }
+  constructor(private peticionUsuario: PeticionesUsuarioService,private route:ActivatedRoute,private router:Router,public matDialog: MatDialog,private toastr:ToastrService) { }
 
   ngOnInit(): void {
 
@@ -60,7 +63,21 @@ export class UsuarioModificarComponent implements OnInit {
       data=>{}
     )
   }
-
+  mostrarDialogo(): void {
+    this.matDialog
+      .open(DialogoConfirmacionComponent, {
+        data: `¿Estas seguro de querer darte de baja?`
+      })
+      .afterClosed()
+      .subscribe((confirmado: Boolean) => {
+        if (confirmado) {
+          this.bajaUsuario();
+          this.toastr.info("Te has dado de baja correctamente")
+        } else {
+          this.toastr.warning("Debes aceptar para darte de baja");
+        }
+      });
+  }
   bajaUsuario(){
     this.peticionUsuario.deleteUsuario(this.usuario.username).subscribe(()=>{});
     sessionStorage.removeItem('usuario')

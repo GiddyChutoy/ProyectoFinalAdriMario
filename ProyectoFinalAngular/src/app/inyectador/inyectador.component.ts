@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PeticionesService } from '../servicios/peticiones.service';
 
 @Component({
   selector: 'app-inyectador',
@@ -9,13 +10,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./inyectador.component.css']
 })
 export class InyectadorComponent implements OnInit {
+  //params
   url:any
   formulario: FormGroup;
+  marcas:any;
+  tipos:any;
   fileToUpload: File = null;
-  constructor(private http: HttpClient, private router: Router) { }
+
+  constructor(private http: HttpClient, private router: Router,private peticiones:PeticionesService) { }
 
   ngOnInit(): void {
     this.iniciarForm();
+    this.getMarcas();
+    this.getTipos();
   }
 
   private iniciarForm() {
@@ -75,4 +82,18 @@ export class InyectadorComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+  private getMarcas(){
+    this.peticiones.getMarcas().subscribe(
+       data=>{
+         this.marcas=data;
+       }
+     );
+    }
+    private getTipos(){
+      this.peticiones.getCategorias().subscribe(
+        data=>{
+          this.tipos=data;
+        }
+      )
+    }
 }

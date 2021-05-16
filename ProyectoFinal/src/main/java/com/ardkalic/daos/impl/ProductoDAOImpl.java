@@ -54,12 +54,17 @@ public class ProductoDAOImpl implements ProductoDAO {
 	}
 	@Override
 	public Integer modificarProducto(int id,String nombre, String descripcion, String tipo, String marca, int cantidad,
-			Double precio, MultipartFile file) {
+			Double precio,byte[] imagen, MultipartFile file) {
 		Integer idMarca= marcaRepo.buscarIdMarca(marca);
 		Integer idCategoria= categoriaRepo.buscarIdCategoria(tipo);
-		byte[] imagen = null;
+		byte[] imagen2 = null;
 		try {
-			imagen = file.getBytes();
+			if(file!=null) {
+				imagen2 = file.getBytes();
+			}else {
+				imagen2 =imagen;
+			}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,7 +73,7 @@ public class ProductoDAOImpl implements ProductoDAO {
 		MarcaEntity marcaEn = marcaOp.get();
 		Optional<CategoriaEntity> categoriaOp= categoriaRepo.findById(idCategoria);
 		CategoriaEntity categoriaEn = categoriaOp.get();
-		ProductoEntity p = new ProductoEntity(id,categoriaEn,marcaEn,nombre,descripcion,cantidad,precio,imagen);
+		ProductoEntity p = new ProductoEntity(id,categoriaEn,marcaEn,nombre,descripcion,cantidad,precio,imagen2);
 		productoRepo.save(p);
 		return 1;
 	}

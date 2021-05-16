@@ -71,7 +71,7 @@ public class ProductoControllerRest {
 	public ResponseEntity<String> modificarProductos(@RequestPart(name = "file",required=false) MultipartFile file,@RequestPart("request") ProductosDto producto) {
 		
 		productoDao.modificarProducto(producto.getId(),producto.getNombre(),producto.getDescripcion(),producto.getTipo(),producto.getMarca(),
-				producto.getCantidad(),producto.getPrecio(),file);
+				producto.getCantidad(),producto.getPrecio(),producto.getImagen(),file);
 
 		return new ResponseEntity<>(HttpStatus.OK);
 

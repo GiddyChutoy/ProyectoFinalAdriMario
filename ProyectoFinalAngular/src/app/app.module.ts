@@ -16,8 +16,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { InyectadorComponent } from './inyectador/inyectador.component';
-import { precioMaximoPipe } from './productos/precio-maximo.pipe';
-import { MarcaFiltradaPipe } from './productos/marca-filtrada.pipe';
+import { precioMaximoPipe } from './pipes/precio-maximo.pipe';
+import { MarcaFiltradaPipe } from './pipes/marca-filtrada.pipe';
 import { ModificadorComponent } from './inyectador/modificador/modificador.component';
 import { FormularioModificadorComponent } from './inyectador/modificador/formulario-modificador/formulario-modificador.component';
 import { CarritoComponent } from './carrito/carrito.component';
@@ -30,6 +30,7 @@ import { DetallesProductoComponent } from './productos/detalles-producto/detalle
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-modificar.component';
+import { DialogoConfirmacionComponent } from './carrito/dialogo-confirmacion/dialogo-confirmacion.component';
 
 
 
@@ -56,6 +57,7 @@ import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-m
     DetallesProductoComponent,
     UsuarioComponent,
     UsuarioModificarComponent,
+    DialogoConfirmacionComponent,
    
    
     
