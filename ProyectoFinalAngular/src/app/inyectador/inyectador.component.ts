@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PeticionesService } from '../servicios/peticiones.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class InyectadorComponent implements OnInit {
   tipos:any;
   fileToUpload: File = null;
 
-  constructor(private http: HttpClient, private router: Router,private peticiones:PeticionesService) { }
+  constructor(private http: HttpClient, private router: Router,private peticiones:PeticionesService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.iniciarForm();
@@ -57,11 +58,10 @@ export class InyectadorComponent implements OnInit {
     this.http.post("http://localhost:8080/ardkalic/productos/anadir", formData, { responseType: 'text' })
       .subscribe(
         data => {
-          console.log("************")
-          console.log(data)
+         this.toastr.info("Se ha añadido con exito el producto")
         },
         error => {
-          console.log(error)
+          this.toastr.error("No se ha podido añadir el producto contacte con administrador")
         }
       )
         this.formulario.reset();

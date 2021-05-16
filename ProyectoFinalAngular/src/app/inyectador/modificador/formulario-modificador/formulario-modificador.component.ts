@@ -12,7 +12,7 @@ import { PeticionesService } from 'src/app/servicios/peticiones.service';
 export class FormularioModificadorComponent implements OnInit {
   formulario: FormGroup;
   producto: any = {};
-  url:any
+  url:any;
   marcas:any;
   tipos:any;
   constructor(private peticiones: PeticionesService,private http: HttpClient,private toastr: ToastrService) { }
@@ -37,6 +37,7 @@ export class FormularioModificadorComponent implements OnInit {
           this.formulario.get('precio').setValue(data[0].precio);
           this.formulario.get('imagen').setValue(data[0].imagen);
           console.log("valor imagen",this.formulario.get('imagen').setValue(data[0].imagen))
+          this.url = 'data:image/png;base64,'+this.formulario.get('imagen').value
         },
         error => {
           console.error(error);
@@ -85,7 +86,7 @@ export class FormularioModificadorComponent implements OnInit {
           }, 1000);
         },
         error => {
-          this.toastr.error("No se ha podido modificar el producto seleccione una imagen");
+          this.toastr.error("No se ha podido modificar el producto ");
         }
       )
      
