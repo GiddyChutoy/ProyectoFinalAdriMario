@@ -23,8 +23,10 @@ export class ProductoMarcasComponent implements OnInit {
     this.listaProductos();
   }
   listaProductos(){
+    console.log(this.marca)
     this.peticiones.getProductoMarca(this.marca).subscribe(data=>
         {
+          console.log(data);
           this.productos=data;
           this.productos.map(el=>{
             el['cantidadProducto']=1;

@@ -63,7 +63,8 @@ export class InyectadorComponent implements OnInit {
           this.toastr.error("No se ha podido añadir el producto contacte con administrador")
         }
       )
-        this.formulario.reset();
+      this.url="";
+      this.formulario.reset();
   }
   onFileSelect(event) {
     if (event.target.files.length > 0) {
