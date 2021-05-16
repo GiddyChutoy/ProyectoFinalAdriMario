@@ -25,6 +25,7 @@
           <a class="dropdown-item" ngbDropdownItem [routerLink]="['/productos/RAM']">RAM</a>
           <a class="dropdown-item" ngbDropdownItem [routerLink]="['/productos/Caja']">Cajas/Torres</a>
           <div class="dropdown-divider"></div>
+          <a class="dropdown-item" ngbDropdownItem [routerLink]="['/productos/Monitor']">Monitores</a>
           <a class="dropdown-item" ngbDropdownItem [routerLink]="['/productos/Teclado']">Teclados</a>
           <a class="dropdown-item" ngbDropdownItem [routerLink]="['/productos/Ratón']">Ratones</a>
         </div>
@@ -39,18 +40,17 @@
           email
           </span></a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link ml-auto" [routerLink]="['/carrito']"><span class="material-icons-outlined">
-          shopping_cart
-          </span></a>
-      </li> -->
     </ul>
 
-    <a class="nav-link ml-auto" [routerLink]="['/carrito']"><span class="material-icons-outlined">
-      shopping_cart
-      </span></a>
+    <div class="carrito">
+      <a class="nav-link ml-auto" [routerLink]="['/carrito']"><span class="material-icons-outlined">
+        shopping_cart
+        </span></a>
+    </div>
 
-    <button *ngIf="rol == 'Administrador'" class="btn btn-success mr-2" (click)="inyectador()">Añadir/Modificar componente</button>
+    <div class="administrador">
+      <button *ngIf="rol == 'Administrador'" class="btn btn-success mr-2" (click)="inyectador()">Añadir/Modificar componente</button>
+    </div>
 
     <form class="form-inline my-2 my-lg-0" >
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="palabra" name="busqueda">
