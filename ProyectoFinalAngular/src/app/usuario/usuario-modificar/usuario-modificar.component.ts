@@ -30,8 +30,14 @@ export class UsuarioModificarComponent implements OnInit {
     })  
     this.peticionUsuario.getUsuario(this.nombreUser)
       .subscribe(data => {
+        console.log(data);
         this.usuario = data;
         this.formulario.get('username').setValue(this.usuario.username);
+        this.formulario.get('nombre').setValue(this.usuario.nombre);
+        this.formulario.get('apellidos').setValue(this.usuario.apellidos);
+        this.formulario.get('contraseña').setValue(this.usuario.userPassword);
+        this.formulario.get('direccion').setValue(this.usuario.direccion);
+        this.formulario.get('nacimiento').setValue(this.usuario.nacimiento);
         this.formulario.get('email').setValue(this.usuario.email);
       });
   }

@@ -21,7 +21,7 @@
     
             <div class="form-group">
                 <label for="UserPassword">Contraseña:</label>
-                <input type="text" name="contraseña" id="contraseña" class="form-control" formControlName="contraseña" >
+                <input type="password" name="contraseña" id="contraseña" class="form-control" formControlName="contraseña" >
                 <span class="text-danger" *ngIf="!formulario.get('contraseña').valid && formulario.get('contraseña').touched">No ha introducido la contraseña</span><br>
             </div>
     

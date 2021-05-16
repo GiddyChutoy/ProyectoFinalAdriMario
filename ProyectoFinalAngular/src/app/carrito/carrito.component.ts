@@ -40,29 +40,27 @@ export class CarritoComponent implements OnInit {
     }
     sessionStorage.setItem('productos', JSON.stringify(this.productos));
   }
-  obtenerPrecioTotal(){
-    
-  this.servicioTienda.sendListaCompra(this.productos).subscribe(
+ 
+  mostrarDialogo(): void {
+    this.servicioTienda.sendListaCompra(this.productos).subscribe(
       data=>{
         this.precioTotal=data;
         console.log(this.precioTotal)
+        this.matDialog
+        .open(DialogoConfirmacionComponent, {
+          data: `¿Te gustaria finalizar la compra? ` + "El precio total de su compra es " + this.precioTotal
+        })
+        .afterClosed()
+        .subscribe((confirmado: Boolean) => {
+          if (confirmado) {
+
+          } else {
+
+            
+          }
+        });
       }
     )
-    return this.precioTotal;
    
-  }
-  //bug a solucionar
-  mostrarDialogo(): void {
-    const precio=this.obtenerPrecioTotal();
-    this.matDialog
-      .open(DialogoConfirmacionComponent, {
-        data: `¿Te gustaria finalizar la compra? ` + "El precio total de su compra es " + precio
-      })
-      .afterClosed()
-      .subscribe((confirmado: Boolean) => {
-        if (confirmado) {
-        } else {
-        }
-      });
   }
 }
