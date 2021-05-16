@@ -84,8 +84,8 @@ public class ProductoControllerRest {
 		return new ResponseEntity<>(HttpStatus.OK);
 		
 	}
-	@GetMapping(value="/logitech")
-	public List<ProductosDto> obtenerProductosLogitech(){
-		return productorepository.obtenerProductosLogitech();
+	@GetMapping(value="/marca/{marca}")
+	public List<ProductosDto> obtenerProductosLogitech(@PathVariable(value = "marca",required = false ) String marca){
+		return productorepository.obtenerProductosMarca(marca);
 	}
 }

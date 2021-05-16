@@ -21,7 +21,6 @@ import { MarcaFiltradaPipe } from './pipes/marca-filtrada.pipe';
 import { ModificadorComponent } from './inyectador/modificador/modificador.component';
 import { FormularioModificadorComponent } from './inyectador/modificador/formulario-modificador/formulario-modificador.component';
 import { CarritoComponent } from './carrito/carrito.component';
-import { OfertaLogitechComponent } from './oferta-logitech/oferta-logitech.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -31,6 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-modificar.component';
 import { DialogoConfirmacionComponent } from './modal/dialogo-confirmacion/dialogo-confirmacion.component';
+import { ProductoMarcasComponent } from './producto-marcas/producto-marcas.component';
 
 
 
@@ -53,12 +53,11 @@ import { DialogoConfirmacionComponent } from './modal/dialogo-confirmacion/dialo
     ModificadorComponent,
     FormularioModificadorComponent,
     CarritoComponent,
-    OfertaLogitechComponent,
     DetallesProductoComponent,
     UsuarioComponent,
     UsuarioModificarComponent,
     DialogoConfirmacionComponent,
-   
+    ProductoMarcasComponent
    
     
   ],

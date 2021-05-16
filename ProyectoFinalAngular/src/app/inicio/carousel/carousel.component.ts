@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -12,9 +12,16 @@ export class CarouselComponent implements OnInit {
   constructor( private router:Router) { }
 
   ngOnInit(): void {
+   
   }
 
   irLogitech(){
-    this.router.navigate(["logitech"]);
+    this.router.navigate(["categoria","logitech"]);
+  }
+  irCorsair(){
+    this.router.navigate(["categoria","corsair"]);
+  }
+  irAsus(){
+    this.router.navigate(["categoria","asus"]);
   }
 }
