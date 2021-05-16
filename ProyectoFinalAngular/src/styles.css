@@ -191,14 +191,14 @@
   }
   
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #ffe1e3;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #d6d5ff;}
 
 .btn-primary {
   background-color: #7875fd;
 }
 
 .btn-success:hover {
-  background-color: #f7a1f6;
+  background-color: #5f0981;
 }
 
 
@@ -206,9 +206,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 that have an id of `modal-component` */
 /* https://stackoverflow.com/a/48689004/9263761 */
 mat-dialog-container#modal-component {
-  border: 3px solid #f7a1f6;
+  border: 3px solid #ffffff;
   border-radius: 11px;
-  background-color: #ffe1e3;
+  background-color: #3f19e9;
 }
   .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */

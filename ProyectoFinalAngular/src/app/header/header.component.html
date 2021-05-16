@@ -52,7 +52,7 @@
     </form>
 
     <div *ngIf="nombreUsuario == null || nombreUsuario == ''" class="ml-2" mat-raised-button id="login-button" (click)="openModal()">Inicia sesión</div>
-    <div *ngIf="nombreUsuario != null || nombreUsuario != undefined " class="logout-button" (click)="cerrarSesion()"  >Cerrar Sesion</div>
+    <div *ngIf="nombreUsuario != null || nombreUsuario != undefined " class="logout-button ml-2" (click)="cerrarSesion()"  >Cerrar Sesion</div>
     <div *ngIf="nombreUsuario != ''" class="userName ml-2" (click)="toPerfilUsuario()">{{ nombreUsuario }}</div>
   </div>
 </nav>
