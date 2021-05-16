@@ -16,13 +16,9 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit(): void {
    this.listarProductos();
-
   }
   listarProductos(){
-   
     this.productos=JSON.parse(sessionStorage.getItem('productos'));
-  
-    
   }
 
   limpiarCarrito(){
@@ -44,27 +40,28 @@ export class CarritoComponent implements OnInit {
     }
     sessionStorage.setItem('productos', JSON.stringify(this.productos));
   }
-  completarCompra(){
+  obtenerPrecioTotal(){
     
-    this.servicioTienda.sendListaCompra(this.productos).subscribe(
+  this.servicioTienda.sendListaCompra(this.productos).subscribe(
       data=>{
         this.precioTotal=data;
+        console.log(this.precioTotal)
       }
     )
-    sessionStorage.removeItem('productos');
+    return this.precioTotal;
    
   }
+  //bug a solucionar
   mostrarDialogo(): void {
+    const precio=this.obtenerPrecioTotal();
     this.matDialog
       .open(DialogoConfirmacionComponent, {
-        data: `¿Te gustaria finalizar la compra?`
+        data: `¿Te gustaria finalizar la compra? ` + "El precio total de su compra es " + precio
       })
       .afterClosed()
       .subscribe((confirmado: Boolean) => {
         if (confirmado) {
-         this.completarCompra();
         } else {
-         
         }
       });
   }

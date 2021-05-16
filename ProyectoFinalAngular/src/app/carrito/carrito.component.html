@@ -36,8 +36,8 @@
                     </span></button>
                 </tr>
             </table>
-            <p>El precio total es {{precioTotal}}</p>
-            <button type="button" class="btn btn-success"(click)="mostrarDialogo()" >Completar Compra</button> 
+            <h2 *ngIf="precioTotal!=undefined">El precio total es {{precioTotal}}</h2>
+            <button type="button"  class="btn btn-success"(click)="mostrarDialogo()" >Completar Compra</button> 
             <button type="button" class="btn btn-danger" (click)="limpiarCarrito()" >Limpiar Carrito</button> 
         </div>
     </div>
