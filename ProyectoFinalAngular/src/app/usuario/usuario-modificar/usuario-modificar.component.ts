@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { DialogoConfirmacionComponent } from 'src/app/carrito/dialogo-confirmacion/dialogo-confirmacion.component';
+import { DialogoConfirmacionComponent } from 'src/app/modal/dialogo-confirmacion/dialogo-confirmacion.component';
 import { PeticionesUsuarioService } from 'src/app/servicios/peticiones-usuario.service';
 
 @Component({

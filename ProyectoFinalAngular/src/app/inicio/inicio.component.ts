@@ -27,17 +27,14 @@ export class InicioComponent implements OnInit {
       this.productos.map(el=>{
         el['cantidadProducto']=1;
       })
-      console.log(this.productos);
     })
   }
   anadirCarrito(producto){
     this.servicioTienda.añadirProducto(producto);
-    this.toastr.info("Has añadido este producto al carrito");
   }
 
   verDetalles(id){
     this.servicioTienda.guardarIdProducto(id);
-    console.log(id)
     this.router.navigate(['/detalles-producto'])
   }
 

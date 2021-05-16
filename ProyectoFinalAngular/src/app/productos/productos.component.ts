@@ -34,7 +34,6 @@ export class ProductosComponent implements OnInit {
           this.productos.map(el=>{
             el['cantidadProducto']=1;
           })
-          console.log(this.productos);
         }
       )
   }
@@ -42,8 +41,6 @@ export class ProductosComponent implements OnInit {
     this.peticiones.getMarcas()
       .subscribe(
         data => {
-          console.log('marcas')
-          console.log(data)
           this.marcas = data
         }
       )
@@ -54,7 +51,6 @@ export class ProductosComponent implements OnInit {
 
   verDetalles(id){
     this.servicioTienda.guardarIdProducto(id);
-    console.log(id)
     this.router.navigate(['/detalles-producto'])
   }
 }

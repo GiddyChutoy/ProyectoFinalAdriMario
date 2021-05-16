@@ -15,14 +15,14 @@ export class ContactUsComponent implements OnInit {
   }
   onSubmit(contactForm: NgForm) {
     if (contactForm.valid) {
-      console.log(contactForm.valid);
+     
       const email = contactForm.value;
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
       this.http.post('https://formspree.io/f/xjvjybzl',
         { name: email.name, replyto: email.email, message: email.messages },
         { 'headers': headers }).subscribe(
           response => {
-            console.log(response);
+           
           }
         );
     }

@@ -16,7 +16,7 @@ export class ServicioTienda {
     }
 
     añadirProducto(producto) {
-        console.log(producto);
+       
         let arrayProductos = [];
         
 
@@ -39,7 +39,7 @@ export class ServicioTienda {
         sessionStorage.setItem('productos', JSON.stringify(arrayProductos));
         this.setProducto(arrayProductos);
         this.toastr.info("Ha añadido el producto al carrito");
-        console.log(arrayProductos);
+       
       
     }
 

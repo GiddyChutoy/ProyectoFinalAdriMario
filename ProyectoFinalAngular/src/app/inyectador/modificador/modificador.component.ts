@@ -29,10 +29,9 @@ export class ModificadorComponent implements OnInit {
       .subscribe(
         data => {
           this.productos = [...data];
-          // console.log(data)
         },
         error => {
-          console.error(error);
+  
         }
       );
   }

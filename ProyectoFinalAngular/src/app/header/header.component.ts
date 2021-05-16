@@ -23,11 +23,9 @@ export class HeaderComponent implements OnInit {
     this.nombreUsuario = sessionStorage.getItem('usuario')
     this.rol = sessionStorage.getItem('rol')
 
-    console.log(this.nombreUsuario, this.rol)
   }
   
   recogerDatoBuscador(){
-    console.log(this.palabra);
 
     this.router.navigate(["resultado",this.palabra])
   }

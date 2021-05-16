@@ -7,7 +7,6 @@ export class MarcaFiltradaPipe implements PipeTransform {
 
   transform(value: any, marcaFiltrada: string, marcaProducto: string): any {
     
-    console.log(marcaFiltrada)
     const marcasResultantes = [];
 
     for(const marca of value) {

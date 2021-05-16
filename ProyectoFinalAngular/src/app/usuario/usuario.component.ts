@@ -23,7 +23,6 @@ export class UsuarioComponent implements OnInit {
 
   toModificarUsuario(){
     this.listaVisible = false;
-    console.log(this.usuario.username);
     this.router.navigate(["usuario/",this.usuario.username])
   
   }

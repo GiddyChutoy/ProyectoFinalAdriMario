@@ -30,7 +30,7 @@ import { DetallesProductoComponent } from './productos/detalles-producto/detalle
 import { NgxPaginationModule } from 'ngx-pagination';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioModificarComponent } from './usuario/usuario-modificar/usuario-modificar.component';
-import { DialogoConfirmacionComponent } from './carrito/dialogo-confirmacion/dialogo-confirmacion.component';
+import { DialogoConfirmacionComponent } from './modal/dialogo-confirmacion/dialogo-confirmacion.component';
 
 
 

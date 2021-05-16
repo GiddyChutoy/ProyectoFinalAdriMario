@@ -33,6 +33,5 @@ export class BuscadorComponent implements OnInit {
   }
   anadirCarrito(producto){
     this.servicioTienda.añadirProducto(producto);
-    console.log("carrito",producto); 
   }
 }

@@ -18,7 +18,6 @@ export class OfertaLogitechComponent implements OnInit {
   listaProductos(){
     this.peticiones.getProductoLogitech().subscribe(data=>
         {
-          console.log(data);
           this.productos=data;
         }
       )

@@ -26,18 +26,14 @@ export class RegisterComponent implements OnInit {
       direccion:this.formulario.get('direccion').value,
       fecha_nacimiento:this.formulario.get('nacimiento').value
     }
-    console.log(datos);
     this.peticionesUsuario.postUsuarios(datos).subscribe(
       data=>{
         this.toastr.info("Has sido registrado con exito");
         this.matDialog.closeAll();
       },
       error=>{
-        console.error(error);
         this.toastr.error("Tu usuario o correo ya estan registrados");
-        
       }
-      
       )
     this.formulario.reset();
   }

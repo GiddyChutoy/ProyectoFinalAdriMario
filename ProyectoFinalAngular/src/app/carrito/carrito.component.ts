@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ServicioTienda } from '../servicios/servicio-tienda.service';
-import { DialogoConfirmacionComponent } from './dialogo-confirmacion/dialogo-confirmacion.component';
+import { DialogoConfirmacionComponent } from '../modal/dialogo-confirmacion/dialogo-confirmacion.component';
 
 @Component({
   selector: 'app-carrito',
@@ -21,7 +21,7 @@ export class CarritoComponent implements OnInit {
   listarProductos(){
    
     this.productos=JSON.parse(sessionStorage.getItem('productos'));
-    console.log(this.productos);
+  
     
   }
 
@@ -62,9 +62,9 @@ export class CarritoComponent implements OnInit {
       .afterClosed()
       .subscribe((confirmado: Boolean) => {
         if (confirmado) {
-          alert("¡A mí también!");
+         this.completarCompra();
         } else {
-          alert("Deberías probarlo, a mí me gusta :)");
+         
         }
       });
   }

@@ -36,11 +36,10 @@ export class FormularioModificadorComponent implements OnInit {
           this.formulario.get('cantidad').setValue(data[0].cantidad);
           this.formulario.get('precio').setValue(data[0].precio);
           this.formulario.get('imagen').setValue(data[0].imagen);
-          console.log("valor imagen",this.formulario.get('imagen').setValue(data[0].imagen))
           this.url = 'data:image/png;base64,'+this.formulario.get('imagen').value
         },
         error => {
-          console.error(error);
+
         }
       );
   }
@@ -73,8 +72,6 @@ export class FormularioModificadorComponent implements OnInit {
       precio :this.formulario.get('precio').value,
       imagen:this.formulario.get('imagen').value
     }
-    console.log(data);
-    console.log(this.formulario.get('imagen').value);
     formData.append('file',this.formulario.get('fichero').value);//este es el input que recoge el la imagen file
     formData.append('request', new Blob([JSON.stringify(data)], { type: 'application/json' }))
     this.http.put("http://localhost:8080/ardkalic/productos/modificar", formData, { responseType: 'text' })
