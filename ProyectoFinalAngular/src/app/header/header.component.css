@@ -14,6 +14,28 @@ nav{
     margin: auto;
 }
 
+@media screen and (max-width:1080px) {
+    .form-inline{
+        margin: auto !important;
+        width: 300px;
+        justify-content: center;
+    }
+
+    .carrito{
+        text-align: center;
+    }
+
+    .administrador{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .login-button, .logout-button, .userName{
+        text-align: center;
+        margin-top: 10px ;
+    }
+}
+
 .btn-outline-success {
     background-color: #08f0d6;
     color: #453d6a;
@@ -59,9 +81,4 @@ nav{
 .navbar-toggler-icon{
     background-color: #08f0d6 !important;
     border: 1px solid black;
-}
-
-/* Iconos */
-.material-icons-outlined{
-    
 }
