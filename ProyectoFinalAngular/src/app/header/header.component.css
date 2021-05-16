@@ -10,6 +10,10 @@ nav{
     background-color: #453d6a;
 }
 
+.nav-item{
+    margin: auto;
+}
+
 .btn-outline-success {
     background-color: #08f0d6;
     color: #453d6a;
@@ -53,5 +57,11 @@ nav{
 /* Toggler */
 
 .navbar-toggler-icon{
-    color: #08f0d6 !important;
+    background-color: #08f0d6 !important;
+    border: 1px solid black;
+}
+
+/* Iconos */
+.material-icons-outlined{
+    
 }
