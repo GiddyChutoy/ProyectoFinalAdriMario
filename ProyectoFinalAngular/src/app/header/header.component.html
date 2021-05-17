@@ -32,7 +32,9 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">About us</a>
+        <a class="nav-link" [routerLink]="['/about']"><span class="material-icons-outlined">
+          group
+          </span></a>
       </li>
 
       <li class="nav-item">
@@ -58,7 +60,7 @@
     </form>
 
     <div *ngIf="nombreUsuario == null || nombreUsuario == ''" class="ml-2" mat-raised-button id="login-button" (click)="openModal()">Inicia sesión</div>
-    <div *ngIf="nombreUsuario != null || nombreUsuario != undefined " class="logout-button ml-2" (click)="cerrarSesion()"  >Cerrar Sesion</div>
+    <div *ngIf="nombreUsuario != '' || nombreUsuario != '' " class="logout-button ml-2" (click)="cerrarSesion()"  >Cerrar Sesion</div>
     <div *ngIf="nombreUsuario != ''" class="userName ml-2" (click)="toPerfilUsuario()">{{ nombreUsuario }}</div>
   </div>
 </nav>

@@ -38,18 +38,17 @@ export class LoginComponent implements OnInit {
     comprobarLogin(){
       const username=this.formulario.get('usuario').value;
       const contraseña=this.formulario.get('contraseña').value;
-      this.peticioneUsuario.getUsuario(username).subscribe(data=>{
-        this.usuario=data;
-        sessionStorage.setItem('usuario', this.usuario.username)
-        sessionStorage.setItem('rol', this.usuario.rol)
-      })
+     
       this.peticioneUsuario.comprobarLogin(username,contraseña).subscribe(
         data=>{
           this.toastr.info("has iniciado con exito");
-          setTimeout(() => {
-            window.location.reload()
-          }, 1000);
           this.matDialog.closeAll();
+          this.peticioneUsuario.getUsuario(username).subscribe(data=>{
+            this.usuario=data;
+            this.peticioneUsuario.setUserData(data)
+            sessionStorage.setItem('usuario', this.usuario.username)
+            sessionStorage.setItem('rol', this.usuario.rol)
+          })
         },error=>{
           this.toastr.error("usuario y/o contraseña incorrecta");
         }

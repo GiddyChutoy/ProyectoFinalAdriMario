@@ -3,7 +3,7 @@ a{
 }
 
 span{
-    color: #e82179;
+    color: #08f0d6;
 }
 
 nav{
@@ -70,10 +70,11 @@ nav{
 
 .dropdown-menu{
     background-color: #453d6a;
+   
 }
 
 .dropdown-item{
-    color: #e82179;
+    color: #08f0d6;
 }
 
 /* Toggler */
@@ -81,4 +82,9 @@ nav{
 .navbar-toggler-icon{
     background-color: #08f0d6 !important;
     border: 1px solid black;
+}
+@media screen and (max-width:480){
+    .dropdown-menu.show {
+        border: 2px solid white !;
+    }
 }

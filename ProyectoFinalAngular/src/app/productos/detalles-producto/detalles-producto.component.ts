@@ -21,7 +21,7 @@ export class DetallesProductoComponent implements OnInit {
           this.producto["cantidadProducto"]=0
         },
         error => {
-          console.error(error);
+        
         }
       )
   }

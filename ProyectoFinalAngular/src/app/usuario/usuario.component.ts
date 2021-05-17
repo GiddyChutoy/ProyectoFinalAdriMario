@@ -27,11 +27,6 @@ export class UsuarioComponent implements OnInit {
   
   }
 
-  cerrarSesion() {
-    sessionStorage.removeItem('usuario')
-    sessionStorage.removeItem('rol')
-    window.location.replace('http://localhost:4200/inicio')
-  }
-
+  
   
 }

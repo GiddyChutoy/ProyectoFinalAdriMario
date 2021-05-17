@@ -162,7 +162,7 @@
     background-color: #000000;
     opacity: 0.4;
   }
-  /* Responsive Design */
+  
   @media all and (max-width: 240px) {
     .toast-container .ngx-toastr.div {
       padding: 8px 8px 8px 50px;
@@ -202,9 +202,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 }
 
 
-/* Overwrite the styles of the mat-dialog-container element globally, but only for those
-that have an id of `modal-component` */
-/* https://stackoverflow.com/a/48689004/9263761 */
 mat-dialog-container#modal-component {
   border: 3px solid #ffffff;
   border-radius: 11px;
@@ -218,11 +215,11 @@ mat-dialog-container#modal-component {
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #111; /* Black */
-    overflow: hidden; /* Disable horizontal scroll */
+    overflow: hidden; 
     padding-top: 20px;
   }
   
-  /* The navigation menu links */
+  
   .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -231,18 +228,17 @@ mat-dialog-container#modal-component {
     display: block;
   }
   
-  /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
     color: #f1f1f1;
   }
   
-  /* Style page content */
+
   .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
+    margin-left: 160px; 
     padding: 0px 10px;
   }
   
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

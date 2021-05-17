@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeticionesUsuarioService {
-
+  
+  userData=new Subject<any>();
+  
   constructor(private http: HttpClient) { }
 
 
@@ -26,5 +29,13 @@ export class PeticionesUsuarioService {
   }
   deleteUsuario(username){
     return this.http.delete<any>("http://localhost:8080/ardkalic/usuarios/borrar/" + username);
+  }
+
+  getUserData(){
+    return this.userData;
+  }
+
+  setUserData(userdata){
+    this.userData.next(userdata);
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ServicioTienda } from '../servicios/servicio-tienda.service';
 import { DialogoConfirmacionComponent } from '../modal/dialogo-confirmacion/dialogo-confirmacion.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -12,7 +13,7 @@ export class CarritoComponent implements OnInit {
   productos:any
   precioTotal:any
   
-  constructor(private servicioTienda:ServicioTienda,public matDialog: MatDialog) { }
+  constructor(private servicioTienda:ServicioTienda,public matDialog: MatDialog,private router:Router) { }
 
   ngOnInit(): void {
    this.listarProductos();
@@ -45,19 +46,17 @@ export class CarritoComponent implements OnInit {
     this.servicioTienda.sendListaCompra(this.productos).subscribe(
       data=>{
         this.precioTotal=data;
-        console.log(this.precioTotal)
         this.matDialog
         .open(DialogoConfirmacionComponent, {
-          data: `¿Te gustaria finalizar la compra? ` + "El precio total de su compra es " + this.precioTotal
+          data: `¿Te gustaria finalizar la compra? ` + "El precio total de su compra es " + this.precioTotal + "€"
         })
         .afterClosed()
         .subscribe((confirmado: Boolean) => {
           if (confirmado) {
-
-          } else {
-
-            
-          }
+              this.router.navigate(["inicio"])
+              this.productos=[];
+              sessionStorage.removeItem('productos');
+          } 
         });
       }
     )

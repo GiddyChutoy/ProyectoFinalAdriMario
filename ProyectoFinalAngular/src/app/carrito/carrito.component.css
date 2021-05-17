@@ -2,7 +2,13 @@ img{
     height: 100px;
     width: 120px;
 }
-.boton{
+td .boton span{
     border-radius: 60%;
     margin: auto;
+    font-size: 11px;
+}
+.btn.btn-success{
+    background-color:#08F0D6 ;
+    color: black;
+    margin-right:1em;
 }

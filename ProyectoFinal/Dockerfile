@@ -5,7 +5,7 @@ EXPOSE 8080
 RUN rm -rf /usr/local/tomcat/webapps/
 
 #incluimos el war generado en la carpeta correspondiente del servidor tomcat
-ADD ./ardkalic-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+ADD ./ardkalic.war /usr/local/tomcat/webapps/
 
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
 

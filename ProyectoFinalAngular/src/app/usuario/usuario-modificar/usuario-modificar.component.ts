@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Subject } from 'rxjs';
 import { DialogoConfirmacionComponent } from 'src/app/modal/dialogo-confirmacion/dialogo-confirmacion.component';
 import { PeticionesUsuarioService } from 'src/app/servicios/peticiones-usuario.service';
 
@@ -15,8 +16,9 @@ export class UsuarioModificarComponent implements OnInit {
   nombreUser:any;
   formulario: FormGroup
   usuario:any ;
+  
   constructor(private peticionUsuario: PeticionesUsuarioService,private route:ActivatedRoute,private router:Router,public matDialog: MatDialog,private toastr:ToastrService) { }
-
+  
   ngOnInit(): void {
 
     this.getUsuario();
@@ -30,7 +32,6 @@ export class UsuarioModificarComponent implements OnInit {
     })  
     this.peticionUsuario.getUsuario(this.nombreUser)
       .subscribe(data => {
-        console.log(data);
         this.usuario = data;
         this.formulario.get('username').setValue(this.usuario.username);
         this.formulario.get('nombre').setValue(this.usuario.nombre);
@@ -88,11 +89,12 @@ export class UsuarioModificarComponent implements OnInit {
     this.peticionUsuario.deleteUsuario(this.usuario.username).subscribe(()=>{});
     sessionStorage.removeItem('usuario')
     sessionStorage.removeItem('rol')
-    window.location.replace('http://localhost:4200/inicio')
+    window.location.replace('http://localhost:7200')
   }
 
   limpiarFormulario(){
     this.formulario.reset();
   }
 
+ 
 }
