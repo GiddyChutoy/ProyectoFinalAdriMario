@@ -48,12 +48,14 @@ export class CarritoComponent implements OnInit {
         this.precioTotal=data;
         this.matDialog
         .open(DialogoConfirmacionComponent, {
-          data: `¿Te gustaria finalizar la compra? ` + "El precio total de su compra es " + this.precioTotal
+          data: `¿Te gustaria finalizar la compra? ` + "El precio total de su compra es " + this.precioTotal + "€"
         })
         .afterClosed()
         .subscribe((confirmado: Boolean) => {
           if (confirmado) {
               this.router.navigate(["inicio"])
+              this.productos=[];
+              sessionStorage.removeItem('productos');
           } 
         });
       }

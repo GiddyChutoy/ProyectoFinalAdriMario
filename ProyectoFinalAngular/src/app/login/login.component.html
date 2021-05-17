@@ -3,14 +3,16 @@
         <form class="m-auto" [formGroup]="formulario" *ngIf="registrar == false">
             <div class="form-group">
                 <label for="usuario">Nombre de usuario</label>
-                <input type="text" name="usuario" id="usuario" class="form-control" formControlName="usuario">
+                <input placeholder="Introduzca su nombre" type="text" name="usuario" id="usuario" class="form-control" formControlName="usuario">
+                <span class="text-danger" *ngIf="!formulario.get('username').valid && formulario.get('username').touched">No ha introducido el username</span><br>
             </div>
             <div class="form group">
                 <label for="contraseña">Contraseña</label>
                 <input type="password" name="contraseña" id="contraseña" class="form-control" formControlName="contraseña">
+                <span class="text-danger" *ngIf="!formulario.get('contraseña').valid && formulario.get('contraseña').touched">No ha introducido la contraseña</span><br>
             </div>
             <button href="" type="button" (click)="comprobarLogin()" class="btn btn-primary mt-4">Enviar</button><br>
-            <small>¿No estás registrado? <a (click)="toRegister()" style="cursor:pointer; color: lightblue; text-decoration: underline;">regístrate</a></small>
+            <small>¿No estás registrado? <a (click)="toRegister()" style="cursor:pointer; color: black; text-decoration: underline;">regístrate</a></small>
         </form>
         <app-register *ngIf="registrar == true" (register)="registrar"></app-register>
     </div>

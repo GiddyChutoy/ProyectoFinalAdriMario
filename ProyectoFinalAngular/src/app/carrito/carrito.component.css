@@ -7,3 +7,8 @@ td .boton span{
     margin: auto;
     font-size: 11px;
 }
+.btn.btn-success{
+    background-color:#08F0D6 ;
+    color: black;
+    margin-right:1em;
+}

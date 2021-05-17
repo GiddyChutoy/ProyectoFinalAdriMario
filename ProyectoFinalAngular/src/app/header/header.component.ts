@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
-import { Observable } from 'rxjs';
 import { PeticionesUsuarioService } from '../servicios/peticiones-usuario.service';
 
 @Component({
@@ -33,7 +31,6 @@ export class HeaderComponent implements OnInit {
   }
 
   recogerDatoBuscador(){
-
     this.router.navigate(["resultado",this.palabra])
   }
 

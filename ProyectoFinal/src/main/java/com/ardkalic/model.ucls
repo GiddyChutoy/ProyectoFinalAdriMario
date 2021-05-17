@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.ardkalic.ArdkalicApplication" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/ArdkalicApplication.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="134" x="58" y="64"/>    
+    <position height="-1" width="-1" x="268" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   <class id="2" language="java" name="com.ardkalic.configuracion.SwaggerConfig" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/configuracion/SwaggerConfig.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="302" y="125"/>    
+    <position height="-1" width="-1" x="542" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -23,7 +23,7 @@
   <class id="3" language="java" name="com.ardkalic.controladores.rest.CategoriaControllerRest" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/controladores/rest/CategoriaControllerRest.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="643" y="1609"/>    
+    <position height="-1" width="-1" x="1192" y="1772"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -33,7 +33,7 @@
   <class id="4" language="java" name="com.ardkalic.controladores.rest.MarcaControllerRest" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/controladores/rest/MarcaControllerRest.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="601" y="1069"/>    
+    <position height="-1" width="-1" x="1512" y="1615"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -43,7 +43,7 @@
   <class id="5" language="java" name="com.ardkalic.controladores.rest.UserControllerRest" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/controladores/rest/UserControllerRest.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1314" y="1219"/>    
+    <position height="-1" width="-1" x="1736" y="955"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -53,7 +53,7 @@
   <class id="6" language="java" name="com.ardkalic.controladores.rest.CestaControllerRest" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/controladores/rest/CestaControllerRest.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="117" width="237" x="1246" y="148"/>    
+    <position height="-1" width="-1" x="1953" y="1589"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -63,7 +63,7 @@
   <class id="7" language="java" name="com.ardkalic.controladores.rest.ProductoControllerRest" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/controladores/rest/ProductoControllerRest.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="953" y="1171"/>    
+    <position height="-1" width="-1" x="946" y="1222"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -72,7 +72,7 @@
   </class>  
   <class id="8" language="java" name="com.ardkalic.entidades.MarcaEntity" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/entidades/MarcaEntity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="129" y="1703"/>    
+    <position height="-1" width="-1" x="16" y="1663"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -81,7 +81,7 @@
   </class>  
   <class id="9" language="java" name="com.ardkalic.entidades.ProductoEntity" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/entidades/ProductoEntity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="271" y="1205"/>    
+    <position height="-1" width="-1" x="73" y="1213"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -100,7 +100,7 @@
   </class>  
   <class id="11" language="java" name="com.ardkalic.entidades.UsersEntity" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/entidades/UsersEntity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="584" y="556"/>    
+    <position height="-1" width="-1" x="664" y="823"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -109,7 +109,7 @@
   </class>  
   <class id="12" language="java" name="com.ardkalic.entidades.CategoriaEntity" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/entidades/CategoriaEntity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="347" y="1705"/>    
+    <position height="-1" width="-1" x="265" y="1654"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -118,7 +118,7 @@
   </class>  
   <class id="13" language="java" name="com.ardkalic.dtos.UserDto" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/dtos/UserDto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1300" y="707"/>    
+    <position height="-1" width="-1" x="1059" y="325"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -127,7 +127,7 @@
   </class>  
   <class id="14" language="java" name="com.ardkalic.dtos.ProductosDto" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/dtos/ProductosDto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1653" y="756"/>    
+    <position height="-1" width="-1" x="1406" y="368"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -136,7 +136,7 @@
   </class>  
   <class id="15" language="java" name="com.ardkalic.dtos.CategoriaDto" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/dtos/CategoriaDto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1932" y="549"/>    
+    <position height="-1" width="-1" x="1659" y="157"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -145,7 +145,7 @@
   </class>  
   <class id="16" language="java" name="com.ardkalic.dtos.MarcaDto" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/dtos/MarcaDto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2106" y="564"/>    
+    <position height="-1" width="-1" x="1810" y="167"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -155,7 +155,7 @@
   <interface id="17" language="java" name="com.ardkalic.repositories.MarcaRepository" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/repositories/MarcaRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="606" y="1286"/>    
+    <position height="-1" width="-1" x="1188" y="1615"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +165,7 @@
   <interface id="18" language="java" name="com.ardkalic.repositories.ProductoRepository" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/repositories/ProductoRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1050" y="1501"/>    
+    <position height="-1" width="-1" x="1270" y="1451"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -175,7 +175,7 @@
   <interface id="19" language="java" name="com.ardkalic.repositories.UserRepository" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/repositories/UserRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1337" y="1510"/>    
+    <position height="-1" width="-1" x="1911" y="1075"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -185,7 +185,7 @@
   <interface id="20" language="java" name="com.ardkalic.repositories.AuthorityRepository" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/repositories/AuthorityRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1862" y="1645"/>    
+    <position height="-1" width="-1" x="1450" y="965"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -195,7 +195,7 @@
   <interface id="21" language="java" name="com.ardkalic.repositories.CategoriaRepository" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/repositories/CategoriaRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="717" y="1781"/>    
+    <position height="-1" width="-1" x="787" y="1779"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -204,7 +204,7 @@
   </interface>  
   <interface id="22" language="java" name="com.ardkalic.negocioDAO.NegocioDAO" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/negocioDAO/NegocioDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="253" x="843" y="299"/>    
+    <position height="-1" width="-1" x="1950" y="1460"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -214,7 +214,7 @@
   <class id="23" language="java" name="com.ardkalic.negocio.dao.impl.NegocioDAOimpl" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/negocio/dao/impl/NegocioDAOimpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="99" width="253" x="652" y="85"/>    
+    <position height="-1" width="-1" x="1857" y="1361"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -223,7 +223,7 @@
   </class>  
   <class id="24" language="java" name="com.ardkalic.daos.impl.ProductoDAOImpl" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/daos/impl/ProductoDAOImpl.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1144" y="1785"/>    
+    <position height="-1" width="-1" x="767" y="1588"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -232,7 +232,7 @@
   </class>  
   <class id="25" language="java" name="com.ardkalic.daos.impl.UserDAOImpl" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/daos/impl/UserDAOImpl.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1591" y="1794"/>    
+    <position height="-1" width="-1" x="1703" y="788"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -241,7 +241,7 @@
   </class>  
   <interface id="26" language="java" name="com.ardkalic.daos.ProductoDAO" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/daos/ProductoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="693" y="1485"/>    
+    <position height="-1" width="-1" x="761" y="1441"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -250,7 +250,7 @@
   </interface>  
   <interface id="27" language="java" name="com.ardkalic.daos.UserDAO" project="ProyectoFinal" 
     file="/ProyectoFinal/src/main/java/com/ardkalic/daos/UserDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1842" y="1341"/>    
+    <position height="-1" width="-1" x="1546" y="970"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -258,195 +258,195 @@
     </display>  
   </interface>  
   <association id="28">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="29" name="marcarepository">        
-        <position height="0" width="0" x="-31" y="7"/>      
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="29" name="categorias">        
+        <position height="0" width="0" x="-58" y="49"/>      
       </attribute>      
       <multiplicity id="30" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-31" y="7"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="31">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="32" name="authRepo">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="33" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="34">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="35" name="userRepo">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="36" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="38" name="userRepo">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="39" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="41" name="userDao">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="42" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="43">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="44" name="productoRepo">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="45" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="47" name="negocioDAO">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="48" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="49">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="50" name="categorias">        
-        <position height="0" width="0" x="24" y="100"/>      
-      </attribute>      
-      <multiplicity id="51" minimum="0" maximum="1">        
-        <position height="0" width="0" x="24" y="100"/>      
+        <position height="0" width="0" x="-58" y="49"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="52">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="26"/>  
-  </realization>  
-  <association id="53">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="54" name="marcaRepo">        
-        <position height="0" width="0" x="-31" y="7"/>      
+  <association id="31">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="32" name="userRepo">        
+        <position height="0" width="0" x="574" y="-435"/>      
       </attribute>      
-      <multiplicity id="55" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-31" y="7"/>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="0" width="0" x="574" y="-435"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
+    <end type="TARGET" refId="19" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="56">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="57" name="authRepo">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <realization id="34">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="35">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="36" name="authRepo">        
+        <position height="0" width="0" x="-412" y="-680"/>      
       </attribute>      
-      <multiplicity id="58" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="37" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-412" y="-680"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="59">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="60" name="marcas">        
-        <position height="0" width="0" x="-14" y="89"/>      
+  <association id="38">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="39" name="marcaRepo">        
+        <position height="0" width="0" x="551" y="336"/>      
       </attribute>      
-      <multiplicity id="61" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-14" y="89"/>      
+      <multiplicity id="40" minimum="0" maximum="1">        
+        <position height="0" width="0" x="551" y="336"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
+    <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="63" name="productoDao">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="41">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="42" name="userDao">        
+        <position height="0" width="0" x="-296" y="-371"/>      
       </attribute>      
-      <multiplicity id="64" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="43" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-296" y="-371"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
+    <end type="TARGET" refId="27" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="65">    
+  <realization id="44">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <association id="45">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="46" name="userRepo">        
+        <position height="0" width="0" x="574" y="-435"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="0" width="0" x="574" y="-435"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="66" name="categoriarepository">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="49" name="categoriarepository">        
+        <position height="0" width="0" x="70" y="-2"/>      
       </attribute>      
-      <multiplicity id="67" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="50" minimum="0" maximum="1">        
+        <position height="0" width="0" x="70" y="-2"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="68">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="22"/>  
-  </realization>  
-  <realization id="69">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="27"/>  
-  </realization>  
-  <association id="70">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="71" name="productorepository">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="51">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="52" name="negocioDAO">        
+        <position height="0" width="0" x="981" y="1121"/>      
       </attribute>      
-      <multiplicity id="72" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="53" minimum="0" maximum="1">        
+        <position height="0" width="0" x="981" y="1121"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="55" name="productoRepo">        
+        <position height="0" width="0" x="220" y="-50"/>      
+      </attribute>      
+      <multiplicity id="56" minimum="0" maximum="1">        
+        <position height="0" width="0" x="220" y="-50"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="73">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="74" name="categoriaRepo">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="57">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="58" name="productorepository">        
+        <position height="0" width="0" x="220" y="-50"/>      
       </attribute>      
-      <multiplicity id="75" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="59" minimum="0" maximum="1">        
+        <position height="0" width="0" x="220" y="-50"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="61" name="marcarepository">        
+        <position height="0" width="0" x="551" y="336"/>      
+      </attribute>      
+      <multiplicity id="62" minimum="0" maximum="1">        
+        <position height="0" width="0" x="551" y="336"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="64" name="authRepo">        
+        <position height="0" width="0" x="-412" y="-680"/>      
+      </attribute>      
+      <multiplicity id="65" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-412" y="-680"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="67" name="categoriaRepo">        
+        <position height="0" width="0" x="70" y="-2"/>      
+      </attribute>      
+      <multiplicity id="68" minimum="0" maximum="1">        
+        <position height="0" width="0" x="70" y="-2"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="69">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="26"/>  
+  </realization>  
+  <association id="70">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="71" name="productoDao">        
+        <position height="0" width="0" x="68" y="-44"/>      
+      </attribute>      
+      <multiplicity id="72" minimum="0" maximum="1">        
+        <position height="0" width="0" x="68" y="-44"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="74" name="marcas">        
+        <position height="0" width="0" x="-127" y="49"/>      
+      </attribute>      
+      <multiplicity id="75" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-127" y="49"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
