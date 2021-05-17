@@ -208,7 +208,7 @@ that have an id of `modal-component` */
 mat-dialog-container#modal-component {
   border: 3px solid #ffffff;
   border-radius: 11px;
-  background-color: #3f19e9;
+  background-color: #7875fd;
 }
   .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
