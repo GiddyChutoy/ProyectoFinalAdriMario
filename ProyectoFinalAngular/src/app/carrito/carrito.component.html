@@ -5,38 +5,36 @@
 
             <!-- Hacer una tabla con todos los productos con un boton que mande el id de los productos a un componente que modifique los productos (storageItem.setItem()) -->
 
-            <table class="table">
-                <tr>
-                    <th></th>
-                    <th>NOMBRE</th>
-                    <th>CATEGORÍA</th>
-                    <th>MARCA</th>
-                    <th>DESCRIPCIÓN</th>
-                    <th>CANTIDAD</th>
-                    <th>PRECIO</th>
-                    <th>TOTAL</th>
-                    <th></th>
-                </tr>
+            <table class="table table-striped w-auto ">
+                <thead>
+                    <tr>
+                      
+                        <th>NOMBRE</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO</th>
+                        <th>TOTAL</th>
+                        
+                    </tr>
+                </thead>
+               <tbody>
                 <tr *ngFor="let producto of productos">
-                    <button  class="boton" type="button" (click)="anadirProducto(producto)"><span class="material-icons-outlined">
-                        add
-                    </span></button>
+                  
                     <td>{{producto.nombre}}</td>
-                    <td>{{producto.tipo}}</td>
-                    <td>{{producto.marca}}</td>
-                    <td>{{producto.descripcion}}</td>
-                    <td>{{producto.cantidadProducto}}</td>
+
+                    <td>  <button  class="boton" type="button" (click)="anadirProducto(producto)"><span class="material-icons-outlined">
+                        add
+                    </span></button>{{producto.cantidadProducto}} <button class="boton" type="button" (click)="quitarProducto(producto)"><span class="material-icons-outlined">
+                        remove
+                    </span></button></td>
                     <td>{{producto.precio}}</td>
                     <td>{{producto.precio * producto.cantidadProducto}}</td>
                     <td>
                         <img src="data:image/jpeg;base64,{{producto.imagen}}" alt="{{producto.nombre}}">
                     </td>
-                    <button class="boton" type="button" (click)="quitarProducto(producto)"><span class="material-icons-outlined">
-                        remove
-                    </span></button>
+                   
                 </tr>
+            </tbody>
             </table>
-            <h2 *ngIf="precioTotal!=undefined">El precio total es {{precioTotal}}</h2>
             <button type="button"  class="btn btn-success"(click)="mostrarDialogo()" >Completar Compra</button> 
             <button type="button" class="btn btn-danger" (click)="limpiarCarrito()" >Limpiar Carrito</button> 
         </div>
