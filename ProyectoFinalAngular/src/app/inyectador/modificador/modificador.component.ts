@@ -57,6 +57,7 @@ export class ModificadorComponent implements OnInit {
     if (confirmado) {
       this.toastr.info("Se ha eliminado el producto con exito");
       this.peticiones.deleteProducto(id).subscribe(data=>{
+        this.getProductos()
       },error=>{
         this.toastr.error("No se ha podido eliminar el producto");
       })
