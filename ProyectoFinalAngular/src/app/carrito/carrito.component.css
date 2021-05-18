@@ -12,3 +12,8 @@ td .boton span{
     color: black;
     margin-right:1em;
 }
+h1{
+    margin: auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}

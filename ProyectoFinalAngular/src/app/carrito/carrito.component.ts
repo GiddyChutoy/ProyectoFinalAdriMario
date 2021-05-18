@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
-  productos:any
+  productos:any;
   precioTotal:any
   
   constructor(private servicioTienda:ServicioTienda,public matDialog: MatDialog,private router:Router) { }
