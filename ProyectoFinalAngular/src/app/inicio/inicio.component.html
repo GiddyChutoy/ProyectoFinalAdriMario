@@ -12,10 +12,10 @@
           <div class="col-lg-4 col-md-6 mb-4 mt-4" *ngFor="let producto of productos| paginate:{itemsPerPage: 6, currentPage:page} ">
             <div class="card h-100" >
               <a >
-              <img class="card-img-top img-fluid" src="data:image/jpeg;base64,{{producto.imagen}}" height="300px" width="300px" alt=""></a>
+              <img class="card-img-top img-fluid" src="data:image/jpeg;base64,{{producto.imagen}}"  alt="{{producto.nombre}}"></a>
               <div class="card-body" >
                 <h3 class="card-title">
-                  <a >{{producto.nombre}}</a>
+                  <a (click)="verDetalles(producto.id)">{{producto.nombre}}</a>
                 </h3>
                 <h4>{{producto.precio}}€</h4>
                 

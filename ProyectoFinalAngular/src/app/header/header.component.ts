@@ -55,6 +55,7 @@ export class HeaderComponent implements OnInit {
     sessionStorage.removeItem('rol')
     this.nombreUsuario='';
     this.rol='';
+    this.router.navigate(['inicio']);
   }
 
 }
