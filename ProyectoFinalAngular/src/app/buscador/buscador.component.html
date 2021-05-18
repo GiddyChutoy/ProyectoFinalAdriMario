@@ -1,22 +1,17 @@
 
 <div class="container">
-  <!-- <div class="sidenav">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-  </div> -->
+ 
     <div class="row">
 
       <div class="col-lg-12">
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4 mt-4" *ngFor="let producto of productos| paginate:{itemsPerPage: 6, currentPage:page} ">
+          <div class="col-lg-4 col-md-6 mb-4 mt-4" *ngFor="let producto of productos| paginate:{itemsPerPage: 3, currentPage:page} ">
             <div class="card h-100" >
-              <a href="#">
+              <a >
               <img class="card-img-top img-fluid" src="data:image/jpeg;base64,{{producto.imagen}}" height="300px" width="300px" alt=""></a>
               <div class="card-body" >
                 <h3 class="card-title">
-                  <a href="#">{{producto.nombre}}</a>
+                  <a (click)="verDetalles(producto.id)" >{{producto.nombre}}</a>
                 </h3>
                 <h4>{{producto.precio}}€</h4>
                 
