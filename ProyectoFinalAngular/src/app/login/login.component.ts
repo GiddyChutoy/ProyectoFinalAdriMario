@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
      
       this.peticioneUsuario.comprobarLogin(username,contraseña).subscribe(
         data=>{
-          this.toastr.info("has iniciado con exito");
+          this.toastr.info("Has iniciado con exito");
           this.matDialog.closeAll();
           this.peticioneUsuario.getUsuario(username).subscribe(data=>{
             this.usuario=data;
