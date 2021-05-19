@@ -6,3 +6,6 @@ h1{
     margin-top: 200px;
     margin-bottom: 200px;
 }
+input[type=number]{
+    text-align: center;
+}

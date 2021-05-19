@@ -12,9 +12,14 @@ Para que funcione la aplicacion:
 
 	- Una vez instalados los paquetes ejecutar ng serve para compilar y desplegar e introducir en el navegador localhost:4200  
 
-Nota: Ahora se muestran las imagenes si las hay en la bbdd si no hay se pueden añadir en la BBDD por el mysql para ver el resultado , tambien se pueden agregar eliminar modificar los productos 
-y asi como también estan disponibles las peticiones para añadir eliminar y modificar usuarios.
+- Para desplegarlo con docker se requerirá tener instalado docker en tu equipo 
+	
+	- En primer lugar crear una network con el comando docker network create ardkalic 
+	
+	- Para arrancar el contenedor de la base de datos utilizar docker run -d --network ardkalic --name mi_mysql  -e MYSQL_ROOT_PASSWORD=mario -e MYSQL_DATABASE=ardkalic  -e MYSQL_PASSWORD=mario -p 3307:3306 mariorg/bbdd 
 
-Nota 2: Se puede encontrar un error a la hora de usar las peticiones porque cuando se arranca Spring crea una columna user_password si se elimina la columana UserPassword de la bbdd funcionare correctamente 
-de todas maneras intentare subir la BBDD mas actualizada 
+	- Para la parte back docker run --network ardkalic --name ardkalic_back -p 8080:8080 mariorg/back
 
+	- Para la parte front  docker run –d –p 4200:80 –name ardkalic_front mariorg/front 
+
+ -Nota: esos comandos son para las imagenes de Mario pero tienen el mismo contenido que las de Adri
