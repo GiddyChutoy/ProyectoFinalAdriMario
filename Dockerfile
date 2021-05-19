@@ -7,4 +7,4 @@ COPY ./scriptSQL/ /docker-entrypoint-initdb.d/
 
 
 #docker build -t mariorg/bbdd . es lo que hago para generar la imagen
-#docker run -d --network ardkalic --name mi_mysql -e MYSQL_ROOT_PASSWORD=mario -e MYSQL_DATABASE=ardkalic -e MYSQL_PASSWORD=mario -p 3307:3306 mariorg/bbdd y esto para arrancar el contenedor
+#docker run -d --network pedropo --name mi_mysql -e MYSQL_ROOT_PASSWORD=mario -e MYSQL_DATABASE=ardkalic -e MYSQL_PASSWORD=mario -p 3307:3306 giddychutoy/bbdd y esto para arrancar el contenedor

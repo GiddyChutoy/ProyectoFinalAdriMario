@@ -16,3 +16,6 @@ RUN npm run build --prod
 FROM nginx:1.17.1-alpine
     #Si estas utilizando otra aplicacion cambia PokeApp por el nombre de tu app
 COPY --from=build-step /app/dist/ProyectoFinal /usr/share/nginx/html
+
+# docker build -t giddychutoy/front .
+# docker run -d --name ardkalic_front giddychutoy/front
