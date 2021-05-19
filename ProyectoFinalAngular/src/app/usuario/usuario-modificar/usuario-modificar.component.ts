@@ -67,7 +67,10 @@ export class UsuarioModificarComponent implements OnInit {
       rol:this.usuario.rol
     }
     this.peticionUsuario.putUsuario(usuario).subscribe(
-      data=>{}
+      data=>{
+        this.toastr.info("Has modificado tus datos con éxito")
+        this.router.navigate(['perfil'])
+      }
     )
   }
   mostrarDialogo(): void {

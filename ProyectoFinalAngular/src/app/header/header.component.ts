@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.peticionUsuario.getUserData().subscribe(
       data=>{
-        this.nombreUsuario=data.nombre
+        this.nombreUsuario=data.username
         this.rol=data.rol
       }
     )

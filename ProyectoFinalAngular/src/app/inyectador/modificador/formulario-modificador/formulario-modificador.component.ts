@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PeticionesService } from 'src/app/servicios/peticiones.service';
 
@@ -15,7 +16,7 @@ export class FormularioModificadorComponent implements OnInit {
   url:any;
   marcas:any;
   tipos:any;
-  constructor(private peticiones: PeticionesService,private http: HttpClient,private toastr: ToastrService) { }
+  constructor(private peticiones: PeticionesService,private http: HttpClient,private toastr: ToastrService,private router: Router) { }
 
   ngOnInit(): void {
     this.getMarcas();
@@ -78,9 +79,7 @@ export class FormularioModificadorComponent implements OnInit {
       .subscribe(
         data => {
           this.toastr.info("Se ha modificado el producto con exito");
-          setTimeout(() => {
-            window.location.reload()
-          }, 1000);
+          this.router.navigate(['modificador']);
         },
         error => {
           this.toastr.error("No se ha podido modificar el producto ");
