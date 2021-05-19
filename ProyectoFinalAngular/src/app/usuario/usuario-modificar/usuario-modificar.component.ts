@@ -89,7 +89,11 @@ export class UsuarioModificarComponent implements OnInit {
     this.peticionUsuario.deleteUsuario(this.usuario.username).subscribe(()=>{});
     sessionStorage.removeItem('usuario')
     sessionStorage.removeItem('rol')
-    window.location.replace('http://localhost:7200')
+    this.peticionUsuario.setUserData({
+      nombre:'',
+      rol:''
+    })
+   this.router.navigate(['/'])
   }
 
   limpiarFormulario(){

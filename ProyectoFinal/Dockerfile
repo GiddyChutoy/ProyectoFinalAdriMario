@@ -10,4 +10,4 @@ ADD ./ardkalic.war /usr/local/tomcat/webapps/
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
 
 #Un ejemplo para la sentencia de arranque:
-#docker run --network colegio --name colegio_back -p 8080:8080 soniagg/tomcat_colegio
+#docker run --network nombreNetwork --name nombreContenedor -p 8080:8080 nombreImagen

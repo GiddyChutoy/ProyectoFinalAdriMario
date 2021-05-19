@@ -3,3 +3,6 @@ img{
     width: 300px;
     margin-left: 25px;
 }
+input[type=number]{
+    text-align: center;
+}
